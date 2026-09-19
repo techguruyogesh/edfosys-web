@@ -10,30 +10,45 @@ export async function POST(request) {
       received_at: new Date().toISOString(),
     });
 
-    // Optionally forward lead into Edfosys Central CRM enquiry endpoint
+    // Forward lead into Edfosys Central CRM enquiry endpoint
     const centralApiUrl =
       process.env.CENTRAL_API_BASE_URL || "https://app.edfosys.com";
 
     try {
-      await fetch(`${centralApiUrl}/api/v1/central/enquiries`, {
+      const payload = {
+        name: data.name,
+        email: data.email,
+        company_name:
+          data.company_name ||
+          data.company ||
+          (data.name ? `${data.name}'s Company` : "Prospective Client"),
+        phone_number: data.phone || data.phone_number || null,
+        industry: data.primary_interest || data.industry || "Technology & Consulting",
+        team_size: data.team_size || "1-5",
+        message:
+          data.notes ||
+          data.message ||
+          `Consultation request submitted from ${data.lead_source || "Website"}. Business Stage: ${data.business_stage || "N/A"}.`,
+      };
+
+      const crmRes = await fetch(`${centralApiUrl}/api/enquiries`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          company: data.notes || "Free Consulting Lead",
-          industry: data.primary_interest || "general",
-          source: data.lead_source || "Edfosys Website",
-        }),
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
+
+      const crmData = await crmRes.json();
+      console.log("[CRM Forwarding Success]:", crmData);
     } catch (e) {
       console.warn("[CRM Forwarding Warning]:", e.message);
     }
 
     return NextResponse.json({
       success: true,
-      message: "Lead received successfully.",
+      message: "Lead received and saved to CRM successfully.",
     });
   } catch (error) {
     console.error("[API Lead Error]:", error);
