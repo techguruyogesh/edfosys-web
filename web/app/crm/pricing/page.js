@@ -26,7 +26,7 @@ export default function PricingPage() {
       ],
       popular: false,
       ctaText: "Start Free Trial",
-      ctaLink: "https://app.edfosys.com/register?plan=starter",
+      ctaLink: "https://app.edfosys.com/signup?plan=starter",
     },
     {
       name: "Growth",
@@ -44,7 +44,7 @@ export default function PricingPage() {
       ],
       popular: true,
       ctaText: "Start 14-Day Trial",
-      ctaLink: "https://app.edfosys.com/register?plan=growth",
+      ctaLink: "https://app.edfosys.com/signup?plan=growth",
     },
     {
       name: "Enterprise",

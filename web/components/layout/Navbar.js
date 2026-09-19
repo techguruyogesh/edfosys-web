@@ -270,7 +270,7 @@ export default function Navbar() {
           {/* Desktop Right CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="https://app.edfosys.com/admin/login"
+              href="https://app.edfosys.com/login"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors px-3 py-2"
@@ -354,7 +354,7 @@ export default function Navbar() {
             </Link>
             <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
               <a
-                href="https://app.edfosys.com/admin/login"
+                href="https://app.edfosys.com/login"
                 className="w-full text-center py-2.5 text-sm font-semibold border border-slate-200 rounded-xl"
               >
                 Sign In

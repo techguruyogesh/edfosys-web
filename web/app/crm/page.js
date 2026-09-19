@@ -97,7 +97,7 @@ export default function CrmOverviewPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <a
-                href="https://app.edfosys.com/register"
+                href="https://app.edfosys.com/signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-[1.02] flex items-center justify-center space-x-2"
@@ -215,7 +215,7 @@ export default function CrmOverviewPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://app.edfosys.com/register"
+                href="https://app.edfosys.com/signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-xl"
