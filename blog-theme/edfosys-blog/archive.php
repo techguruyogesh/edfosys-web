@@ -16,17 +16,20 @@ $categories       = get_categories(
 $current_category = is_category() ? get_queried_object() : null;
 ?>
 
-<section class="blog-hero blog-hero--archive">
-	<div class="cyancrm-shell">
-		<div class="blog-hero__inner">
-			<div class="hero__eyebrow"><?php esc_html_e( 'Browse the Blog', 'cyancrm-blog' ); ?></div>
-			<h1 class="blog-hero__title blog-hero__title--archive">
+<section class="edf-blog-hero">
+	<div class="edf-container">
+		<div class="edf-blog-hero__content">
+			<div class="edf-pill-badge">
+				<span>📂</span>
+				<span><?php esc_html_e( 'Topic Archive', 'cyancrm-blog' ); ?></span>
+			</div>
+			<h1 class="edf-blog-hero__title">
 				<?php
 				if ( is_category() ) {
 					printf(
 						wp_kses_post(
 							/* translators: %s: category name */
-							__( 'Articles in <span class="hero__title-accent">%s</span>', 'cyancrm-blog' )
+							__( 'Articles in <span class="edf-text-accent">%s</span>', 'cyancrm-blog' )
 						),
 						esc_html( single_cat_title( '', false ) )
 					);
@@ -34,7 +37,7 @@ $current_category = is_category() ? get_queried_object() : null;
 					printf(
 						wp_kses_post(
 							/* translators: %s: tag name */
-							__( 'Tagged with <span class="hero__title-accent">%s</span>', 'cyancrm-blog' )
+							__( 'Tagged with <span class="edf-text-accent">%s</span>', 'cyancrm-blog' )
 						),
 						esc_html( single_tag_title( '', false ) )
 					);
@@ -44,34 +47,42 @@ $current_category = is_category() ? get_queried_object() : null;
 				?>
 			</h1>
 			<?php if ( term_description() ) : ?>
-				<div class="blog-hero__description"><?php echo wp_kses_post( term_description() ); ?></div>
+				<div class="edf-blog-hero__desc"><?php echo wp_kses_post( term_description() ); ?></div>
 			<?php else : ?>
-				<p class="blog-hero__description"><?php esc_html_e( 'Explore curated articles designed to help sales and operations teams improve capture, follow-up, and conversion performance.', 'cyancrm-blog' ); ?></p>
+				<p class="edf-blog-hero__desc"><?php esc_html_e( 'Curated articles designed to help enterprise leaders scale technology and accelerate business growth.', 'cyancrm-blog' ); ?></p>
 			<?php endif; ?>
-			<div class="blog-hero__search">
-				<?php get_search_form(); ?>
+
+			<div class="edf-blog-hero__search">
+				<form role="search" method="get" class="edf-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<span class="edf-search-icon">🔍</span>
+					<input type="search" class="edf-search-input" placeholder="<?php esc_attr_e( 'Search this topic...', 'cyancrm-blog' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+					<button type="submit" class="edf-search-btn"><?php esc_html_e( 'Search', 'cyancrm-blog' ); ?></button>
+				</form>
 			</div>
 		</div>
 	</div>
 </section>
 
 <?php if ( $categories ) : ?>
-	<section class="blog-filter-bar">
-		<div class="cyancrm-shell">
-			<div class="blog-filter-bar__inner">
-				<a class="blog-filter-chip<?php echo is_category() ? '' : ' is-current'; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'All Articles', 'cyancrm-blog' ); ?></a>
+	<section class="edf-filter-bar">
+		<div class="edf-container">
+			<div class="edf-filter-bar__inner">
+				<a class="edf-filter-pill<?php echo is_category() ? '' : ' is-active'; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'All Insights', 'cyancrm-blog' ); ?></a>
 				<?php foreach ( $categories as $category ) : ?>
-					<a class="blog-filter-chip<?php echo ( $current_category && (int) $current_category->term_id === (int) $category->term_id ) ? ' is-current' : ''; ?>" href="<?php echo esc_url( get_category_link( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></a>
+					<a class="edf-filter-pill<?php echo ( $current_category && (int) $current_category->term_id === (int) $category->term_id ) ? ' is-active' : ''; ?>" href="<?php echo esc_url( get_category_link( $category ) ); ?>">
+						<?php echo esc_html( $category->name ); ?>
+						<span class="edf-filter-count"><?php echo esc_html( $category->count ); ?></span>
+					</a>
 				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
 <?php endif; ?>
 
-<section class="posts-section posts-section--listing">
-	<div class="cyancrm-shell">
+<section class="edf-posts-section">
+	<div class="edf-container">
 		<?php if ( have_posts() ) : ?>
-			<div class="posts-grid">
+			<div class="edf-posts-grid">
 				<?php
 				while ( have_posts() ) :
 					the_post();
@@ -79,24 +90,25 @@ $current_category = is_category() ? get_queried_object() : null;
 				endwhile;
 				?>
 			</div>
-			<div class="pagination">
+			<div class="edf-pagination">
 				<?php
 				echo wp_kses_post(
 					paginate_links(
 						array(
 							'type'      => 'list',
-							'prev_text' => '&larr;',
-							'next_text' => '&rarr;',
+							'prev_text' => '&larr; Previous',
+							'next_text' => 'Next &rarr;',
 						)
 					)
 				);
 				?>
 			</div>
 		<?php else : ?>
-			<div class="archive-empty">
-				<div class="archive-empty__icon">?</div>
-				<h2 class="section-header__title"><?php esc_html_e( 'Nothing here yet', 'cyancrm-blog' ); ?></h2>
-				<p class="archive-empty__text"><?php esc_html_e( 'Try another category or publish a new article from the WordPress dashboard.', 'cyancrm-blog' ); ?></p>
+			<div class="edf-empty-box">
+				<div class="edf-empty-icon">📂</div>
+				<h2 class="edf-empty-title"><?php esc_html_e( 'No articles in this topic yet', 'cyancrm-blog' ); ?></h2>
+				<p class="edf-empty-desc"><?php esc_html_e( 'Try another category or return to the main insights page.', 'cyancrm-blog' ); ?></p>
+				<a class="edf-btn-primary" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'View All Insights', 'cyancrm-blog' ); ?></a>
 			</div>
 		<?php endif; ?>
 	</div>

@@ -200,11 +200,11 @@ if ( have_posts() ) :
 							</div>
 						<?php endif; ?>
 
-						<div class="sidebar-panel sidebar-panel--cta">
-							<h2 class="sidebar-title"><?php esc_html_e( 'Ready to Get Started?', 'cyancrm-blog' ); ?></h2>
-							<p class="article-sidebar__text"><?php esc_html_e( 'Start your free 14-day trial today. No credit card required.', 'cyancrm-blog' ); ?></p>
-							<a class="button button--light" href="<?php echo esc_url( cyancrm_main_site_url() . '/contact' ); ?>">
-								<?php esc_html_e( 'Contact Sales', 'cyancrm-blog' ); ?>
+						<div class="sidebar-panel sidebar-panel--cta" style="background: linear-gradient(135deg, #0C3246 0%, #071f2c 100%); color: #ffffff; border-radius: 20px; padding: 24px;">
+							<h2 class="sidebar-title" style="color: #ffffff;"><?php esc_html_e( 'Scale With Edfosys', 'cyancrm-blog' ); ?></h2>
+							<p class="article-sidebar__text" style="color: #cbd5e1;"><?php esc_html_e( 'Experience modern engineering and high-velocity CRM automation.', 'cyancrm-blog' ); ?></p>
+							<a class="edf-btn-primary" href="https://app.edfosys.com/signup" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; margin-top: 12px;">
+								<?php esc_html_e( 'Start 14-Day Free Trial', 'cyancrm-blog' ); ?> &rarr;
 							</a>
 						</div>
 					</div>
@@ -219,9 +219,9 @@ if ( have_posts() ) :
 		?>
 		<?php if ( $related_posts instanceof WP_Query && $related_posts->have_posts() ) : ?>
 			<section class="related-section">
-				<div class="cyancrm-shell">
+				<div class="edf-container">
 					<h2 class="section-header__title related-section__title"><?php esc_html_e( 'You Might Also Like', 'cyancrm-blog' ); ?></h2>
-					<div class="posts-grid">
+					<div class="edf-posts-grid">
 						<?php
 						while ( $related_posts->have_posts() ) :
 							$related_posts->the_post();

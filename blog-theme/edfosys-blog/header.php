@@ -1,95 +1,155 @@
 <?php
 /**
- * Theme header — matches the React marketing-site Navbar exactly.
+ * Theme header — matches the Edfosys Next.js Navbar exactly.
  *
- * @package cyancrm-blog
+ * @package edfosys-blog
  */
 
 $main_url = cyancrm_main_site_url();
 $blog_url = home_url( '/' );
 $is_blog  = is_home() || is_front_page() || is_archive() || is_single() || is_search();
-
-$industries = array(
-	array(
-		'name'        => 'Education CRM',
-		'description' => 'Manage student inquiries, admissions, and enrollments',
-		'path'        => '/industries/education',
-		'icon'        => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>',
-	),
-	array(
-		'name'        => 'Immigration CRM',
-		'description' => 'Track visa applications and document workflows',
-		'path'        => '/industries/immigration',
-		'icon'        => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
-	),
-	array(
-		'name'        => 'Auction Management CRM',
-		'description' => 'Track consignors, bidders, and auction lots',
-		'path'        => '/industries/auction',
-		'icon'        => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 12.5-8 8a2.119 2.119 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></svg>',
-	),
-	array(
-		'name'        => 'Real Estate CRM',
-		'description' => 'Track leads, properties, and site visits',
-		'path'        => '/industries/real-estate',
-		'icon'        => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
-	),
-);
 ?>
-<?php // phpcs:disable ?><!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-WSR9J99P');</script>
-	<!-- End Google Tag Manager -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/favicon.png' ); ?>">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSR9J99P"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
 <?php wp_body_open(); ?>
-<header class="site-header">
-	<div class="cyancrm-shell site-header__inner">
+
+<header class="edf-navbar">
+	<div class="edf-container edf-navbar__inner">
 		<!-- Brand Logo -->
-		<a class="site-brand" href="<?php echo esc_url( $main_url . '/' ); ?>">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="Edfosys" style="height: 38px; width: auto;" />
+		<a class="edf-brand" href="<?php echo esc_url( $main_url . '/' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="Edfosys" class="edf-brand__img" />
 		</a>
 
 		<!-- Desktop Navigation -->
-		<nav class="site-nav" aria-label="<?php esc_attr_e( 'Primary', 'cyancrm-blog' ); ?>">
-			<a class="site-nav__link" href="<?php echo esc_url( $main_url . '/' ); ?>"><?php esc_html_e( 'Home', 'cyancrm-blog' ); ?></a>
-			<a class="site-nav__link" href="<?php echo esc_url( $main_url . '/services/custom-software' ); ?>"><?php esc_html_e( 'Services', 'cyancrm-blog' ); ?></a>
-			<a class="site-nav__link" href="<?php echo esc_url( $main_url . '/crm' ); ?>">
-				<?php esc_html_e( 'Edfosys CRM', 'cyancrm-blog' ); ?>
-				<span style="background: #ffedd5; color: #ea580c; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">SaaS</span>
+		<nav class="edf-nav" aria-label="<?php esc_attr_e( 'Primary', 'cyancrm-blog' ); ?>">
+			<a class="edf-nav__link" href="<?php echo esc_url( $main_url . '/' ); ?>"><?php esc_html_e( 'Home', 'cyancrm-blog' ); ?></a>
+
+			<!-- Services Dropdown -->
+			<div class="edf-dropdown">
+				<a class="edf-nav__link edf-dropdown__trigger" href="<?php echo esc_url( $main_url . '/services/custom-software' ); ?>">
+					<span><?php esc_html_e( 'Services', 'cyancrm-blog' ); ?></span>
+					<svg class="edf-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+				</a>
+				<div class="edf-dropdown__menu">
+					<div class="edf-dropdown__col">
+						<div class="edf-dropdown__label"><?php esc_html_e( 'Digital & IT Engineering', 'cyancrm-blog' ); ?></div>
+						<a class="edf-dropdown__item" href="<?php echo esc_url( $main_url . '/services/custom-software' ); ?>">
+							<div class="edf-dropdown__icon">💻</div>
+							<div>
+								<div class="edf-dropdown__title"><?php esc_html_e( 'Custom Software Development', 'cyancrm-blog' ); ?></div>
+								<div class="edf-dropdown__desc"><?php esc_html_e( 'Enterprise ERP, SaaS & robust backend APIs', 'cyancrm-blog' ); ?></div>
+							</div>
+						</a>
+						<a class="edf-dropdown__item" href="<?php echo esc_url( $main_url . '/services/web-development' ); ?>">
+							<div class="edf-dropdown__icon">🌐</div>
+							<div>
+								<div class="edf-dropdown__title"><?php esc_html_e( 'Web Applications & Cloud', 'cyancrm-blog' ); ?></div>
+								<div class="edf-dropdown__desc"><?php esc_html_e( 'Next.js & cloud infrastructure architecture', 'cyancrm-blog' ); ?></div>
+							</div>
+						</a>
+						<a class="edf-dropdown__item" href="<?php echo esc_url( $main_url . '/services/mobile-apps' ); ?>">
+							<div class="edf-dropdown__icon">📱</div>
+							<div>
+								<div class="edf-dropdown__title"><?php esc_html_e( 'Mobile App Engineering', 'cyancrm-blog' ); ?></div>
+								<div class="edf-dropdown__desc"><?php esc_html_e( 'iOS & Android native and Flutter apps', 'cyancrm-blog' ); ?></div>
+							</div>
+						</a>
+					</div>
+					<div class="edf-dropdown__col">
+						<div class="edf-dropdown__label"><?php esc_html_e( 'Business Growth & Setup', 'cyancrm-blog' ); ?></div>
+						<a class="edf-dropdown__item" href="<?php echo esc_url( $main_url . '/business/growth-planner' ); ?>">
+							<div class="edf-dropdown__icon">📈</div>
+							<div>
+								<div class="edf-dropdown__title"><?php esc_html_e( 'Business Growth Planner', 'cyancrm-blog' ); ?></div>
+								<div class="edf-dropdown__desc"><?php esc_html_e( 'Financial modeling & roadmap planning', 'cyancrm-blog' ); ?></div>
+							</div>
+						</a>
+						<a class="edf-dropdown__item" href="<?php echo esc_url( $main_url . '/business/setup' ); ?>">
+							<div class="edf-dropdown__icon">🏛️</div>
+							<div>
+								<div class="edf-dropdown__title"><?php esc_html_e( 'Turnkey Business Setup', 'cyancrm-blog' ); ?></div>
+								<div class="edf-dropdown__desc"><?php esc_html_e( 'Company incorporation, GST & compliance', 'cyancrm-blog' ); ?></div>
+							</div>
+						</a>
+						<a class="edf-dropdown__item" href="<?php echo esc_url( $main_url . '/free-consulting' ); ?>">
+							<div class="edf-dropdown__icon">✨</div>
+							<div>
+								<div class="edf-dropdown__title"><?php esc_html_e( 'Free 45-Min Consulting', 'cyancrm-blog' ); ?> <span class="edf-badge-pill">Free</span></div>
+								<div class="edf-dropdown__desc"><?php esc_html_e( 'Strategy session with senior tech architects', 'cyancrm-blog' ); ?></div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Edfosys CRM -->
+			<a class="edf-nav__link" href="<?php echo esc_url( $main_url . '/crm' ); ?>">
+				<span><?php esc_html_e( 'Edfosys CRM', 'cyancrm-blog' ); ?></span>
+				<span class="edf-pill-saas">SaaS</span>
 			</a>
-			<a class="site-nav__link" href="<?php echo esc_url( $main_url . '/free-consulting' ); ?>">
-				<?php esc_html_e( 'Free Consulting', 'cyancrm-blog' ); ?>
-				<span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #10b981; margin-left: 4px;"></span>
+
+			<!-- Free Consulting -->
+			<a class="edf-nav__link" href="<?php echo esc_url( $main_url . '/free-consulting' ); ?>">
+				<span><?php esc_html_e( 'Free Consulting', 'cyancrm-blog' ); ?></span>
+				<span class="edf-pulse-dot"></span>
 			</a>
-			<a class="site-nav__link" href="<?php echo esc_url( $main_url . '/about' ); ?>"><?php esc_html_e( 'About', 'cyancrm-blog' ); ?></a>
-			<a class="site-nav__link<?php echo $is_blog ? ' is-current' : ''; ?>" href="<?php echo esc_url( $blog_url ); ?>"><?php esc_html_e( 'Blog', 'cyancrm-blog' ); ?></a>
-			<a class="site-nav__link" href="<?php echo esc_url( $main_url . '/contact' ); ?>"><?php esc_html_e( 'Contact', 'cyancrm-blog' ); ?></a>
+
+			<a class="edf-nav__link" href="<?php echo esc_url( $main_url . '/about' ); ?>"><?php esc_html_e( 'About', 'cyancrm-blog' ); ?></a>
+			<a class="edf-nav__link is-active" href="<?php echo esc_url( $blog_url ); ?>"><?php esc_html_e( 'Blog', 'cyancrm-blog' ); ?></a>
+			<a class="edf-nav__link" href="<?php echo esc_url( $main_url . '/contact' ); ?>"><?php esc_html_e( 'Contact', 'cyancrm-blog' ); ?></a>
 		</nav>
 
 		<!-- Right CTAs -->
-		<div class="site-header__actions" style="display: flex; align-items: center; gap: 12px;">
-			<a href="https://app.edfosys.com/login" target="_blank" rel="noopener noreferrer" class="site-nav__link" style="font-weight: 600;">
+		<div class="edf-navbar__actions">
+			<a href="https://app.edfosys.com/login" target="_blank" rel="noopener noreferrer" class="edf-btn-ghost">
 				<?php esc_html_e( 'Sign In', 'cyancrm-blog' ); ?>
 			</a>
-			<a href="https://app.edfosys.com/signup" target="_blank" rel="noopener noreferrer" style="background: #F7941D; color: #ffffff; padding: 8px 18px; border-radius: 10px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#e57a0b'" onmouseout="this.style.background='#F7941D'">
+			<a href="https://app.edfosys.com/signup" target="_blank" rel="noopener noreferrer" class="edf-btn-primary">
 				<?php esc_html_e( 'Start Free Trial', 'cyancrm-blog' ); ?>
 			</a>
+			<!-- Mobile Hamburger Toggle -->
+			<button class="edf-mobile-toggle" id="edfMobileToggle" aria-label="Toggle navigation" type="button">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Mobile Drawer -->
+	<div class="edf-mobile-menu" id="edfMobileMenu">
+		<a class="edf-mobile-menu__link" href="<?php echo esc_url( $main_url . '/' ); ?>"><?php esc_html_e( 'Home', 'cyancrm-blog' ); ?></a>
+		<a class="edf-mobile-menu__link" href="<?php echo esc_url( $main_url . '/services/custom-software' ); ?>"><?php esc_html_e( 'Services', 'cyancrm-blog' ); ?></a>
+		<a class="edf-mobile-menu__link" href="<?php echo esc_url( $main_url . '/crm' ); ?>"><?php esc_html_e( 'Edfosys CRM SaaS', 'cyancrm-blog' ); ?></a>
+		<a class="edf-mobile-menu__link" href="<?php echo esc_url( $main_url . '/free-consulting' ); ?>"><?php esc_html_e( 'Free Consulting', 'cyancrm-blog' ); ?></a>
+		<a class="edf-mobile-menu__link" href="<?php echo esc_url( $main_url . '/about' ); ?>"><?php esc_html_e( 'About', 'cyancrm-blog' ); ?></a>
+		<a class="edf-mobile-menu__link is-active" href="<?php echo esc_url( $blog_url ); ?>"><?php esc_html_e( 'Blog', 'cyancrm-blog' ); ?></a>
+		<a class="edf-mobile-menu__link" href="<?php echo esc_url( $main_url . '/contact' ); ?>"><?php esc_html_e( 'Contact', 'cyancrm-blog' ); ?></a>
+		<div class="edf-mobile-menu__actions">
+			<a href="https://app.edfosys.com/login" target="_blank" rel="noopener noreferrer" class="edf-btn-ghost" style="width: 100%; text-align: center;"><?php esc_html_e( 'Sign In', 'cyancrm-blog' ); ?></a>
+			<a href="https://app.edfosys.com/signup" target="_blank" rel="noopener noreferrer" class="edf-btn-primary" style="width: 100%; text-align: center; margin-top: 8px;"><?php esc_html_e( 'Start Free Trial', 'cyancrm-blog' ); ?></a>
 		</div>
 	</div>
 </header>
-<main class="site-main">
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	var toggle = document.getElementById('edfMobileToggle');
+	var menu = document.getElementById('edfMobileMenu');
+	if (toggle && menu) {
+		toggle.addEventListener('click', function() {
+			menu.classList.toggle('is-open');
+		});
+	}
+});
+</script>
+
+<main class="edf-main">

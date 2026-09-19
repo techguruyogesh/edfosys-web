@@ -1,8 +1,8 @@
 <?php
 /**
- * Blog index template.
+ * Blog index template — matches Edfosys modern marketing design.
  *
- * @package cyancrm-blog
+ * @package edfosys-blog
  */
 
 get_header();
@@ -12,7 +12,7 @@ $paged = max( 1, get_query_var( 'paged', 1 ) );
 $posts_query = new WP_Query(
 	array(
 		'post_type'           => 'post',
-		'posts_per_page'      => 6,
+		'posts_per_page'      => 9,
 		'paged'               => $paged,
 		'ignore_sticky_posts' => true,
 	)
@@ -22,50 +22,63 @@ $categories = get_categories(
 	array(
 		'orderby' => 'count',
 		'order'   => 'DESC',
+		'hide_empty' => false,
 	)
 );
 ?>
 
-<section class="blog-hero">
-	<div class="cyancrm-shell">
-		<div class="blog-hero__inner">
-			<div class="hero__eyebrow">
-				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="color:#06b6d4;flex-shrink:0;">
-					<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="currentColor" fill-opacity="0.3"/>
-				</svg>
-				<?php esc_html_e( 'Edfosys CRM Blog', 'cyancrm-blog' ); ?>
+<!-- Hero Header Section -->
+<section class="edf-blog-hero">
+	<div class="edf-container">
+		<div class="edf-blog-hero__content">
+			<div class="edf-pill-badge">
+				<span>✦</span>
+				<span><?php esc_html_e( 'Edfosys Engineering & Growth Insights', 'cyancrm-blog' ); ?></span>
 			</div>
-			<h1 class="blog-hero__title">
-				<?php esc_html_e( 'CRM Insights, Tips &', 'cyancrm-blog' ); ?>
-				<span class="hero__title-accent"><?php esc_html_e( 'Industry Updates', 'cyancrm-blog' ); ?></span>
+			<h1 class="edf-blog-hero__title">
+				<?php esc_html_e( 'Ideas, Architecture & Playbooks for', 'cyancrm-blog' ); ?>
+				<span class="edf-text-accent"><?php esc_html_e( 'Modern Scale', 'cyancrm-blog' ); ?></span>
 			</h1>
-			<p class="blog-hero__description">
-				<?php esc_html_e( 'Learn how to manage leads better, close more deals, and grow your business with expert advice.', 'cyancrm-blog' ); ?>
+			<p class="edf-blog-hero__desc">
+				<?php esc_html_e( 'Practical engineering deep-dives, business setup blueprints, and high-velocity CRM automation from our technology architects and growth advisors.', 'cyancrm-blog' ); ?>
 			</p>
-			<div class="blog-hero__search">
-				<?php get_search_form(); ?>
+
+			<!-- Search Bar -->
+			<div class="edf-blog-hero__search">
+				<form role="search" method="get" class="edf-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<span class="edf-search-icon">🔍</span>
+					<input type="search" class="edf-search-input" placeholder="<?php esc_attr_e( 'Search articles, architectures, blueprints...', 'cyancrm-blog' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+					<button type="submit" class="edf-search-btn"><?php esc_html_e( 'Search', 'cyancrm-blog' ); ?></button>
+				</form>
 			</div>
 		</div>
 	</div>
 </section>
 
+<!-- Category Filter Pills Bar -->
 <?php if ( $categories ) : ?>
-	<section class="blog-filter-bar">
-		<div class="cyancrm-shell">
-			<div class="blog-filter-bar__inner">
-				<a class="blog-filter-chip is-current" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'All Articles', 'cyancrm-blog' ); ?></a>
+	<section class="edf-filter-bar">
+		<div class="edf-container">
+			<div class="edf-filter-bar__inner">
+				<a class="edf-filter-pill is-active" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<?php esc_html_e( 'All Insights', 'cyancrm-blog' ); ?>
+				</a>
 				<?php foreach ( $categories as $category ) : ?>
-					<a class="blog-filter-chip" href="<?php echo esc_url( get_category_link( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></a>
+					<a class="edf-filter-pill" href="<?php echo esc_url( get_category_link( $category ) ); ?>">
+						<?php echo esc_html( $category->name ); ?>
+						<span class="edf-filter-count"><?php echo esc_html( $category->count ); ?></span>
+					</a>
 				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
 <?php endif; ?>
 
-<section class="posts-section posts-section--listing">
-	<div class="cyancrm-shell">
+<!-- Main Posts Listing -->
+<section class="edf-posts-section">
+	<div class="edf-container">
 		<?php if ( $posts_query->have_posts() ) : ?>
-			<div class="posts-grid">
+			<div class="edf-posts-grid">
 				<?php
 				while ( $posts_query->have_posts() ) :
 					$posts_query->the_post();
@@ -74,7 +87,8 @@ $categories = get_categories(
 				?>
 			</div>
 
-			<div class="pagination">
+			<!-- Pagination -->
+			<div class="edf-pagination">
 				<?php
 				echo wp_kses_post(
 					paginate_links(
@@ -82,19 +96,21 @@ $categories = get_categories(
 							'total'      => $posts_query->max_num_pages,
 							'current'    => $paged,
 							'type'       => 'list',
-							'prev_text'  => '&larr;',
-							'next_text'  => '&rarr;',
+							'prev_text'  => '&larr; Previous',
+							'next_text'  => 'Next &rarr;',
 						)
 					)
 				);
 				?>
 			</div>
 		<?php else : ?>
-			<div class="archive-empty">
-				<div class="archive-empty__icon">?</div>
-				<h2 class="section-header__title"><?php esc_html_e( 'No articles published yet', 'cyancrm-blog' ); ?></h2>
-				<p class="archive-empty__text"><?php esc_html_e( 'Publish your first WordPress post and it will automatically appear in this layout.', 'cyancrm-blog' ); ?></p>
-				<a class="button" href="<?php echo esc_url( admin_url( 'post-new.php' ) ); ?>"><?php esc_html_e( 'Create first post', 'cyancrm-blog' ); ?></a>
+			<div class="edf-empty-box">
+				<div class="edf-empty-icon">📝</div>
+				<h2 class="edf-empty-title"><?php esc_html_e( 'No articles found', 'cyancrm-blog' ); ?></h2>
+				<p class="edf-empty-desc"><?php esc_html_e( 'We are actively writing new engineering and strategy guides. Check back soon or browse our services.', 'cyancrm-blog' ); ?></p>
+				<a class="edf-btn-primary" href="<?php echo esc_url( cyancrm_main_site_url() . '/services/custom-software' ); ?>">
+					<?php esc_html_e( 'Explore Engineering Services', 'cyancrm-blog' ); ?>
+				</a>
 			</div>
 		<?php endif; ?>
 	</div>
@@ -103,3 +119,4 @@ $categories = get_categories(
 <?php
 wp_reset_postdata();
 get_footer();
+

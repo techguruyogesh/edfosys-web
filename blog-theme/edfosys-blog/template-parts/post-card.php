@@ -1,41 +1,56 @@
 <?php
 /**
- * Post card partial.
+ * Post card partial — modern Calendly/Lattice inspired article card.
  *
- * @package cyancrm-blog
+ * @package edfosys-blog
  */
 
 $category = cyancrm_blog_primary_category();
+$post_date = get_the_date( 'M j, Y' );
+$read_time = cyancrm_blog_reading_time();
 ?>
-<article <?php post_class( 'post-card' ); ?>>
-	<a class="post-card__media" href="<?php the_permalink(); ?>">
+<article <?php post_class( 'edf-card' ); ?>>
+	<a class="edf-card__media" href="<?php the_permalink(); ?>">
 		<?php if ( has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail( 'large' ); ?>
+			<?php the_post_thumbnail( 'large', array( 'class' => 'edf-card__img' ) ); ?>
+		<?php else : ?>
+			<div class="edf-card__placeholder">
+				<div class="edf-card__placeholder-icon">⚡</div>
+				<div class="edf-card__placeholder-brand">Edfosys Engineering</div>
+			</div>
 		<?php endif; ?>
 		<?php if ( $category ) : ?>
-			<span class="post-card__chip <?php echo esc_attr( cyancrm_blog_category_theme_class( $category ) ); ?>"><?php echo esc_html( $category->name ); ?></span>
+			<span class="edf-card__category"><?php echo esc_html( $category->name ); ?></span>
 		<?php endif; ?>
 	</a>
-	<div class="post-card__body">
-		<h2 class="post-card__title">
+
+	<div class="edf-card__body">
+		<div class="edf-card__meta">
+			<span class="edf-card__date"><?php echo esc_html( $post_date ); ?></span>
+			<span class="edf-card__dot">•</span>
+			<span class="edf-card__time"><?php echo esc_html( $read_time ); ?></span>
+		</div>
+
+		<h2 class="edf-card__title">
 			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h2>
-		<p class="post-card__excerpt"><?php echo esc_html( cyancrm_blog_excerpt() ); ?></p>
-		<div class="post-card__footer">
-			<div class="post-card__author">
-				<a class="post-card__author-badge" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+
+		<p class="edf-card__excerpt"><?php echo esc_html( cyancrm_blog_excerpt() ); ?></p>
+
+		<div class="edf-card__footer">
+			<div class="edf-card__author">
+				<div class="edf-card__avatar">
 					<?php echo esc_html( cyancrm_blog_author_initials() ); ?>
-				</a>
-				<div class="post-card__author-meta">
-					<p class="post-card__author-name">
-						<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a>
-					</p>
-					<p class="post-card__author-readtime"><?php echo esc_html( cyancrm_blog_reading_time() ); ?></p>
+				</div>
+				<div class="edf-card__author-info">
+					<span class="edf-card__author-name"><?php echo esc_html( get_the_author() ); ?></span>
+					<span class="edf-card__author-role"><?php esc_html_e( 'Technology Architect', 'cyancrm-blog' ); ?></span>
 				</div>
 			</div>
-			<a class="post-card__readmore" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
-				<span aria-hidden="true">&rarr;</span>
+			<a class="edf-card__arrow" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 			</a>
 		</div>
 	</div>
 </article>
+
