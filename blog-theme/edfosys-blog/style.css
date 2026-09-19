@@ -1,28 +1,28 @@
 /*
-Theme Name: Edfosys CRM Blog
+Theme Name: Edfosys Blog
 Theme URI: https://edfosys.com/blog
-Author: Edfosys CRM
-Description: Custom WordPress blog theme matching the Edfosys CRM marketing website.
-Version: 1.8.0
+Author: Edfosys Technologies
+Description: Custom WordPress blog theme matching the high-motion Edfosys ecosystem.
+Version: 2.0.0
 Text Domain: cyancrm-blog
 */
 
 /* ============================================================
-   DESIGN TOKENS
+   DESIGN TOKENS (Edfosys Brand)
    ============================================================ */
 :root {
-  --cyan-bg: #f0f9ff;
+  --cyan-bg: #FCFAF7;
   --cyan-surface: #ffffff;
-  --cyan-border: #e2eaf2;
+  --cyan-border: #e2e8f0;
   --cyan-text: #0f172a;
   --cyan-text-muted: #64748b;
   --cyan-text-soft: #94a3b8;
-  --cyan-primary: #06b6d4;
-  --cyan-primary-deep: #0891b2;
-  --cyan-blue: #2563eb;
-  --cyan-blue-deep: #1d4ed8;
-  --cyan-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
-  --cyan-shadow-hover: 0 8px 38px rgba(15, 23, 42, 0.13);
+  --cyan-primary: #F7941D;
+  --cyan-primary-deep: #e57a0b;
+  --cyan-blue: #0C3246;
+  --cyan-blue-deep: #082230;
+  --cyan-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  --cyan-shadow-hover: 0 8px 38px rgba(247, 148, 29, 0.12);
   --cyan-radius-card: 16px;
   --cyan-radius-pill: 999px;
   --cyan-container: 1280px;

@@ -42,7 +42,7 @@ add_action( 'after_setup_theme', 'cyancrm_blog_setup' );
  */
 function cyancrm_blog_custom_title( $title ) {
 	if ( is_home() || is_front_page() ) {
-		return 'Edfosys CRM Blog – CRM Tips, Lead Management & Sales Growth';
+		return 'Edfosys Blog – Engineering, Business Setup & CRM Growth';
 	}
 	return $title;
 }
@@ -50,7 +50,7 @@ add_filter( 'pre_get_document_title', 'cyancrm_blog_custom_title', 99 );
 
 function cyancrm_blog_meta_description() {
 	if ( is_home() || is_front_page() ) {
-		echo '<meta name="description" content="Explore CRM tips, lead management strategies & sales growth ideas on the Edfosys CRM blog. Learn how to convert more leads and grow your business faster.">' . "\n";
+		echo '<meta name="description" content="Explore custom engineering insights, business setup strategies, and high-velocity CRM automation on the Edfosys blog.">' . "\n";
 	}
 }
 add_action( 'wp_head', 'cyancrm_blog_meta_description', 1 );
