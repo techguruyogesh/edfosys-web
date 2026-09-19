@@ -111,9 +111,6 @@ $is_blog  = is_home() || is_front_page() || is_archive() || is_single() || is_se
 
 		<!-- Right CTAs -->
 		<div class="edf-navbar__actions">
-			<a href="https://app.edfosys.com/login" target="_blank" rel="noopener noreferrer" class="edf-btn-ghost">
-				<?php esc_html_e( 'Sign In', 'cyancrm-blog' ); ?>
-			</a>
 			<a href="https://app.edfosys.com/signup" target="_blank" rel="noopener noreferrer" class="edf-btn-primary">
 				<?php esc_html_e( 'Start Free Trial', 'cyancrm-blog' ); ?>
 			</a>
@@ -134,8 +131,7 @@ $is_blog  = is_home() || is_front_page() || is_archive() || is_single() || is_se
 		<a class="edf-mobile-menu__link is-active" href="<?php echo esc_url( $blog_url ); ?>"><?php esc_html_e( 'Blog', 'cyancrm-blog' ); ?></a>
 		<a class="edf-mobile-menu__link" href="<?php echo esc_url( $main_url . '/contact' ); ?>"><?php esc_html_e( 'Contact', 'cyancrm-blog' ); ?></a>
 		<div class="edf-mobile-menu__actions">
-			<a href="https://app.edfosys.com/login" target="_blank" rel="noopener noreferrer" class="edf-btn-ghost" style="width: 100%; text-align: center;"><?php esc_html_e( 'Sign In', 'cyancrm-blog' ); ?></a>
-			<a href="https://app.edfosys.com/signup" target="_blank" rel="noopener noreferrer" class="edf-btn-primary" style="width: 100%; text-align: center; margin-top: 8px;"><?php esc_html_e( 'Start Free Trial', 'cyancrm-blog' ); ?></a>
+			<a href="https://app.edfosys.com/signup" target="_blank" rel="noopener noreferrer" class="edf-btn-primary" style="width: 100%; text-align: center;"><?php esc_html_e( 'Start Free Trial', 'cyancrm-blog' ); ?></a>
 		</div>
 	</div>
 </header>

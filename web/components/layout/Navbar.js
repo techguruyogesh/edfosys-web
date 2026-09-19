@@ -268,14 +268,14 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop Right CTAs */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-3">
             <a
-              href="https://app.edfosys.com/login"
+              href="https://app.edfosys.com/signup"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors px-3 py-2"
             >
-              Sign In
+              Start Free Trial
             </a>
             <Link
               href="/free-consulting"
@@ -353,18 +353,20 @@ export default function Navbar() {
               Contact
             </Link>
             <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
-              <a
-                href="https://app.edfosys.com/login"
-                className="w-full text-center py-2.5 text-sm font-semibold border border-slate-200 rounded-xl"
-              >
-                Sign In
-              </a>
               <Link
                 href="/free-consulting"
                 className="w-full text-center py-2.5 text-sm font-semibold bg-[#F7941D] text-white rounded-xl shadow"
               >
                 Book Free Consultation
               </Link>
+              <a
+                href="https://app.edfosys.com/signup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center py-2.5 text-sm font-semibold border border-slate-200 text-slate-800 rounded-xl hover:bg-slate-50"
+              >
+                Start Free Trial
+              </a>
             </div>
           </div>
         )}

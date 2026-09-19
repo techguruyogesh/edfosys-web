@@ -126,16 +126,6 @@ export default function Footer() {
                   Start Free CRM Trial
                 </a>
               </li>
-              <li>
-                <a href="https://app.edfosys.com/login" target="_blank" rel="noopener noreferrer" className="hover:text-[#F7941D] transition-colors">
-                  Customer Sign In
-                </a>
-              </li>
-              <li>
-                <a href="https://app.edfosys.com/admin/login" target="_blank" rel="noopener noreferrer" className="hover:text-[#F7941D] transition-colors text-xs text-slate-500 hover:text-slate-400">
-                  Admin Portal →
-                </a>
-              </li>
             </ul>
           </div>
         </div>

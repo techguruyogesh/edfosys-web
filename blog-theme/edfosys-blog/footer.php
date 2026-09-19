@@ -97,7 +97,6 @@ $blog_url = home_url( '/' );
 					</li>
 					<li><a href="<?php echo esc_url( $main_url . '/crm/pricing' ); ?>"><?php esc_html_e( 'CRM Pricing & Plans', 'cyancrm-blog' ); ?></a></li>
 					<li><a href="https://app.edfosys.com/signup" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Start Free CRM Trial', 'cyancrm-blog' ); ?></a></li>
-					<li><a href="https://app.edfosys.com/login" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Customer Login', 'cyancrm-blog' ); ?></a></li>
 				</ul>
 			</div>
 
