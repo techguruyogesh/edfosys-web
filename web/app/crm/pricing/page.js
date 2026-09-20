@@ -70,7 +70,7 @@ export default function PricingPage() {
     <>
       <Navbar />
 
-      <main className="flex-1 pt-28 pb-20">
+      <main className="flex-1 pt-28">
         <section className="bg-gradient-to-b from-[#FFF9F2] to-white py-16 text-center border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4">

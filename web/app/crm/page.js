@@ -2,6 +2,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import CrmMainShowcase from "@/components/crm/CrmMainShowcase";
+import CrmPanelFeatures from "@/components/crm/CrmPanelFeatures";
+import CrmIntegrationsEcosystem from "@/components/crm/CrmIntegrationsEcosystem";
 import {
   Zap,
   ArrowRight,
@@ -70,7 +72,7 @@ export default function CrmOverviewPage() {
     <>
       <Navbar />
 
-      <main className="flex-1 pt-28 pb-20">
+      <main className="flex-1 pt-28">
         {/* CRM Hero */}
         <section className="bg-gradient-to-b from-[#FFF9F2] via-white to-slate-50 py-16 lg:py-24 border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -120,6 +122,9 @@ export default function CrmOverviewPage() {
 
         {/* Calendly-Style Product Pillars, Interactive Showcase & Workflow Stepper */}
         <CrmMainShowcase />
+
+        {/* Complete Operations Suite: All Panel Capabilities */}
+        <CrmPanelFeatures />
 
         {/* Industry Verticals */}
         <section className="py-20 bg-slate-50 border-t border-slate-200/60">
@@ -177,6 +182,9 @@ export default function CrmOverviewPage() {
             </div>
           </div>
         </section>
+
+        {/* Connected Integrations Ecosystem */}
+        <CrmIntegrationsEcosystem />
 
         {/* CTA */}
         <section className="py-16 bg-[#0C3246] text-white text-center">

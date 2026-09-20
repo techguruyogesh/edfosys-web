@@ -24,12 +24,18 @@ import {
   Stethoscope,
   Briefcase,
   Zap,
+  MessageSquare,
+  Receipt,
+  BarChart3,
+  CheckCircle2,
+  Layers,
+  CreditCard,
 } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
-  const [industriesDropdown, setIndustriesDropdown] = useState(false);
+  const [crmDropdown, setCrmDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -44,7 +50,7 @@ export default function Navbar() {
   useEffect(() => {
     setIsOpen(false);
     setServicesDropdown(false);
-    setIndustriesDropdown(false);
+    setCrmDropdown(false);
   }, [pathname]);
 
   const industryList = [
@@ -269,69 +275,172 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Edfosys CRM Product Link */}
-            <Link
-              href="/crm"
-              className="text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors flex items-center space-x-1.5"
-            >
-              <span>Edfosys CRM</span>
-              <span className="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-orange-100 text-[#e57a0b]">
-                SaaS
-              </span>
-            </Link>
-
-            {/* Industries Dropdown */}
+            {/* Edfosys CRM Mega Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setIndustriesDropdown(true)}
-              onMouseLeave={() => setIndustriesDropdown(false)}
+              onMouseEnter={() => setCrmDropdown(true)}
+              onMouseLeave={() => setCrmDropdown(false)}
             >
               <button
                 className="flex items-center space-x-1.5 text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors py-2"
-                onClick={() => setIndustriesDropdown(!industriesDropdown)}
+                onClick={() => setCrmDropdown(!crmDropdown)}
               >
-                <span>Industries</span>
+                <span>Edfosys CRM</span>
+                <span className="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-orange-100 text-[#e57a0b]">
+                  SaaS
+                </span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
-                    industriesDropdown ? "rotate-180 text-[#F7941D]" : ""
+                    crmDropdown ? "rotate-180 text-[#F7941D]" : ""
                   }`}
                 />
               </button>
 
-              {/* Industries Dropdown Menu */}
-              {industriesDropdown && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[540px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 grid grid-cols-2 gap-3 animate-in fade-in slide-in-from-top-2 duration-200">
-                  {industryList.map((item) => {
-                    const Icon = item.icon;
-                    return (
+              {/* CRM Mega Dropdown Menu */}
+              {crmDropdown && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[820px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 grid grid-cols-12 gap-6 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {/* Left Column: Platform, Pricing & Key Features (5 cols) */}
+                  <div className="col-span-5 border-r border-slate-100 pr-6 space-y-4">
+                    <div className="flex items-center space-x-2 text-xs font-bold text-slate-400 uppercase tracking-wider pb-2 border-b border-slate-100">
+                      <span>CRM Platform & Panel</span>
+                    </div>
+
+                    <div className="space-y-2">
                       <Link
-                        key={item.href}
-                        href={item.href}
-                        className="group flex items-start space-x-3 p-2.5 rounded-xl hover:bg-[#FFF9F2] transition-colors"
+                        href="/crm"
+                        className="group flex items-start space-x-3 p-2 rounded-xl hover:bg-[#FFF9F2] transition-colors"
                       >
                         <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F7941D] transition-colors">
-                          <Icon className="w-4 h-4 text-[#F7941D] group-hover:text-white transition-colors" />
+                          <Zap className="w-4 h-4 text-[#F7941D] group-hover:text-white transition-colors" />
                         </div>
                         <div>
                           <div className="text-xs font-bold text-slate-900 group-hover:text-[#F7941D] transition-colors">
-                            {item.title}
+                            CRM Platform Overview
                           </div>
                           <div className="text-[11px] text-slate-500 leading-snug">
-                            {item.desc}
+                            Omni-channel lead capture & WhatsApp sales automation.
                           </div>
                         </div>
                       </Link>
-                    );
-                  })}
-                  <div className="col-span-2 pt-3 mt-1 border-t border-slate-100 flex items-center justify-between text-xs">
-                    <Link
-                      href="/crm/industries"
-                      className="font-bold text-[#F7941D] hover:underline flex items-center space-x-1"
-                    >
-                      <span>Explore All Industries Hub</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                    <span className="text-slate-400 text-[11px]">6 Pre-configured Editions</span>
+
+                      <Link
+                        href="/crm/pricing"
+                        className="group flex items-start space-x-3 p-2 rounded-xl hover:bg-[#FFF9F2] transition-colors"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 transition-colors">
+                          <CreditCard className="w-4 h-4 text-emerald-600 group-hover:text-white transition-colors" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-[#F7941D] transition-colors">
+                            Pricing & Plans
+                          </div>
+                          <div className="text-[11px] text-slate-500 leading-snug">
+                            Transparent tiers from ₹1,499/mo with 14-day free trial.
+                          </div>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/crm/industries"
+                        className="group flex items-start space-x-3 p-2 rounded-xl hover:bg-[#FFF9F2] transition-colors"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
+                          <Layers className="w-4 h-4 text-blue-600 group-hover:text-white transition-colors" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-[#F7941D] transition-colors">
+                            All Industries Hub
+                          </div>
+                          <div className="text-[11px] text-slate-500 leading-snug">
+                            Compare pre-configured workflows for all verticals.
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+
+                    {/* Highlights Box */}
+                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-xs space-y-1.5">
+                      <div className="font-bold text-slate-700 text-[10px] uppercase tracking-wide">
+                        Core Panel Capabilities:
+                      </div>
+                      <div className="flex items-center text-slate-600 text-[11px]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 mr-1.5 flex-shrink-0" />
+                        <span>Official Meta WhatsApp Cloud API</span>
+                      </div>
+                      <div className="flex items-center text-slate-600 text-[11px]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 mr-1.5 flex-shrink-0" />
+                        <span>Visual Kanban & Follow-up Logs</span>
+                      </div>
+                      <div className="flex items-center text-slate-600 text-[11px]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 mr-1.5 flex-shrink-0" />
+                        <span>Quotation & GST Invoicing Engine</span>
+                      </div>
+                      <div className="flex items-center text-slate-600 text-[11px]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 mr-1.5 flex-shrink-0" />
+                        <span>100% Dedicated Database Isolation</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column: 6 Industry Editions (7 cols) */}
+                  <div className="col-span-7 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between text-xs font-bold text-slate-400 uppercase tracking-wider pb-2 border-b border-slate-100 mb-3">
+                        <span>Industry-Specific Editions</span>
+                        <Link
+                          href="/crm/industries"
+                          className="text-[#F7941D] hover:underline normal-case text-xs font-semibold"
+                        >
+                          View all 6 →
+                        </Link>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-2">
+                        {industryList.map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="group flex items-start space-x-2.5 p-2 rounded-xl hover:bg-[#FFF9F2] transition-colors"
+                            >
+                              <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F7941D] transition-colors">
+                                <Icon className="w-4 h-4 text-[#F7941D] group-hover:text-white transition-colors" />
+                              </div>
+                              <div>
+                                <div className="text-xs font-bold text-slate-900 group-hover:text-[#F7941D] transition-colors">
+                                  {item.title}
+                                </div>
+                                <div className="text-[10px] text-slate-500 line-clamp-1 leading-snug">
+                                  {item.desc}
+                                </div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Bottom CTA Card */}
+                    <div className="mt-4 p-3 bg-gradient-to-r from-[#0C3246] to-[#071f2c] rounded-xl text-white flex items-center justify-between">
+                      <div>
+                        <div className="text-[11px] font-bold text-orange-400">
+                          Integrated with Meta Ads, Google Sheets, Razorpay & WhatsApp Cloud
+                        </div>
+                        <div className="text-[10px] text-slate-300">
+                          Get full access to all features in 2 minutes.
+                        </div>
+                      </div>
+                      <a
+                        href="https://app.edfosys.com/signup"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3.5 py-1.5 bg-[#F7941D] hover:bg-[#e57a0b] text-white text-xs font-bold rounded-lg whitespace-nowrap transition-colors flex items-center space-x-1"
+                      >
+                        <span>Start Free</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               )}
@@ -432,29 +541,48 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-            <Link
-              href="/crm"
-              className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-900 hover:bg-[#FFF9F2]"
-            >
-              Edfosys CRM
-            </Link>
-            <div className="px-3 py-2">
-              <div className="flex items-center justify-between text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                <span>Industry Solutions</span>
-                <Link href="/crm/industries" className="text-[#F7941D] text-[11px] lowercase tracking-normal">
-                  view all →
+            {/* Mobile Edfosys CRM Section */}
+            <div className="px-3 py-2.5 rounded-xl bg-orange-50/40 border border-orange-100/70">
+              <div className="flex items-center justify-between text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">
+                <span className="text-[#F7941D]">Edfosys CRM SaaS</span>
+                <Link href="/crm" className="text-[#0C3246] text-[11px] lowercase tracking-normal font-semibold">
+                  explore crm →
                 </Link>
               </div>
-              <div className="space-y-2 pl-2">
-                {industryList.map((ind) => (
-                  <Link
-                    key={ind.href}
-                    href={ind.href}
-                    className="block text-sm text-slate-700 hover:text-[#F7941D]"
-                  >
-                    {ind.title}
-                  </Link>
-                ))}
+              <div className="space-y-1.5 pl-1">
+                <Link
+                  href="/crm"
+                  className="block text-sm font-semibold text-slate-800 hover:text-[#F7941D]"
+                >
+                  ⚡ CRM Overview & Platform
+                </Link>
+                <Link
+                  href="/crm/pricing"
+                  className="block text-sm font-semibold text-slate-800 hover:text-[#F7941D]"
+                >
+                  💳 Pricing & ROI Plans
+                </Link>
+                <Link
+                  href="/crm/industries"
+                  className="block text-sm font-semibold text-slate-800 hover:text-[#F7941D]"
+                >
+                  🏢 All Industries Comparison Hub
+                </Link>
+
+                <div className="pt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                  Pre-configured Vertical Editions
+                </div>
+                <div className="grid grid-cols-2 gap-1 pt-1">
+                  {industryList.map((ind) => (
+                    <Link
+                      key={ind.href}
+                      href={ind.href}
+                      className="text-xs text-slate-600 hover:text-[#F7941D] py-1 px-1.5 rounded hover:bg-white"
+                    >
+                      • {ind.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
             <Link

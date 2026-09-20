@@ -142,7 +142,7 @@ export default function IndustriesHubPage() {
     <>
       <Navbar />
 
-      <main className="flex-1 pt-24 pb-20">
+      <main className="flex-1 pt-24">
         {/* Hub Hero */}
         <section className="bg-gradient-to-b from-[#FFF9F2] via-white to-slate-50/70 py-16 lg:py-24 border-b border-slate-100 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
