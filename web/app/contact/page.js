@@ -43,8 +43,8 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-[#F7941D] flex-shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-slate-900 block">Phone & WhatsApp:</strong>
-                      <a href="tel:+919099699965" className="hover:text-[#F7941D] transition-colors">
-                        +91 90996 99965
+                      <a href="tel:+917405672371" className="hover:text-[#F7941D] transition-colors">
+                        +91 74056 72371
                       </a>
                     </div>
                   </div>

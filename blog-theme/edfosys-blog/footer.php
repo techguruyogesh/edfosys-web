@@ -55,7 +55,7 @@ $blog_url = home_url( '/' );
 					</div>
 					<div class="edf-footer__contact-item">
 						<span>📞</span>
-						<a href="tel:+919099699965"><?php esc_html_e( '+91 90996 99965', 'cyancrm-blog' ); ?></a>
+						<a href="tel:+917405672371"><?php esc_html_e( '+91 74056 72371', 'cyancrm-blog' ); ?></a>
 					</div>
 					<div class="edf-footer__contact-item">
 						<span>✉️</span>

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 export default function FloatingWhatsApp({
-  phoneNumber = "919099699965",
+  phoneNumber = "917405672371",
   message = "Hi Edfosys team, I would like to know more about your CRM platform and services.",
 }) {
   const [showTooltip, setShowTooltip] = useState(false);
