@@ -17,6 +17,7 @@ import {
   Sparkles,
   Layers,
   Lock,
+  Zap,
 } from "lucide-react";
 
 export default function CrmPanelFeatures() {
@@ -25,8 +26,8 @@ export default function CrmPanelFeatures() {
   const categories = [
     { id: "all", label: "All Panel Features" },
     { id: "lead-capture", label: "Lead Ingestion & WhatsApp" },
-    { id: "pipeline", label: "Kanban & Team Activity" },
-    { id: "finance", label: "Quotation & Payments" },
+    { id: "pipeline", label: "Sales Stages & Workflows" },
+    { id: "finance", label: "Quotations & Invoicing" },
     { id: "security", label: "RBAC & Security" },
   ];
 
@@ -55,26 +56,26 @@ export default function CrmPanelFeatures() {
       icon: MessageSquare,
       iconColor: "text-emerald-600 bg-emerald-50 group-hover:bg-emerald-600 group-hover:text-white",
       description:
-        "Direct Meta WhatsApp Cloud integration. Send instant welcome brochures, automated follow-up sequences, and interactive quick-reply buttons with 98% open rates.",
+        "Direct Meta WhatsApp Cloud integration. Send instant welcome brochures, automated follow-up sequences, and verified notifications with 98% open rates.",
       bullets: [
-        "Pre-approved Meta HSM message templates with buttons",
+        "Pre-approved Meta HSM message templates with dynamic variables",
         "Automated welcome & brochure dispatch within 5 seconds",
-        "2-way live chat conversation window directly in the panel",
+        "Outbound message logs and template dispatch history per lead",
         "No third-party ban risk — 100% compliant Official Cloud API",
       ],
     },
     {
       id: "kanban",
       category: "pipeline",
-      title: "Visual Kanban Sales Pipeline",
-      badge: "Drag & Drop",
+      title: "Visual Sales Pipeline & Stages",
+      badge: "Stage Qualification",
       icon: BarChart3,
       iconColor: "text-purple-600 bg-purple-50 group-hover:bg-purple-600 group-hover:text-white",
       description:
         "Track deals visually through customizable qualification stages. Gain complete pipeline visibility and identify revenue bottlenecks in real time.",
       bullets: [
         "Customizable stages tailored to your exact industry",
-        "Deal values, estimated close dates & probability weighting",
+        "Deal values, estimated close dates & priority tagging",
         "Aging alerts for stagnant leads with zero team activity",
         "Loss reason categorization with actionable sales intelligence",
       ],
@@ -87,7 +88,7 @@ export default function CrmPanelFeatures() {
       icon: Clock,
       iconColor: "text-orange-600 bg-orange-50 group-hover:bg-orange-600 group-hover:text-white",
       description:
-        "Keep your sales team disciplined with scheduled callback reminders, meeting logs, internal audio/text notes, and complete immutable history.",
+        "Keep your sales team disciplined with scheduled callback reminders, meeting logs, internal text notes, and complete immutable history.",
       bullets: [
         "Automated scheduled follow-up notifications & alarms",
         "Internal team notes and call recap logging",
@@ -112,19 +113,19 @@ export default function CrmPanelFeatures() {
       ],
     },
     {
-      id: "payments",
-      category: "finance",
-      title: "Razorpay Payments & Settlement",
-      badge: "Instant Webhook",
-      icon: CreditCard,
+      id: "workflows",
+      category: "pipeline",
+      title: "Automated Workflows & Triggers",
+      badge: "Event-Driven Engine",
+      icon: Zap,
       iconColor: "text-indigo-600 bg-indigo-50 group-hover:bg-indigo-600 group-hover:text-white",
       description:
-        "Dispatch Razorpay & UPI payment links directly from deals. Automatically record payments, generate receipts, and track pending installment balances.",
+        "Build visual automation rules. Trigger automated WhatsApp templates, assign reps, update lead stages, and schedule delayed follow-up actions automatically.",
       bullets: [
-        "Automated Razorpay payment link dispatch via WhatsApp/SMS",
-        "Instant webhook capture upon successful UPI/Card/NetBanking",
-        "Partial payment installment milestones & balance tracking",
-        "Automated payment confirmation receipt with PDF download",
+        "Event triggers: Lead Created, Status Changed, Source Tagged",
+        "Automated counselor & sales rep assignment",
+        "Delayed action queue for automated follow-up sequences",
+        "Execution audit logs for every workflow run",
       ],
     },
     {

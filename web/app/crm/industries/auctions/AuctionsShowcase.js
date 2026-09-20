@@ -20,15 +20,15 @@ export default function AuctionsShowcase() {
   const showcaseTabs = [
     {
       id: "lot-registry",
-      label: "Consignor Lot Registry",
-      badge: "Asset Cataloging",
+      label: "Asset & Consignor Pipeline",
+      badge: "Asset Valuation",
       icon: Package,
-      headline: "Catalog Luxury Lots, Reserve Prices & Provenance Records",
-      desc: "Streamline the consignor intake pipeline. Appraise luxury watches, fine art, vintage automobiles, and commercial equipment with comprehensive provenance logs and agreed reserve prices.",
+      headline: "Track Consignor Inquiries, Valuations & Appraisal Records",
+      desc: "Streamline high-value asset intake. Manage collector inquiries for luxury timepieces, fine art, capital equipment, and properties with documented appraisal history and agreed reserve estimates.",
       bullets: [
-        "High-resolution image vault with condition grading checklists",
-        "Confidential reserve price locks visible only to the auctioneer",
-        "Automated consignor consignment contract generation",
+        "Document vault for authenticity certificates & provenance",
+        "Confidential valuation and reserve price tracking",
+        "Structured intake pipeline from inquiry to catalog approval",
       ],
       secondaryLink: "/crm/features",
       secondaryLabel: "See lot management tools →",
@@ -51,7 +51,7 @@ export default function AuctionsShowcase() {
                 <div className="font-bold text-slate-800">₹14,00,000</div>
               </div>
               <div className="text-right">
-                <span className="text-slate-500 text-[10px]">Estimated Hammer:</span>
+                <span className="text-slate-500 text-[10px]">Estimated Range:</span>
                 <div className="font-extrabold text-[#0C3246]">₹18L - ₹22L</div>
               </div>
             </div>
@@ -74,20 +74,20 @@ export default function AuctionsShowcase() {
     },
     {
       id: "bidder-kyc",
-      label: "Bidder KYC & Paddle Vault",
-      badge: "High-Security Verification",
+      label: "Buyer Verification & Records",
+      badge: "Document Verification",
       icon: ShieldCheck,
-      headline: "Verify High-Net-Worth Bidders & Assign Floor Paddles",
-      desc: "Eliminate fraudulent bidding. Verify government IDs, hold refundable security deposits via payment gateways, and assign digital paddle numbers with pre-authorized credit limits.",
+      headline: "Verify High-Net-Worth Buyers & Maintain Confidential Records",
+      desc: "Eliminate unqualified inquiries. Collect and verify identity documents, track buyer qualification stages, and store client records securely in your isolated tenant database.",
       bullets: [
-        "Automated PAN, Aadhar & passport verification checks",
-        "Pre-authorized deposit escrow holds (e.g. ₹2,00,000 refundable)",
-        "Instant digital paddle issuance with floor seat assignment",
+        "Government ID and business verification document vault",
+        "Physical tenant database isolation for complete client confidentiality",
+        "Custom qualification tags for high-intent collector accounts",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200/80 p-5 space-y-3.5">
           <div className="flex items-center justify-between pb-2 border-b border-slate-100 text-xs">
-            <span className="font-bold text-slate-800">Approved Bidder Roster</span>
+            <span className="font-bold text-slate-800">Approved Buyer Profile</span>
             <span className="text-[10px] font-bold text-emerald-600">KYC Verified</span>
           </div>
 
@@ -95,34 +95,34 @@ export default function AuctionsShowcase() {
             <div className="p-2.5 rounded-xl border border-emerald-200 bg-emerald-50/40 flex items-center justify-between text-xs">
               <div className="flex items-center space-x-2.5">
                 <div className="w-8 h-8 rounded-full bg-[#0C3246] text-white flex items-center justify-center font-bold text-xs">
-                  #42
+                  HS
                 </div>
                 <div>
                   <div className="font-bold text-slate-900">Harshavardhan Singhania</div>
-                  <div className="text-[10px] text-slate-500">Deposit: ₹5,00,000 Hold Verified</div>
+                  <div className="text-[10px] text-slate-500">ID: PAN & Passport Verified</div>
                 </div>
               </div>
               <span className="text-[10px] font-extrabold bg-emerald-600 text-white px-2 py-0.5 rounded">
-                Floor Seat A-12
+                Tier 1 Collector
               </span>
             </div>
 
             <div className="p-2.5 rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-between text-xs">
               <div className="flex items-center space-x-2.5">
                 <div className="w-8 h-8 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-xs">
-                  #77
+                  PB
                 </div>
                 <div>
-                  <div className="font-bold text-slate-800">Phone Bidder (Zurich)</div>
-                  <div className="text-[10px] text-slate-500">Bank Guarantee Approved ($100k)</div>
+                  <div className="font-bold text-slate-800">International Collector (Zurich)</div>
+                  <div className="text-[10px] text-slate-500">Interested in Vintage Timepieces</div>
                 </div>
               </div>
-              <span className="text-[10px] font-semibold text-slate-600">Telephone Desk 2</span>
+              <span className="text-[10px] font-semibold text-slate-600">Private Treaty</span>
             </div>
           </div>
 
           <div className="p-2 rounded-lg bg-orange-50 border border-orange-100 text-[10px] text-orange-900 flex justify-between items-center font-semibold">
-            <span>Floor Credit Exposure Limit: <strong>₹2.5 Crore</strong></span>
+            <span>Client Financial Data: <strong>Encrypted at Rest</strong></span>
             <CheckCircle2 className="w-3.5 h-3.5 text-[#F7941D]" />
           </div>
         </div>
@@ -130,42 +130,46 @@ export default function AuctionsShowcase() {
     },
     {
       id: "outbid-alerts",
-      label: "Real-Time Outbid Alerts",
-      badge: "WhatsApp Auction Bot",
+      label: "WhatsApp Catalog Broadcast",
+      badge: "Instant Engagement",
       icon: MessageSquare,
-      headline: "Drive Bidding Wars with 5-Second WhatsApp Outbid Triggers",
-      desc: "Every second counts in a live auction. The moment a bidder is outbid on a lot, trigger an instant WhatsApp ping allowing them to raise their bid with a single tap.",
+      headline: "Broadcast High-Resolution Catalogs & Price Alerts via WhatsApp",
+      desc: "Engage top buyers on their preferred channel. Send high-resolution PDF catalogs, lot inspection schedules, and private treaty pricing directly via official Meta WhatsApp templates.",
       bullets: [
-        "Sub-second WhatsApp delivery during live auction windows",
-        "One-tap 'Place Next Incremental Bid' button inside WhatsApp",
-        "Automated floor hammer notifications to all registered bidders",
+        "Instant PDF catalog and lot condition report delivery",
+        "Pre-approved Meta WhatsApp templates with 98% open rates",
+        "One-click callback and private viewing scheduler",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-[#EFEAE2] rounded-2xl shadow-xl p-4 space-y-3 font-sans">
           <div className="flex items-center space-x-2 pb-2 border-b border-slate-300/60">
-            <div className="w-7 h-7 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-[10px]">
-              G
+            <div className="w-7 h-7 rounded-full bg-[#0C3246] text-white flex items-center justify-center font-bold text-[10px]">
+              H
             </div>
             <div>
               <div className="text-xs font-bold text-slate-900 flex items-center">
-                Grand Crown Fine Auctions <CheckCircle2 className="w-3 h-3 text-blue-500 ml-1 fill-blue-500 text-white" />
+                Heritage Auctions <CheckCircle2 className="w-3 h-3 text-blue-500 ml-1 fill-blue-500 text-white" />
               </div>
-              <div className="text-[9px] text-slate-500">Live Auction Floor Engine</div>
+              <div className="text-[9px] text-slate-500">Verified Business Account</div>
             </div>
           </div>
 
           <div className="bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm space-y-2 text-xs text-slate-800">
-            <p className="font-semibold text-rose-600 flex items-center">
-              <AlertTriangle className="w-3.5 h-3.5 mr-1" /> You have been outbid on Lot #408!
+            <p className="font-semibold text-slate-900">
+              Dear Collector, the Autumn Fine Art & Luxury Timepieces catalog is now live.
             </p>
-            <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 text-[11px] space-y-1">
-              <div>🏆 <strong>Current High Bid:</strong> ₹18,50,000 (Paddle #19)</div>
-              <div>⚡ <strong>Next Increment:</strong> ₹19,00,000</div>
-              <div>⏳ <strong>Time Left:</strong> Going once... Going twice...</div>
+            <div className="p-2 bg-slate-50 rounded-xl border border-slate-100 flex items-center space-x-2.5">
+              <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs">
+                PDF
+              </div>
+              <div className="flex-1">
+                <div className="text-[11px] font-bold text-slate-800">Autumn_2026_Catalog.pdf</div>
+                <div className="text-[9px] text-slate-400">18.5 MB • High-Resolution Lots</div>
+              </div>
             </div>
             <div className="pt-1 flex gap-2">
               <button className="flex-1 py-1.5 bg-[#0C3246] text-white font-bold rounded-lg text-[10px] text-center">
-                Bid ₹19,00,000 Now
+                Schedule Private Viewing
               </button>
             </div>
             <div className="text-[9px] text-right text-slate-400">08:44 PM ✓✓</div>

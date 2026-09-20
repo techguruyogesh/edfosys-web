@@ -92,7 +92,7 @@ export default function CalendlyPillarsGrid({
     },
     {
       id: "pipeline-kanban",
-      title: "Visual Kanban Pipeline",
+      title: "Visual Sales Pipeline",
       tag: "Deal Velocity",
       tagIcon: BarChart3,
       tagBg: "bg-purple-50 text-purple-700",

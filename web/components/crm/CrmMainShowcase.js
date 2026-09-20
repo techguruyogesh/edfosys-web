@@ -74,7 +74,7 @@ export default function CrmMainShowcase() {
       desc: "Stop relying on emails that end up in spam. Engage prospects on WhatsApp within 5 seconds of their form submission with personalized brochures, calendar links, and payment reminders.",
       bullets: [
         "Pre-approved Meta business templates with zero phone ban risk",
-        "Two-way synchronized chat directly from the CRM rep inbox",
+        "Automated WhatsApp template dispatch & real-time trigger logs",
         "Automated media delivery: PDFs, product brochures & location pins",
       ],
       secondaryLink: "/crm/features",

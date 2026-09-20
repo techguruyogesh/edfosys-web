@@ -21,14 +21,14 @@ export default function RealEstateShowcase() {
     {
       id: "site-visit-scheduler",
       label: "Site Visit Scheduling",
-      badge: "Calendly-Style Booking",
+      badge: "Automated Scheduling",
       icon: Calendar,
-      headline: "Book & Confirm Site Tours with Zero Phone Tag",
-      desc: "Give high-intent buyers an interactive site visit calendar. Coordinate driver pick-ups, send Google Maps directions via WhatsApp, and assign sales reps on the ground automatically.",
+      headline: "Schedule & Confirm Site Visits with Zero Phone Tag",
+      desc: "Give high-intent buyers an organized site visit calendar. Coordinate scheduled tour slots, send Google Maps directions via WhatsApp, and assign property sales managers automatically.",
       bullets: [
-        "Self-serve weekend site visit booking link for Facebook Ads",
-        "Automated cab/driver dispatch notification with car details",
-        "Geo-fenced mobile check-in for sales reps at the property site",
+        "Pre-scheduled weekend site visit booking slots for ad campaigns",
+        "Automated WhatsApp directions and appointment reminders",
+        "Instant sales manager notification & follow-up task logging",
       ],
       secondaryLink: "/crm/features",
       secondaryLabel: "See scheduling features →",
@@ -69,7 +69,7 @@ export default function RealEstateShowcase() {
               </div>
               <div>
                 <div className="text-xs font-bold text-slate-800">Vikram Malhotra</div>
-                <div className="text-[10px] text-slate-500">Opted for: Cab Pickup from SG Highway</div>
+                <div className="text-[10px] text-slate-500">Site Visit Confirmed • Vastrapur Site</div>
               </div>
             </div>
             <span className="text-[10px] font-extrabold text-emerald-700">Confirmed</span>
@@ -78,51 +78,51 @@ export default function RealEstateShowcase() {
       ),
     },
     {
-      id: "unit-inventory",
-      label: "Unit Inventory Tracker",
-      badge: "Real-Time Availability",
+      id: "buyer-pipeline",
+      label: "Buyer Pipeline",
+      badge: "Stage Qualification",
       icon: Building2,
-      headline: "Live Multi-Tower Unit Grid: Never Double-Sell a Flat",
-      desc: "Track every flat, duplex, and penthouse in real time. Know instantly which units are Available, Blocked with Token, or Sold across all marketing channels and channel partners.",
+      headline: "Qualify Buyers Across Every Stage from Visit to Token",
+      desc: "Track every prospective buyer across custom real estate stages. Know instantly who visited the site, who received the cost estimate, and who submitted a booking token.",
       bullets: [
-        "Color-coded floor plate matrix (Available, Hold, Sold)",
-        "Instant lock/hold mechanism with 48-hour token countdown timer",
-        "Dynamic cost-sheet calculator with stamp duty & GST breakdowns",
+        "Custom stages: Inquired → Site Visit → Quotation → Token → Booked",
+        "Tag budget, preferred configuration (2BHK/3BHK), and location",
+        "Aging alerts for leads without follow-up in 48 hours",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200/80 p-5 space-y-3.5">
           <div className="flex items-center justify-between pb-2 border-b border-slate-100 text-xs">
-            <span className="font-bold text-slate-800">Tower B — Floor 14</span>
-            <div className="flex items-center space-x-3 text-[10px]">
-              <span className="flex items-center"><span className="w-2 h-2 rounded-full bg-emerald-500 mr-1" /> Avail</span>
-              <span className="flex items-center"><span className="w-2 h-2 rounded-full bg-amber-500 mr-1" /> Hold</span>
-              <span className="flex items-center"><span className="w-2 h-2 rounded-full bg-slate-400 mr-1" /> Sold</span>
-            </div>
+            <span className="font-bold text-slate-800">Active Real Estate Deals</span>
+            <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
+              3 In Negotiation
+            </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-2.5">
-            <div className="p-2.5 rounded-xl border border-emerald-200 bg-emerald-50/40">
-              <div className="flex justify-between items-center text-xs font-bold text-slate-900">
-                <span>Unit 1401</span>
-                <span className="text-[10px] text-emerald-600 font-extrabold">Available</span>
+          <div className="space-y-2">
+            <div className="p-2.5 rounded-xl border border-emerald-200 bg-emerald-50/40 flex justify-between items-center text-xs">
+              <div>
+                <div className="font-bold text-slate-900">Vikram Malhotra</div>
+                <div className="text-[10px] text-slate-500">3BHK Luxury • Tower B • Budget: ₹1.65 Cr</div>
               </div>
-              <div className="text-[10px] text-slate-500 mt-1">3BHK • 1,920 sq.ft</div>
-              <div className="text-xs font-bold text-slate-800 mt-0.5">₹1.48 Cr</div>
+              <span className="text-[10px] font-bold bg-emerald-600 text-white px-2 py-0.5 rounded">
+                Token Received
+              </span>
             </div>
 
-            <div className="p-2.5 rounded-xl border border-amber-200 bg-amber-50/40">
-              <div className="flex justify-between items-center text-xs font-bold text-slate-900">
-                <span>Unit 1402</span>
-                <span className="text-[10px] text-amber-600 font-extrabold">Hold (24h)</span>
+            <div className="p-2.5 rounded-xl border border-slate-100 bg-slate-50 flex justify-between items-center text-xs">
+              <div>
+                <div className="font-bold text-slate-800">Amit Trivedi</div>
+                <div className="text-[10px] text-slate-500">2BHK Premium • Budget: ₹95 Lakh</div>
               </div>
-              <div className="text-[10px] text-slate-500 mt-1">3BHK Luxury • 2,150 sq.ft</div>
-              <div className="text-xs font-bold text-slate-800 mt-0.5">₹1.65 Cr</div>
+              <span className="text-[10px] font-semibold text-slate-600">
+                Site Visit Done
+              </span>
             </div>
           </div>
 
           <div className="p-2 rounded-lg bg-slate-50 border border-slate-100 text-[10px] text-slate-600 flex justify-between items-center">
-            <span>Overall Tower Occupancy: <strong>78% Sold</strong></span>
-            <span className="text-[#F7941D] font-bold">12 Units Left</span>
+            <span>Project Pipeline Value: <strong>₹8.4 Crore</strong></span>
+            <span className="text-[#F7941D] font-bold">14 Active Leads</span>
           </div>
         </div>
       ),
@@ -132,12 +132,12 @@ export default function RealEstateShowcase() {
       label: "WhatsApp Brochure Bot",
       badge: "Instant Engagement",
       icon: MessageSquare,
-      headline: "Broadcast 3D Walkthroughs & Layouts in 5 Seconds",
-      desc: "When a buyer clicks your Instagram Ad or walks by the hoardings, send them high-resolution floor plans, price breakdowns, and YouTube video tours directly on WhatsApp.",
+      headline: "Broadcast High-Resolution Project Brochures in 5 Seconds",
+      desc: "When a buyer submits a form on Facebook or Instagram, send them floor plans, location highlights, and pricing breakdowns directly on WhatsApp.",
       bullets: [
-        "Deliver 20MB+ PDFs and high-res layout images seamlessly",
-        "Track when the buyer opens the brochure and clicks the site visit link",
-        "Direct chat connection to the property sales manager",
+        "Deliver PDFs and high-res layout brochures directly to WhatsApp",
+        "Official Meta Cloud API ensures zero phone number ban risks",
+        "Direct callback scheduling and sales manager contact card",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-[#EFEAE2] rounded-2xl shadow-xl p-4 space-y-3 font-sans">
@@ -168,7 +168,7 @@ export default function RealEstateShowcase() {
             </div>
             <div className="pt-1 flex gap-2">
               <button className="flex-1 py-1.5 bg-[#0C3246] text-white font-bold rounded-lg text-[10px] text-center">
-                Book Guided Site Visit
+                Schedule Site Visit
               </button>
             </div>
             <div className="text-[9px] text-right text-slate-400">11:15 AM ✓✓</div>
@@ -178,40 +178,39 @@ export default function RealEstateShowcase() {
     },
     {
       id: "broker-network",
-      label: "Broker & CP Network",
-      badge: "Channel Partner Ledger",
+      label: "Partner & Source Tracking",
+      badge: "Attribution Protection",
       icon: Users,
-      headline: "Manage Channel Partners, RERA Tags & Commission Payouts",
-      desc: "Centralize all your external real estate agents. Track which broker registered which client, protect leads from commission disputes, and calculate payout milestones automatically.",
+      headline: "Track Channel Partners, Portals & Ad Sources Cleanly",
+      desc: "Centralize all your external lead sources. Track which broker, portal, or Meta campaign registered which client, protect leads from duplicate conflicts, and maintain clean audit records.",
       bullets: [
-        "Unique QR code & link for each channel partner to register clients",
-        "90-day lead tagging rule protecting broker attribution",
-        "Automated commission milestone calculations (Token, Agreement, Registry)",
+        "Source tags: Channel Partner, Meta Ads, Google Ads, Portals",
+        "Phone and email deduplication to prevent double-claiming",
+        "Sales rep assignment with multi-branch segregation",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200/80 p-4 space-y-3">
           <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-100">
-            <span className="font-bold text-slate-900">Channel Partner Ledger</span>
-            <span className="text-[10px] font-bold text-slate-500">RERA: PR/GJ/AHM/2026</span>
+            <span className="font-bold text-slate-900">Channel Partner & Source Log</span>
+            <span className="text-[10px] font-bold text-slate-500">Branch: North Wing</span>
           </div>
 
           <div className="space-y-2">
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
               <div>
                 <div className="text-xs font-bold text-slate-900">Apex Realty Partners</div>
-                <div className="text-[10px] text-slate-500">Buyer: Vikram Malhotra (Unit 1401)</div>
+                <div className="text-[10px] text-slate-500">Buyer: Vikram Malhotra (3BHK Interest)</div>
               </div>
               <div className="text-right">
-                <div className="text-xs font-extrabold text-slate-900">2.0% Comm.</div>
                 <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">
-                  ₹2,96,000 Approved
+                  Source: Channel Partner
                 </span>
               </div>
             </div>
           </div>
 
           <div className="p-2.5 rounded-xl bg-orange-50/50 border border-orange-100 text-[11px] text-orange-900 flex justify-between items-center">
-            <span>Lead Registration Protected: <strong>82 Days Left</strong></span>
+            <span>Deduplication Status: <strong>Unique Buyer Verified</strong></span>
             <ShieldCheck className="w-4 h-4 text-[#F7941D]" />
           </div>
         </div>
@@ -223,7 +222,7 @@ export default function RealEstateShowcase() {
     {
       title: "Ingest Leads",
       timing: "Sub-Second",
-      desc: "Pull leads from 99acres, MagicBricks, Meta Ads, and walk-in desks into a single unified inventory CRM.",
+      desc: "Pull leads from property portals, Meta Ads, and walk-in desks into a single unified real estate CRM.",
       bullets: [
         { text: "De-duplicate repeated buyer phone numbers", icon: CheckCircle2 },
         { text: "Tag budget & unit preference (2BHK, 3BHK, Penthouse)", icon: Home },
@@ -232,7 +231,7 @@ export default function RealEstateShowcase() {
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1.5">
           <div className="flex justify-between items-center text-[11px] font-bold text-slate-800">
-            <span>99acres Portal Lead</span>
+            <span>Property Inquiry Ingest</span>
             <span className="text-emerald-600 font-semibold">Live Ingest</span>
           </div>
           <div className="text-[10px] text-slate-500">Buyer: Deepak Verma (Budget: ₹1.5 Cr+)</div>
@@ -245,11 +244,11 @@ export default function RealEstateShowcase() {
     {
       title: "Route & Tour",
       timing: "Schedule",
-      desc: "Assign sales managers and schedule geo-tagged site visits with automated driver pick-up reminders.",
+      desc: "Assign sales managers and schedule site visits with automated WhatsApp reminders and location pins.",
       bullets: [
-        { text: "Automated rep assignment by project tower", icon: Users },
-        { text: "Interactive site visit slot booking", icon: Calendar },
-        { text: "Geo-fenced mobile visit check-in", icon: MapPin },
+        { text: "Automated rep assignment by project branch", icon: Users },
+        { text: "Organized site visit calendar follow-ups", icon: Calendar },
+        { text: "Google Maps location link via WhatsApp", icon: MapPin },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1.5">
@@ -257,44 +256,44 @@ export default function RealEstateShowcase() {
             <span>Site Visit Scheduled</span>
             <span className="text-orange-600 font-bold">Saturday 11 AM</span>
           </div>
-          <div className="text-[10px] text-slate-500">Driver Pick-up: Assigned (MH-02-CD-4421)</div>
+          <div className="text-[10px] text-slate-500">Rep Assigned: Karan Verma (North Wing)</div>
           <div className="text-[9px] text-emerald-600 font-semibold">Location Pin Sent to WhatsApp ✓</div>
         </div>
       ),
     },
     {
-      title: "Quote & Hold",
-      timing: "48-Hour Lock",
-      desc: "Generate professional cost sheets with GST & stamp duty. Place temporary holds on units with token verification.",
+      title: "Quote & Follow-up",
+      timing: "Quotation PDF",
+      desc: "Generate professional cost sheets with GST calculations and maintain persistent follow-up records.",
       bullets: [
-        { text: "One-click dynamic cost sheet PDF", icon: FileCheck },
-        { text: "48-hour temporary unit lock timer", icon: Clock },
-        { text: "Channel partner commission attribution", icon: Users },
+        { text: "One-click dynamic cost sheet / quotation PDF", icon: FileCheck },
+        { text: "Automated task reminders for sales executives", icon: Clock },
+        { text: "Channel partner attribution preserved", icon: Users },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1 text-[10px]">
-          <div className="font-bold text-slate-900">Cost Sheet Generated: Unit 1401</div>
-          <div className="text-slate-600">Base Price: ₹1,48,00,000 + ₹8,88,000 Stamp Duty</div>
-          <div className="text-amber-600 font-bold">Unit Locked: 47h 12m Remaining</div>
+          <div className="font-bold text-slate-900">Cost Estimate Generated: 3BHK Unit</div>
+          <div className="text-slate-600">Base Price: ₹1,48,00,000 + GST & Stamp Duty</div>
+          <div className="text-emerald-600 font-bold">Quotation PDF Sent via WhatsApp ✓</div>
         </div>
       ),
     },
     {
       title: "Close & Settle",
-      timing: "Booking Form",
-      desc: "Collect token payments via payment gateways, generate RERA-compliant booking forms, and mark inventory as Sold.",
+      timing: "Booking Stage",
+      desc: "Record booking advance receipts, generate GST tax invoices, and mark deals as Won in the pipeline.",
       bullets: [
-        { text: "Instant token payment verification", icon: CheckCircle2 },
-        { text: "Automated digital booking agreement", icon: FileCheck },
-        { text: "Broker payout milestone release", icon: Sparkles },
+        { text: "Booking advance invoice generation", icon: CheckCircle2 },
+        { text: "GST tax invoice with company branding", icon: FileCheck },
+        { text: "Clean stage transition to Won", icon: Sparkles },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1.5">
           <div className="flex justify-between items-center text-[11px] font-bold text-slate-900">
             <span>Booking Confirmed</span>
-            <span className="text-emerald-600 font-extrabold">₹5,00,000 Token ✓</span>
+            <span className="text-emerald-600 font-extrabold">₹5,00,000 Advance ✓</span>
           </div>
-          <div className="text-[10px] text-slate-500">Unit 1401 Status: Marked as SOLD in Live Grid</div>
+          <div className="text-[10px] text-slate-500">Status: Deal Won • Tax Invoice Generated</div>
           <div className="w-full bg-emerald-500 h-1.5 rounded-full" />
         </div>
       ),

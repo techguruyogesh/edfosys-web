@@ -172,22 +172,22 @@ export default function EducationShowcase() {
     },
     {
       id: "admission-pipeline",
-      label: "Batch & Seat Pipeline",
-      badge: "Admission Conversion",
+      label: "Admission Pipeline",
+      badge: "Stage Qualification",
       icon: BookOpen,
-      headline: "Visual Kanban Stages from Walk-in to Fee Settlement",
-      desc: "Stop tracking admissions on messy paper logs. Move students from Counseling -> Demo Class -> Scholarship -> Seat Advance -> Full Enrollment with automated receipt generation.",
+      headline: "Visual Stages from Counseling to Fee Settlement",
+      desc: "Stop tracking admissions on messy paper registers. Move students through clear qualification stages: Counseling -> Demo Class -> Documents Pending -> Seat Advance -> Enrolled with automated GST fee receipts.",
       bullets: [
-        "Dynamic stage probabilities with batch quota warnings",
-        "Integrated Razorpay fee deposit links with instant settlement receipts",
-        "Document collection tracker: Marksheets, ID proofs & transfer certificates",
+        "Stage qualification: Inquired → Counseling → Documents → Enrolled",
+        "1-click GST invoice & fee receipt generation with company branding",
+        "Document collection tracker: Marksheets, ID proofs & certificates",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200/80 p-4 space-y-3">
           <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-100">
-            <span className="font-bold text-slate-900">Batch Alpha - JEE 2027</span>
+            <span className="font-bold text-slate-900">Academic Intake Pipeline</span>
             <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
-              34/40 Seats Filled
+              Intake Active
             </span>
           </div>
 
@@ -195,9 +195,9 @@ export default function EducationShowcase() {
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
               <div>
                 <div className="text-xs font-bold text-slate-900">Priya Nair</div>
-                <div className="text-[10px] text-slate-500">Stage: Seat Advance Paid</div>
+                <div className="text-[10px] text-slate-500">Stage: Admission Fee Invoice Paid</div>
               </div>
-              <span className="text-xs font-extrabold text-emerald-600">₹25,000 ✓</span>
+              <span className="text-xs font-extrabold text-emerald-600">₹25,000 Paid ✓</span>
             </div>
 
             <div className="p-2.5 rounded-xl bg-orange-50/50 border border-orange-200 flex items-center justify-between">
@@ -205,17 +205,17 @@ export default function EducationShowcase() {
                 <div className="text-xs font-bold text-slate-900">Kavya Shah</div>
                 <div className="text-[10px] text-slate-500">Stage: Demo Class Attended</div>
               </div>
-              <span className="text-xs font-bold text-[#F7941D]">Pending Decision</span>
+              <span className="text-xs font-bold text-[#F7941D]">Documents Pending</span>
             </div>
           </div>
 
           <div className="pt-2">
             <div className="flex justify-between text-[11px] text-slate-500 mb-1">
-              <span>Batch Capacity</span>
-              <span>85% Occupied</span>
+              <span>Intake Pipeline Progress</span>
+              <span>28 Confirmed Enrollments</span>
             </div>
             <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-              <div className="bg-[#F7941D] h-full rounded-full w-[85%]" />
+              <div className="bg-[#F7941D] h-full rounded-full w-[75%]" />
             </div>
           </div>
         </div>
@@ -230,7 +230,7 @@ export default function EducationShowcase() {
       desc: "Ingest student inquiries from Meta Ads, Google search, Justdial, and school seminars automatically into your centralized CRM.",
       bullets: [
         { text: "De-duplicate repeated mobile numbers", icon: CheckCircle2 },
-        { text: "Capture preferred stream & budget", icon: CheckCircle2 },
+        { text: "Capture preferred stream & course interest", icon: CheckCircle2 },
         { text: "Instant welcome WhatsApp template", icon: MessageSquare },
       ],
       preview: (
@@ -249,11 +249,11 @@ export default function EducationShowcase() {
     {
       title: "Route & Call",
       timing: "Sub-5 Mins",
-      desc: "Assign to counselors via smart round-robin rules based on academic subjects and branch locations.",
+      desc: "Assign to counselors via smart round-robin rules based on academic subjects, branches, and active shifts.",
       bullets: [
-        { text: "Round-robin distribution by stream", icon: Users },
-        { text: "Click-to-call with call recording", icon: Clock },
-        { text: "Follow-up reminders on counselor phone", icon: Calendar },
+        { text: "Round-robin distribution with shift awareness", icon: Users },
+        { text: "Counselor disposition & follow-up logging", icon: Clock },
+        { text: "Scheduled follow-up reminders & alarms", icon: Calendar },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1.5">
@@ -271,16 +271,16 @@ export default function EducationShowcase() {
     {
       title: "Engage",
       timing: "Automated",
-      desc: "Trigger pre-approved WhatsApp messages with mock test links, past topper interview PDFs, and fee brochures.",
+      desc: "Trigger pre-approved WhatsApp messages with diagnostic test reminders, fee schedules, and course brochures.",
       bullets: [
         { text: "Official Meta WhatsApp Cloud API", icon: MessageSquare },
-        { text: "Automated mock test countdowns", icon: Clock },
+        { text: "Automated test date & counseling reminders", icon: Clock },
         { text: "98% read rate within 15 minutes", icon: Sparkles },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1 text-[10px]">
           <div className="font-bold text-slate-900">WhatsApp Alert: Diagnostic Test</div>
-          <div className="text-slate-600">"Hi Riya, your Sunday seat at Center B is reserved..."</div>
+          <div className="text-slate-600">"Hi Riya, your Sunday counseling slot at Center B is reserved..."</div>
           <div className="text-emerald-600 font-bold text-[9px]">Delivered & Read ✓✓</div>
         </div>
       ),
@@ -288,19 +288,19 @@ export default function EducationShowcase() {
     {
       title: "Enroll & Settle",
       timing: "Conversion",
-      desc: "Collect token seat deposits via payment links, verify admission documents, and issue instant enrollment IDs.",
+      desc: "Generate GST-compliant fee invoices, track token deposits, and attach student documents directly in the cloud.",
       bullets: [
-        { text: "Razorpay fee installment links", icon: CheckCircle2 },
-        { text: "Aadhar & marksheet document vault", icon: FileCheck },
-        { text: "Automated batch enrollment ID", icon: GraduationCap },
+        { text: "1-Click GST admission invoice & receipt", icon: CheckCircle2 },
+        { text: "Google Drive document vault for certificates", icon: FileCheck },
+        { text: "Official enrollment confirmation dispatch", icon: GraduationCap },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1.5">
           <div className="flex justify-between items-center text-[11px] font-bold text-slate-900">
             <span>Admission Confirmed</span>
-            <span className="text-emerald-600">ID: AP-9942</span>
+            <span className="text-emerald-600 font-extrabold">Tax Invoice Generated ✓</span>
           </div>
-          <div className="text-[10px] text-slate-500">Seat Advance: ₹25,000 Settled ✓</div>
+          <div className="text-[10px] text-slate-500">Student ID: APX-2026-084 • Documents Verified</div>
           <div className="w-full bg-emerald-500 h-1.5 rounded-full" />
         </div>
       ),

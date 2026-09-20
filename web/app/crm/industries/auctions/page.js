@@ -7,15 +7,15 @@ import IndustryCtaBanner from "@/components/crm/IndustryCtaBanner";
 export const metadata = {
   title: "Auctions & High-Value Deals CRM | Edfosys CRM",
   description:
-    "Manage consignor lots, KYC-verified bidders, live floor paddles, and automated winning bid settlements with Edfosys Auction CRM.",
+    "Manage consignor inquiries, buyer verification pipelines, private treaty negotiations, and settlement invoicing with Edfosys CRM.",
 };
 
 export default function AuctionsCrmPage() {
   const metrics = [
-    { value: "0", label: "Fraudulent / Defaulted Bids" },
-    { value: "5 Sec", label: "WhatsApp Outbid Notification" },
-    { value: "100%", label: "Automated Buyer's Premium Calc" },
-    { value: "₹50Cr+", label: "Auction Lots Handled" },
+    { value: "0.4s", label: "Instant Buyer Ingestion" },
+    { value: "5 Sec", label: "WhatsApp Catalog Delivery" },
+    { value: "100%", label: "Automated GST Invoicing" },
+    { value: "100%", label: "Tenant Database Isolation" },
   ];
 
   return (
@@ -26,9 +26,9 @@ export default function AuctionsCrmPage() {
         {/* Hero */}
         <IndustryHero
           badge="Auctions & High-Value Deals"
-          title="Manage Bidders & Lots."
+          title="Manage Deals & Inquiries."
           highlightText="In One High-Security System."
-          subtitle="The high-stakes CRM engineered for fine art, luxury watches, antique machinery, and real estate auctions. Register KYC-verified bidders, prevent fraud with deposit holds, and automate post-hammer settlements."
+          subtitle="The high-stakes CRM engineered for luxury assets, fine art, capital equipment, and high-value deal brokerage. Ingest qualified buyer inquiries, track negotiation stages, and automate settlement invoicing with ease."
           industrySlug="auctions"
           metrics={metrics}
         />
@@ -41,10 +41,10 @@ export default function AuctionsCrmPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-                Why Standard Software Fails Auction Houses
+                Why Generic CRMs Fail High-Value Deal Brokers
               </h2>
               <p className="text-slate-600 text-base">
-                Standard CRMs cannot handle paddle number registrations, escrow deposit holds, or complex sliding buyer's premium calculations.
+                Standard CRMs lack physical database isolation, customized high-ticket negotiation stages, and fast GST-compliant invoicing.
               </p>
             </div>
 
@@ -53,9 +53,9 @@ export default function AuctionsCrmPage() {
                 <div className="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xl mb-6">
                   ✕
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Bidder Defaults & Fraud</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Slow Inquiry Response</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Unverified bidders place high bids and vanish after the auction, leaving auctioneers with unsold lots and furious consignors.
+                  High-net-worth buyers lose interest when inquiry follow-ups take hours. Without instant WhatsApp dispatch, deals slip away.
                 </p>
               </div>
 
@@ -63,9 +63,9 @@ export default function AuctionsCrmPage() {
                 <div className="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xl mb-6">
                   ✕
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Post-Auction Settlement Chaos</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Settlement & Invoicing Chaos</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Calculating hammer price + tiered buyer's premium + GST on paper spreadsheets takes 48+ hours, creating invoice errors and delaying consignor payouts.
+                  Calculating commission rates, taxes, and advance receipts on disconnected spreadsheets creates accounting errors and payment delays.
                 </p>
               </div>
 
@@ -75,7 +75,7 @@ export default function AuctionsCrmPage() {
                 </div>
                 <h3 className="text-xl font-bold text-emerald-950 mb-3">The Edfosys Fix</h3>
                 <p className="text-sm text-emerald-800 leading-relaxed">
-                  Strict biometric/ID verification with deposit escrow prevents defaults, while our automated settlement engine generates compliant invoices in 3 seconds.
+                  Instant sub-second lead capture, automated round-robin sales rep routing, and 1-click GST invoice generation keep transactions smooth.
                 </p>
               </div>
             </div>
@@ -86,8 +86,8 @@ export default function AuctionsCrmPage() {
         <IndustryCtaBanner
           industryName="Auctions & High-Value Deals"
           industrySlug="auctions"
-          headline="Ready to Power Your Next Auction with Confidence?"
-          subhead="Start your 14-day free trial. Upload your lot catalog and configure bidder KYC verification in minutes."
+          headline="Ready to Power Your Deal Pipeline with Confidence?"
+          subhead="Start your 14-day free trial. Configure your deal pipeline and automated WhatsApp follow-ups in minutes."
         />
       </main>
 

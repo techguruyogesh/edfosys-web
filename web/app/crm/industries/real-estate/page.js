@@ -7,15 +7,15 @@ import IndustryCtaBanner from "@/components/crm/IndustryCtaBanner";
 export const metadata = {
   title: "Real Estate & Builders CRM | Edfosys CRM",
   description:
-    "Sell properties faster. Automate site visit scheduling, instant WhatsApp brochure broadcasts, unit inventory tracking, and broker commission payouts with Edfosys Real Estate CRM.",
+    "Sell properties faster. Automate site visit follow-ups, instant WhatsApp brochure broadcasts, buyer qualification pipelines, and source attribution with Edfosys Real Estate CRM.",
 };
 
 export default function RealEstateCrmPage() {
   const metrics = [
     { value: "60%", label: "Higher Site Visit Attendance" },
-    { value: "0", label: "Double-Sold Unit Conflicts" },
+    { value: "0", label: "Lost Buyer Inquiries" },
     { value: "5 Sec", label: "WhatsApp Brochure Delivery" },
-    { value: "100%", label: "Channel Partner Lead Protection" },
+    { value: "100%", label: "Lead Source Attribution" },
   ];
 
   return (
@@ -27,8 +27,8 @@ export default function RealEstateCrmPage() {
         <IndustryHero
           badge="Real Estate & Property Developers"
           title="Sell Properties Faster."
-          highlightText="Automate Site Visits & Inventory."
-          subtitle="The modern CRM built for property developers, builders, and channel partners. Ingest leads from Facebook & portals, schedule site visits effortlessly, and broadcast WhatsApp brochures with 1 click."
+          highlightText="Automate Site Visits & Buyer Pipeline."
+          subtitle="The modern CRM built for property developers, builders, and sales teams. Ingest leads from Facebook & portals, schedule site visit follow-ups, and broadcast WhatsApp project brochures with 1 click."
           industrySlug="real-estate"
           metrics={metrics}
         />
@@ -44,7 +44,7 @@ export default function RealEstateCrmPage() {
                 Why Standard CRMs Fail Real Estate Developers
               </h2>
               <p className="text-slate-600 text-base">
-                Generic CRMs lack floor plate inventory grids, site visit geo-tracking, and broker attribution rules.
+                Generic CRMs lack instant WhatsApp follow-up cadences, automated sales rep distribution, and site visit tracking.
               </p>
             </div>
 
@@ -63,9 +63,9 @@ export default function RealEstateCrmPage() {
                 <div className="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xl mb-6">
                   ✕
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Broker Attribution Disputes</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Unclear Lead Attribution</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Two different brokers bring the same buyer. Without timestamped QR-lead registration, commissions turn into legal and relationship disputes.
+                  Without automated phone number deduplication and source tracking, multiple campaigns or marketing channels claim the same buyer inquiry.
                 </p>
               </div>
 
@@ -75,7 +75,7 @@ export default function RealEstateCrmPage() {
                 </div>
                 <h3 className="text-xl font-bold text-emerald-950 mb-3">The Edfosys Fix</h3>
                 <p className="text-sm text-emerald-800 leading-relaxed">
-                  Automated WhatsApp location pins and cab dispatch alerts boost visit attendance to 85%+, while our 90-day RERA broker ledger eliminates disputes.
+                  Instant sub-second lead capture, automated round-robin sales rep allocation, and verified WhatsApp reminders ensure 85%+ site visit attendance.
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function RealEstateCrmPage() {
           industryName="Real Estate & Builders"
           industrySlug="real-estate"
           headline="Ready to Accelerate Your Project Sales?"
-          subhead="Start your 14-day free trial. Upload your unit inventory and connect your Meta Lead Ads in minutes."
+          subhead="Start your 14-day free trial. Connect your Meta Lead Ads and configure your project pipeline in minutes."
         />
       </main>
 

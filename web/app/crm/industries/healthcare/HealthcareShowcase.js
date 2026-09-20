@@ -19,15 +19,15 @@ export default function HealthcareShowcase() {
   const showcaseTabs = [
     {
       id: "doctor-booking",
-      label: "Doctor Slot Scheduler",
-      badge: "Calendly-Style Triage",
+      label: "Consultation Scheduling",
+      badge: "Organized Slots",
       icon: Calendar,
-      headline: "Book Doctor Appointments with Real-Time Chamber Availability",
-      desc: "Allow patients to book consultations online or via receptionist intake. Prevent double-booking across multi-specialist doctors, diagnostic labs, and treatment rooms with live slot synchronization.",
+      headline: "Schedule Specialist Consultations with Clean Time Slots",
+      desc: "Allow patients to book consultations online or via front-desk intake. Organize time slots across consultants and treatment centers without double-booking or scheduling chaos.",
       bullets: [
-        "Specialist doctor profiles with chamber operating hours",
-        "Configurable slot durations (15-min follow-up, 45-min detailed consultation)",
-        "Instant WhatsApp booking voucher with clinic directions",
+        "Configurable time slots and clinic center hours",
+        "Scheduled follow-up reminder alarms for front-desk staff",
+        "Instant WhatsApp booking confirmation with Google Maps pin",
       ],
       secondaryLink: "/crm/features",
       secondaryLabel: "See clinic scheduling specs →",
@@ -40,7 +40,7 @@ export default function HealthcareShowcase() {
               </div>
               <div>
                 <div className="text-xs font-bold text-slate-800">Dr. Priya Patel, MD</div>
-                <div className="text-[10px] text-slate-500">Chief Dermatologist • Chamber 4</div>
+                <div className="text-[10px] text-slate-500">Chief Dermatologist • Vastrapur Center</div>
               </div>
             </div>
             <span className="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">
@@ -71,7 +71,7 @@ export default function HealthcareShowcase() {
               <div className="text-xs font-bold text-slate-900">Patient: Sunita Rao</div>
               <div className="text-[10px] text-slate-500">Service: Follow-up Skin Consultation</div>
             </div>
-            <span className="text-xs font-bold text-emerald-600">Token #18 ✓</span>
+            <span className="text-xs font-bold text-emerald-600">Slot Confirmed ✓</span>
           </div>
         </div>
       ),
@@ -82,10 +82,10 @@ export default function HealthcareShowcase() {
       badge: "WhatsApp Cloud API",
       icon: MessageSquare,
       headline: "Cut No-Show Rates by 70% with WhatsApp Prep Directions",
-      desc: "Patients routinely forget appointments or arrive unprepared. Send automated 24-hour and 2-hour WhatsApp notifications with fasting instructions, clinic location pin, and 1-tap reschedule buttons.",
+      desc: "Patients routinely forget appointments or arrive unprepared. Send automated 24-hour and 2-hour WhatsApp notifications with instructions, clinic location pin, and confirmation buttons.",
       bullets: [
-        "Fasting instructions for diagnostic & blood panel tests",
-        "Interactive 'Confirm' or 'Reschedule' quick-reply buttons",
+        "Pre-consultation preparation and clinic guidelines",
+        "Official Meta Verified WhatsApp message delivery",
         "Google Maps GPS clinic link for effortless navigation",
       ],
       widgetContent: (
@@ -109,14 +109,11 @@ export default function HealthcareShowcase() {
             <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 text-[11px] space-y-1">
               <div>⏰ <strong>Time:</strong> Tomorrow at 05:15 PM</div>
               <div>📍 <strong>Clinic:</strong> Apollo Clinic, 2nd Floor, Vastrapur</div>
-              <div>⚠️ <strong>Preparation:</strong> Bring previous prescription records</div>
+              <div>⚠️ <strong>Preparation:</strong> Bring previous treatment records</div>
             </div>
             <div className="pt-1 flex gap-2">
               <button className="flex-1 py-1.5 bg-emerald-600 text-white font-bold rounded-lg text-[10px] text-center">
-                ✓ Confirm Appointment
-              </button>
-              <button className="py-1.5 px-3 bg-slate-100 text-slate-700 font-bold rounded-lg text-[10px]">
-                Reschedule
+                ✓ Confirm Attendance
               </button>
             </div>
             <div className="text-[9px] text-right text-slate-400">06:12 PM ✓✓</div>
@@ -126,61 +123,56 @@ export default function HealthcareShowcase() {
     },
     {
       id: "patient-record",
-      label: "Patient Summary Card",
-      badge: "Clinical Triage",
+      label: "Patient Inquiry Profile",
+      badge: "Inquiry History",
       icon: HeartPulse,
-      headline: "View Patient History, Prescriptions & Notes at a Glance",
-      desc: "Give doctors and receptionists a 360-degree patient view. Track past visits, chief complaints, ongoing medications, and allergies in one clean, privacy-compliant interface.",
+      headline: "Track Patient Inquiries, Treatment Notes & Follow-ups",
+      desc: "Give clinic counselors and receptionists a complete view of every patient. Track consultation stages, treatment packages, internal notes, and scheduled callback reminders in one clean, privacy-compliant interface.",
       bullets: [
-        "Chronological consultation & prescription history",
-        "Prominent allergy and chronic condition warnings",
-        "HIPAA/NDHM compliant data segregation",
+        "Chronological inquiry & consultation follow-up logs",
+        "Treatment interest and package preference tracking",
+        "Dedicated physical database isolation for patient privacy",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200/80 p-5 space-y-3.5">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-            <div>
-              <div className="text-xs font-bold text-slate-900">Patient: Sunita Rao (Age 34)</div>
-              <div className="text-[10px] text-slate-500">UHID: HC-99820 • Blood Group: B+</div>
-            </div>
-            <span className="text-[10px] font-bold bg-rose-50 text-rose-600 px-2 py-0.5 rounded">
-              Allergy: Penicillin
-            </span>
+          <div className="flex items-center justify-between pb-2 border-b border-slate-100 text-xs">
+            <span className="font-bold text-slate-800">Patient Treatment Profile</span>
+            <span className="text-[10px] font-bold text-emerald-600">Active Patient</span>
           </div>
 
-          <div className="space-y-2 text-xs">
-            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-              <div className="flex justify-between font-bold text-slate-800">
-                <span>Last Consultation: 12 Aug 2026</span>
-                <span className="text-slate-400 font-normal">Dr. Priya Patel</span>
+          <div className="space-y-2">
+            <div className="p-2.5 rounded-xl border border-slate-100 bg-slate-50 text-xs space-y-1">
+              <div className="flex justify-between font-bold text-slate-900">
+                <span>Sunita Rao (Age 34)</span>
+                <span className="text-emerald-700">Package: Laser Rejuvenation</span>
               </div>
-              <div className="text-[11px] text-slate-600 mt-1">
-                Diagnosis: Acute Contact Dermatitis
-              </div>
-              <div className="text-[10px] text-emerald-700 font-medium mt-0.5">
-                Prescription: Topical Cream 1% (14-Day Cycle)
-              </div>
+              <div className="text-[10px] text-slate-500">Contact: +91 99250 81234 • Ahmedabad</div>
+            </div>
+
+            <div className="p-2.5 rounded-xl border border-emerald-100 bg-emerald-50/50 text-xs">
+              <div className="font-bold text-emerald-950">Treatment Package Quote</div>
+              <div className="text-[10px] text-emerald-800">3 Sessions • ₹18,000 + GST (Invoice #MED-104)</div>
             </div>
           </div>
 
-          <div className="p-2 rounded-lg bg-emerald-50 border border-emerald-100 text-[11px] text-emerald-800 flex justify-between items-center font-medium">
-            <span>Next Recommended Checkup: Due This Week</span>
-            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+          <div className="p-2 rounded-lg bg-slate-50 border border-slate-100 text-[10px] text-slate-600 flex justify-between items-center">
+            <span>Next Follow-up Call: <strong>In 5 Days</strong></span>
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
           </div>
         </div>
       ),
     },
     {
-      id: "post-care",
-      label: "Retention & Care Cadence",
-      badge: "Post-Care Retention",
+      id: "care-retention",
+      label: "Care Cadence Engine",
+      badge: "Patient Retention",
       icon: Activity,
-      headline: "Automate Prescription Refill & Preventive Checkup Reminders",
-      desc: "Turn one-time clinic visits into lifelong patient loyalty. Automatically trigger 30-day, 90-day, and annual preventive health checkup reminders via WhatsApp.",
+      headline: "Automate Routine Check-Ins & Package Follow-ups",
+      desc: "Retain patients effortlessly. Automate post-procedure check-ins, periodic treatment reminders, and feedback requests directly through official WhatsApp templates.",
       bullets: [
         "Automated post-treatment wellness check-ins at 48 hours",
-        "Refill alerts for chronic condition medications",
-        "Automated Google Reviews feedback booster",
+        "Follow-up appointment reminder alerts",
+        "Treatment package renewal and session reminders",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200/80 p-4 space-y-3">
@@ -205,10 +197,10 @@ export default function HealthcareShowcase() {
             <div className="p-2.5 rounded-xl bg-blue-50/40 border border-blue-100 flex items-center justify-between">
               <div>
                 <div className="text-xs font-bold text-slate-900">Day 30: Follow-up Reminder</div>
-                <div className="text-[10px] text-slate-500">One-click slot re-booking link</div>
+                <div className="text-[10px] text-slate-500">Session 2 of 3 scheduled</div>
               </div>
               <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">
-                +42% Retention
+                Active Cadence
               </span>
             </div>
           </div>
@@ -221,53 +213,53 @@ export default function HealthcareShowcase() {
     {
       title: "Book & Triage",
       timing: "Instant",
-      desc: "Patients book appointments via website, Google Business, or clinic call desk into a unified doctor schedule.",
+      desc: "Inquiries from ad campaigns, website forms, or receptionist intake flow into a unified patient pipeline.",
       bullets: [
-        { text: "Specialist & chamber routing", icon: Stethoscope },
+        { text: "Specialist & center routing", icon: Stethoscope },
         { text: "Prevent double-booking clashes", icon: CheckCircle2 },
         { text: "Instant WhatsApp confirmation voucher", icon: MessageSquare },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1.5">
           <div className="flex justify-between items-center text-[11px] font-bold text-slate-800">
-            <span>Online Booking: Cardiology</span>
+            <span>Inquiry Captured: Dermatology</span>
             <span className="text-emerald-600">Confirmed</span>
           </div>
-          <div className="text-[10px] text-slate-500">Patient: Rajesh Gupta • Tomorrow 11:30 AM</div>
-          <div className="text-[9px] text-blue-600 font-semibold">Chamber: Room 102</div>
+          <div className="text-[10px] text-slate-500">Patient: Sunita Rao • Tomorrow 05:15 PM</div>
+          <div className="text-[9px] text-blue-600 font-semibold">Center: Vastrapur Branch</div>
         </div>
       ),
     },
     {
       title: "Remind & Prep",
       timing: "Automated",
-      desc: "Send automated WhatsApp reminders with fasting guidelines, medication pauses, and GPS clinic map pins.",
+      desc: "Send automated WhatsApp reminders with appointment details, clinic timings, and GPS map pins.",
       bullets: [
         { text: "24h and 2h countdown reminders", icon: Clock },
-        { text: "1-tap confirm or reschedule buttons", icon: CheckCircle2 },
-        { text: "Fasting & test preparation rules", icon: Activity },
+        { text: "Appointment attendance confirmation", icon: CheckCircle2 },
+        { text: "Google Maps directions link", icon: Activity },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1 text-[10px]">
           <div className="font-bold text-slate-900">WhatsApp Reminder Dispatched</div>
-          <div className="text-slate-600">"Appointment in 2 Hours. Fasting required for lipid profile."</div>
-          <div className="text-emerald-600 font-bold">Patient Confirmed Attendance ✓</div>
+          <div className="text-slate-600">"Appointment tomorrow at 5:15 PM at Vastrapur Center."</div>
+          <div className="text-emerald-600 font-bold">Delivered via Meta Cloud ✓</div>
         </div>
       ),
     },
     {
-      title: "Consult & Record",
+      title: "Consult & Quote",
       timing: "In-Clinic",
-      desc: "Doctors view patient history, record prescription summaries, and flag follow-up intervals in 30 seconds.",
+      desc: "Staff log follow-up notes, record treatment recommendations, and generate professional GST invoices.",
       bullets: [
-        { text: "Unified past visit history", icon: FileHeart },
-        { text: "Allergy & chronic condition flags", icon: ShieldCheck },
-        { text: "Digital prescription slip generation", icon: Stethoscope },
+        { text: "Unified patient follow-up history", icon: FileHeart },
+        { text: "Treatment package quotation generator", icon: ShieldCheck },
+        { text: "GST tax invoice with 1-click PDF", icon: Stethoscope },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1 text-[10px]">
-          <div className="font-bold text-slate-900">Consultation Completed</div>
-          <div className="text-slate-600">Prescription dispatched to patient's WhatsApp</div>
+          <div className="font-bold text-slate-900">Treatment Package Quoted</div>
+          <div className="text-slate-600">GST Invoice #MED-104 Dispatched to WhatsApp</div>
           <div className="text-blue-600 font-semibold">Follow-up set: 14 Days</div>
         </div>
       ),
@@ -275,11 +267,11 @@ export default function HealthcareShowcase() {
     {
       title: "Retain & Care",
       timing: "Long-Term",
-      desc: "Trigger automated wellness check-ins, medication refill reminders, and annual preventive health packages.",
+      desc: "Trigger automated wellness check-ins, package session reminders, and annual follow-up alerts.",
       bullets: [
         { text: "Day 2 recovery check-in message", icon: Sparkles },
-        { text: "Prescription refill reminder rules", icon: Clock },
-        { text: "Google 5-star review automated request", icon: CheckCircle2 },
+        { text: "Package session follow-up cadences", icon: Clock },
+        { text: "Automated Google Reviews feedback request", icon: CheckCircle2 },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1.5">
@@ -287,7 +279,7 @@ export default function HealthcareShowcase() {
             <span>Care Cadence Triggered</span>
             <span className="text-emerald-600">Active</span>
           </div>
-          <div className="text-[10px] text-slate-500">Patient rated care 5/5 on Google Reviews ★★★★★</div>
+          <div className="text-[10px] text-slate-500">Patient completed session 2 • Follow-up logged</div>
           <div className="w-full bg-emerald-500 h-1.5 rounded-full" />
         </div>
       ),

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import CallToActionBanner from "@/components/layout/CallToActionBanner";
 import InteractiveHeroWidget from "@/components/home/InteractiveHeroWidget";
 import InteractivePillarTabs from "@/components/home/InteractivePillarTabs";
 import RoiCalculator from "@/components/home/RoiCalculator";
@@ -230,48 +231,21 @@ export default function HomePage() {
         {/* ================================================================= */}
         {/* 7. FINAL HIGH-IMPACT CALENDLY-STYLE BOOKING BANNER                */}
         {/* ================================================================= */}
-        <section className="py-24 bg-white text-center relative overflow-hidden">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-tr from-[#FFF9F2] via-white to-orange-50/50 rounded-3xl p-10 sm:p-14 border-2 border-orange-200/90 shadow-2xl relative">
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-orange-100 text-[#e57a0b] text-xs font-bold uppercase tracking-wider mb-6">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Zero Risk • Immediate Value</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
-                Ready to Experience the Difference?
-              </h2>
-              <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-                Book a complimentary 45-minute roadmap session with our senior architects. Or test-drive Edfosys CRM free for 14 days with zero commitment.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/free-consulting"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl text-sm sm:text-base font-extrabold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-xl shadow-orange-500/25 transition-all flex items-center justify-center space-x-2 hover:scale-[1.02]"
-                >
-                  <Sparkles className="w-4 h-4" />
-                  <span>Claim Free 45-Min Strategy Session</span>
-                </Link>
-
-                <Link
-                  href="/crm"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl text-sm sm:text-base font-bold bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-300 transition-all flex items-center justify-center space-x-2"
-                >
-                  <span>Explore Edfosys CRM</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-
-              <div className="pt-6 flex items-center justify-center space-x-4 text-xs text-slate-400">
-                <span>🔒 Strict Confidentiality</span>
-                <span>•</span>
-                <span>No Credit Card Required</span>
-                <span>•</span>
-                <span>Direct Partner Consultation</span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CallToActionBanner
+          badge="Zero Risk • Immediate Value"
+          title="Ready to Architect Your Growth Engine with"
+          highlight="Edfosys?"
+          subtitle="Book a complimentary 45-minute roadmap session with our senior architects. Or test-drive Edfosys CRM free for 14 days with zero commitment."
+          primaryCtaText="Claim Free 45-Min Strategy Session"
+          primaryCtaLink="/free-consulting"
+          secondaryCtaText="Explore Edfosys CRM"
+          secondaryCtaLink="/crm"
+          trustBadges={[
+            "Strict Confidentiality",
+            "No Credit Card Required",
+            "Direct Partner Consultation",
+          ]}
+        />
       </main>
 
       <Footer />

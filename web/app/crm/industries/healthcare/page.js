@@ -7,15 +7,15 @@ import IndustryCtaBanner from "@/components/crm/IndustryCtaBanner";
 export const metadata = {
   title: "Healthcare & Clinic CRM | Edfosys CRM",
   description:
-    "Automate patient appointments, multi-doctor queue scheduling, WhatsApp pre-consultation reminders, and post-care follow-up cadences with Edfosys Healthcare CRM.",
+    "Convert patient inquiries and automate care reminders. Modern CRM built for elective clinics, dental practices, and specialized wellness centers.",
 };
 
 export default function HealthcareCrmPage() {
   const metrics = [
     { value: "70%", label: "Reduction in No-Show Rates" },
-    { value: "4.8★", label: "Average Patient Review Score" },
-    { value: "3x", label: "Repeat Consultation Retention" },
-    { value: "100%", label: "HIPAA Compliant Isolation" },
+    { value: "0.4s", label: "Instant Ad Inquiry Ingest" },
+    { value: "3x", label: "Repeat Patient Retention" },
+    { value: "100%", label: "Tenant Database Isolation" },
   ];
 
   return (
@@ -26,9 +26,9 @@ export default function HealthcareCrmPage() {
         {/* Hero */}
         <IndustryHero
           badge="Healthcare & Wellness Clinics"
-          title="Automate Patient Appointments."
-          highlightText="Deliver Continuous Care."
-          subtitle="The modern CRM built for multi-specialty clinics, dental practices, and diagnostic centers. Eliminate no-shows with WhatsApp reminders, streamline doctor schedules, and foster lifelong patient retention."
+          title="Convert Patient Inquiries."
+          highlightText="Automate Care Reminders."
+          subtitle="The modern CRM built for dental practices, aesthetic clinics, and specialized care centers. Capture ad inquiries instantly, schedule follow-ups, and send automated WhatsApp appointment reminders."
           industrySlug="healthcare"
           metrics={metrics}
         />

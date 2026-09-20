@@ -73,50 +73,50 @@ export default function B2bServicesShowcase() {
     },
     {
       id: "proposal-tracking",
-      label: "Proposal Engagement Bot",
-      badge: "Real-Time Telemetry",
+      label: "Quotations & Estimates",
+      badge: "Branded PDF Export",
       icon: FileCheck,
-      headline: "Know Exactly When the Client Opens Your Proposal",
-      desc: "Stop wondering if the prospective client reviewed your estimate. Receive instant push notifications the second they open your proposal link, and track which pages they spend the most time reading.",
+      headline: "Generate Professional Proposals & Scope Estimates in 60 Seconds",
+      desc: "Stop manually assembling Word documents. Build multi-line item proposals with custom milestones, item discounts, and tax breakdowns. Dispatch directly via WhatsApp or email with one click.",
       bullets: [
-        "Live alerts: 'Client opened proposal from London (Desktop)'",
-        "Page heatmaps showing time spent on Pricing vs Architecture",
-        "Automated WhatsApp follow-up triggered 2 hours after document review",
+        "Item catalog with custom service pricing and HSN/SAC codes",
+        "Automated Indian GST & multi-currency quotation calculations",
+        "One-click PDF dispatch via WhatsApp or SMTP email",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200/80 p-5 space-y-3.5">
           <div className="flex items-center justify-between pb-2 border-b border-slate-100 text-xs">
-            <span className="font-bold text-slate-800">Proposal Activity Live Log</span>
-            <span className="text-[10px] font-bold text-emerald-600 flex items-center">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 mr-1.5 animate-pulse" /> Live Now
+            <span className="font-bold text-slate-800">Proposal & Estimate Generator</span>
+            <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+              Ready to Dispatch
             </span>
           </div>
 
           <div className="space-y-2">
             <div className="p-2.5 rounded-xl border border-blue-200 bg-blue-50/40 text-xs">
               <div className="flex justify-between font-bold text-slate-900">
-                <span>Acme Corp viewed Page 4 (Commercials)</span>
-                <span className="text-blue-700">4m 12s spent</span>
+                <span>Acme Corp — Cloud Migration SOW</span>
+                <span className="text-blue-700">₹45,00,000</span>
               </div>
               <div className="text-[10px] text-slate-500 mt-0.5">
-                Opened 3 times today by 2 distinct IP addresses
+                Milestones: Architecture Audit • Core Migration • DevOps Handover
               </div>
             </div>
 
             <div className="p-2.5 rounded-xl border border-slate-100 bg-slate-50 text-xs">
               <div className="flex justify-between font-bold text-slate-800">
-                <span>Architecture Blueprint Downloaded</span>
-                <span className="text-slate-400 font-normal">2:15 PM</span>
+                <span>GST Tax Breakdown</span>
+                <span className="text-slate-600 font-normal">18% IGST (₹8,10,000)</span>
               </div>
               <div className="text-[10px] text-slate-500 mt-0.5">
-                File: AWS_Microservices_Architecture_v2.pdf
+                HSN/SAC: 998313 (IT Consulting) • Total: ₹53,10,000
               </div>
             </div>
           </div>
 
           <div className="p-2 rounded-lg bg-orange-50 border border-orange-100 text-[10px] text-orange-900 flex justify-between items-center font-semibold">
-            <span>Recommended Call Window: Within 30 Mins</span>
-            <Clock className="w-3.5 h-3.5 text-[#F7941D]" />
+            <span>One-Click Dispatch: PDF via WhatsApp & Email</span>
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#F7941D]" />
           </div>
         </div>
       ),
@@ -141,71 +141,77 @@ export default function B2bServicesShowcase() {
             </div>
             <div>
               <div className="text-xs font-bold text-slate-900 flex items-center">
-                Edfosys Engineering <CheckCircle2 className="w-3 h-3 text-blue-500 ml-1 fill-blue-500 text-white" />
+                Edfosys Consulting <CheckCircle2 className="w-3 h-3 text-blue-500 ml-1 fill-blue-500 text-white" />
               </div>
-              <div className="text-[9px] text-slate-500">Enterprise Solutions Desk</div>
+              <div className="text-[9px] text-slate-500">Official Business Account</div>
             </div>
           </div>
 
           <div className="bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm space-y-2 text-xs text-slate-800">
             <p className="font-semibold text-slate-900">
-              Hi Rajesh! 🚀 Here is the revised SOW for the Cloud Migration.
+              Hi Rajesh! 👋 Here is the formal technical proposal for Acme Corp.
             </p>
-            <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 text-[11px] space-y-1">
-              <div>📄 <strong>Scope:</strong> Phase 1 AWS Kubernetes Migration</div>
-              <div>📅 <strong>Sprint Start:</strong> 1st October 2026</div>
-              <div>💼 <strong>Deliverables:</strong> CI/CD + Zero-Downtime DB Cutover</div>
+            <div className="p-2 bg-slate-50 rounded-xl border border-slate-100 flex items-center space-x-2.5">
+              <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">
+                PDF
+              </div>
+              <div className="flex-1">
+                <div className="text-[11px] font-bold text-slate-800">Acme_Cloud_Migration_Proposal.pdf</div>
+                <div className="text-[9px] text-slate-400">Formal SOW & Commercials</div>
+              </div>
             </div>
             <div className="pt-1 flex gap-2">
               <button className="flex-1 py-1.5 bg-[#0C3246] text-white font-bold rounded-lg text-[10px] text-center">
-                Sign Digital SOW
+                Schedule Review Call
               </button>
             </div>
-            <div className="text-[9px] text-right text-slate-400">01:20 PM ✓✓</div>
+            <div className="text-[9px] text-right text-slate-400">03:45 PM ✓✓</div>
           </div>
         </div>
       ),
     },
     {
-      id: "milestone-invoicing",
-      label: "Milestones & Invoices",
-      badge: "Cash Flow Engine",
+      id: "billing-milestones",
+      label: "Milestone GST Invoicing",
+      badge: "Cash Flow Visibility",
       icon: DollarSign,
-      headline: "Link Project Deliverables to Automated Invoicing Triggers",
-      desc: "Never let completed sprint work sit unbilled. When a technical milestone is signed off, the CRM automatically generates a GST-compliant invoice and triggers automated payment collection reminders.",
+      headline: "Automate Milestone Retainers & Advance Deposits",
+      desc: "Stop billing leaks in long-running services engagements. Tie invoices directly to project milestones, calculate GST automatically, and track unpaid balances across your entire client roster.",
       bullets: [
-        "Milestone billing tied to sprint acceptance",
-        "Integrated Razorpay & Stripe international payment links",
-        "Automated overdue invoice follow-up sequences",
+        "Milestone-linked tax invoicing (Advance, Sprint 1, Final Handover)",
+        "Indian GST compliance with HSN/SAC code mapping and CGST/SGST/IGST splits",
+        "Instant WhatsApp & email PDF invoice delivery",
       ],
       widgetContent: (
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200/80 p-4 space-y-3">
           <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-100">
-            <span className="font-bold text-slate-900">Project Milestone Ledger</span>
-            <span className="text-[10px] font-bold text-slate-500">PO: PO-2026-881</span>
+            <span className="font-bold text-slate-900">Contract Invoicing Milestones</span>
+            <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+              SOW Active
+            </span>
           </div>
 
           <div className="space-y-2">
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
               <div>
-                <div className="text-xs font-bold text-slate-900">Milestone 1: Architecture & Setup</div>
-                <div className="text-[10px] text-slate-500">Sign-off: Complete</div>
+                <div className="text-xs font-bold text-slate-900">M1: Architecture Review</div>
+                <div className="text-[10px] text-slate-500">Invoice #EDF-402 • Settled</div>
               </div>
-              <span className="text-xs font-extrabold text-emerald-600">₹15,00,000 Paid ✓</span>
+              <span className="text-xs font-extrabold text-emerald-600">₹10,00,000 Paid ✓</span>
             </div>
 
             <div className="p-2.5 rounded-xl bg-blue-50/40 border border-blue-200 flex items-center justify-between">
               <div>
-                <div className="text-xs font-bold text-slate-900">Milestone 2: Database Migration</div>
-                <div className="text-[10px] text-slate-500">Sprint 4 Demo Scheduled</div>
+                <div className="text-xs font-bold text-slate-900">M2: Core Sprint Migration</div>
+                <div className="text-[10px] text-slate-500">Invoice #EDF-403 • Due in 5 Days</div>
               </div>
-              <span className="text-xs font-bold text-blue-700">₹18,00,000 Due Oct 15</span>
+              <span className="text-xs font-bold text-blue-700">₹20,00,000 Pending</span>
             </div>
           </div>
 
-          <div className="p-2 rounded-lg bg-emerald-50 border border-emerald-100 text-[10px] text-emerald-800 flex justify-between items-center font-medium">
-            <span>Client Payment Health Score: <strong>100% On-Time</strong></span>
-            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+          <div className="p-2 rounded-lg bg-slate-50 border border-slate-100 text-[10px] text-slate-600 flex justify-between items-center">
+            <span>Realized Contract Value: <strong>₹30L of ₹45L</strong></span>
+            <span className="text-emerald-600 font-bold">66% Collected</span>
           </div>
         </div>
       ),
@@ -214,9 +220,9 @@ export default function B2bServicesShowcase() {
 
   const workflowSteps = [
     {
-      title: "Discover & Enrich",
-      timing: "Qualification",
-      desc: "Ingest inbound agency leads from website forms, LinkedIn ads, or referrals. Enrich with company size, funding, and tech stack.",
+      title: "Qualify & Assign",
+      timing: "Sub-Second",
+      desc: "Capture high-intent inbound inquiries from Google Ads, LinkedIn campaigns, and referrals into a unified high-ticket pipeline.",
       bullets: [
         { text: "Enrich domain & company size", icon: Briefcase },
         { text: "Deduplicate multi-touch buyer contacts", icon: CheckCircle2 },
@@ -236,17 +242,17 @@ export default function B2bServicesShowcase() {
     {
       title: "Scope & Pitch",
       timing: "Proposal",
-      desc: "Share interactive scope documents and proposals. Get notified the exact moment client stakeholders review your rates.",
+      desc: "Generate professional scope estimates and GST proposals. Send directly to stakeholders with automated WhatsApp reminders.",
       bullets: [
-        { text: "Real-time proposal open telemetry", icon: FileCheck },
-        { text: "Page-by-page viewing duration heatmaps", icon: BarChart3 },
-        { text: "1-click Calendly review call scheduler", icon: Calendar },
+        { text: "1-Click PDF proposal & quotation generation", icon: FileCheck },
+        { text: "Item catalog with custom milestone pricing", icon: BarChart3 },
+        { text: "Automated WhatsApp and email dispatch", icon: MessageSquare },
       ],
       preview: (
         <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm space-y-1 text-[10px]">
-          <div className="font-bold text-slate-900">Proposal Opened: 4 Mins Ago</div>
-          <div className="text-slate-600">Client reviewing Section 3: Engineering Team Rates</div>
-          <div className="text-emerald-600 font-bold">Notification Dispatched to Rep ✓</div>
+          <div className="font-bold text-slate-900">Proposal Generated: 3 Mins Ago</div>
+          <div className="text-slate-600">Acme Corp — Cloud Migration Proposal (₹45,00,000 + GST)</div>
+          <div className="text-emerald-600 font-bold">Sent via WhatsApp & Email ✓</div>
         </div>
       ),
     },
