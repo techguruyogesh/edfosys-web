@@ -486,13 +486,13 @@ export default function Navbar() {
               href="https://app.edfosys.com/signup"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors px-3 py-2"
+              className="px-4 py-2 rounded-xl text-sm font-bold text-slate-800 bg-white border-2 border-slate-200 hover:border-[#F7941D] hover:text-[#F7941D] hover:bg-[#FFF9F2] shadow-sm transition-all duration-200 active:scale-[0.98] flex items-center justify-center"
             >
               Start Free Trial
             </a>
             <Link
               href="/free-consulting"
-              className="px-5 py-2.5 rounded-xl text-sm font-semibold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-lg shadow-orange-500/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              className="px-5 py-2.5 rounded-xl text-sm font-bold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-lg shadow-orange-500/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               Book Free Strategy
             </Link>
@@ -614,7 +614,7 @@ export default function Navbar() {
                 href="https://app.edfosys.com/signup"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center py-2.5 text-sm font-semibold border border-slate-200 text-slate-800 rounded-xl hover:bg-slate-50"
+                className="w-full text-center py-2.5 text-sm font-bold border-2 border-slate-200 text-slate-800 rounded-xl hover:border-[#F7941D] hover:text-[#F7941D] hover:bg-slate-50 transition-all"
               >
                 Start Free Trial
               </a>
