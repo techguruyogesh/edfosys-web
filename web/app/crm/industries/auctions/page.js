@@ -3,11 +3,15 @@ import Footer from "@/components/layout/Footer";
 import IndustryHero from "@/components/crm/IndustryHero";
 import AuctionsShowcase from "./AuctionsShowcase";
 import IndustryCtaBanner from "@/components/crm/IndustryCtaBanner";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Auctions & High-Value Deals CRM | Edfosys CRM",
   description:
     "Manage consignor inquiries, buyer verification pipelines, private treaty negotiations, and settlement invoicing with Edfosys CRM.",
+  alternates: {
+    canonical: "https://edfosys.com/crm/industries/auctions",
+  },
 };
 
 export default function AuctionsCrmPage() {
@@ -81,6 +85,27 @@ export default function AuctionsCrmPage() {
             </div>
           </div>
         </section>
+
+        {/* Auctions FAQs */}
+        <FaqSection
+          badge="Auctions FAQ"
+          title="Frequently Asked Questions: Auctions & Deals CRM"
+          subtitle="How Edfosys CRM powers high-value deal pipelines, consignor relationships, and settlement invoicing."
+          faqs={[
+            {
+              q: "How does Edfosys CRM support auction houses and high-value asset dealers?",
+              a: "Edfosys CRM streamlines consignor valuation tracking, bidder inquiry qualification, private treaty deal stages, and settlement invoicing. It maintains complete records of valuation notes, KYC proofs, and transaction milestones.",
+            },
+            {
+              q: "Can we broadcast private catalog PDFs via WhatsApp to accredited buyers?",
+              a: "Yes. Edfosys CRM connects with the official Meta WhatsApp Cloud API to deliver password-protected PDF lot catalogs and preview invitations directly to verified high-net-worth buyers with full delivery tracking.",
+            },
+            {
+              q: "How are buyer KYC documents and buyer premium invoices managed?",
+              a: "Buyer identity proofs and escrow documentation are stored in secure cloud document storage with role-based access. Once a transaction is agreed, our invoicing engine generates compliant tax invoices including hammer prices and buyer premium breakdowns.",
+            },
+          ]}
+        />
 
         {/* Bottom CTA Banner */}
         <IndustryCtaBanner

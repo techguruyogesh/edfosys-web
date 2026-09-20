@@ -2,11 +2,15 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import { TrendingUp, CheckCircle2, ArrowRight, Target, DollarSign, Users2, BarChart } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
-  title: "Business Growth Planner & Strategic Advisory",
+  title: "Business Growth Planner & Strategic Advisory | Edfosys",
   description:
-    "Data-backed financial forecasting, unit economics modeling, customer acquisition frameworks, and 90-day milestone execution plans for growing enterprises.",
+    "Data-backed financial forecasting, unit economics modeling, customer acquisition frameworks, and 90-day milestone execution plans for growing enterprises with Edfosys.",
+  alternates: {
+    canonical: "https://edfosys.com/business/growth-planner",
+  },
 };
 
 export default function GrowthPlannerPage() {
@@ -98,12 +102,33 @@ export default function GrowthPlannerPage() {
           </div>
         </section>
 
+        {/* Growth Planner FAQs */}
+        <FaqSection
+          badge="Growth Advisory FAQ"
+          title="Frequently Asked Questions: Growth Planning"
+          subtitle="How our data-driven growth advisory helps founders scale revenue profitably."
+          faqs={[
+            {
+              q: "What is the difference between Edfosys Growth Planning and standard business coaching?",
+              a: "Traditional business coaching focuses on generic motivational advice. Edfosys Growth Planning is an architectural advisory sprint led by practitioners who analyze your concrete unit economics (CAC, LTV, payback period, churn rate) and engineer actionable sales pipelines with CRM automation.",
+            },
+            {
+              q: "Who participates in the Growth Planning sessions?",
+              a: "Sessions are conducted directly with our senior technology and business architects. We engage with founders, managing directors, and sales heads to align tech, marketing, and financial goals.",
+            },
+            {
+              q: "How quickly do companies see measurable results from the 90-day sprint?",
+              a: "Most client organizations identify and plug high-leakage pipeline bottlenecks within the first 14 days, with sales conversion increases and CAC reductions typically registering within 30 to 60 days.",
+            },
+          ]}
+        />
+
         <section className="py-16 bg-[#0C3246] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2">
                 Need a Concrete 90-Day Scaling Plan?
-              </h3>
+              </h2>
               <p className="text-slate-300 text-sm">
                 Book a complimentary 45-minute growth consultation to examine your revenue model.
               </p>

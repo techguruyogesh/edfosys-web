@@ -3,11 +3,15 @@ import Footer from "@/components/layout/Footer";
 import IndustryHero from "@/components/crm/IndustryHero";
 import HealthcareShowcase from "./HealthcareShowcase";
 import IndustryCtaBanner from "@/components/crm/IndustryCtaBanner";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Healthcare & Clinic CRM | Edfosys CRM",
   description:
     "Convert patient inquiries and automate care reminders. Modern CRM built for elective clinics, dental practices, and specialized wellness centers.",
+  alternates: {
+    canonical: "https://edfosys.com/crm/industries/healthcare",
+  },
 };
 
 export default function HealthcareCrmPage() {
@@ -81,6 +85,27 @@ export default function HealthcareCrmPage() {
             </div>
           </div>
         </section>
+
+        {/* Healthcare FAQs */}
+        <FaqSection
+          badge="Healthcare FAQ"
+          title="Frequently Asked Questions: Healthcare CRM"
+          subtitle="How Edfosys CRM optimizes patient inquiry conversion, doctor appointment scheduling, and care retention."
+          faqs={[
+            {
+              q: "How does WhatsApp automation reduce clinic appointment no-shows?",
+              a: "Edfosys CRM triggers automated WhatsApp appointment confirmations upon booking, along with location map directions and prep instructions. Automated reminders sent 24 hours and 3 hours prior include 1-click confirmation or reschedule links, reducing no-shows by up to 70%.",
+            },
+            {
+              q: "Is patient communication and inquiry data secure and confidential?",
+              a: "Yes. Edfosys CRM provides dedicated tenant database isolation, AES-256 encryption at rest, TLS 1.3 in transit, and role-based access control, ensuring medical confidentiality and patient privacy.",
+            },
+            {
+              q: "Can our clinic generate treatment package estimates and GST invoices?",
+              a: "Yes. Front-desk coordinators can generate multi-procedure treatment packages with transparent GST breakdowns and print or send branded receipts directly to patients.",
+            },
+          ]}
+        />
 
         {/* Bottom CTA Banner */}
         <IndustryCtaBanner

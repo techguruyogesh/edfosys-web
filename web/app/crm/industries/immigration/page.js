@@ -3,11 +3,15 @@ import Footer from "@/components/layout/Footer";
 import IndustryHero from "@/components/crm/IndustryHero";
 import ImmigrationShowcase from "./ImmigrationShowcase";
 import IndustryCtaBanner from "@/components/crm/IndustryCtaBanner";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Immigration & Visa Consultancy CRM | Edfosys CRM",
   description:
     "Scale visa applications without paperwork chaos. Track country intakes, automate document checklists, and send automated applicant status alerts via WhatsApp Cloud API.",
+  alternates: {
+    canonical: "https://edfosys.com/crm/industries/immigration",
+  },
 };
 
 export default function ImmigrationCrmPage() {
@@ -81,6 +85,27 @@ export default function ImmigrationCrmPage() {
             </div>
           </div>
         </section>
+
+        {/* Immigration FAQs */}
+        <FaqSection
+          badge="Immigration FAQ"
+          title="Frequently Asked Questions: Immigration CRM"
+          subtitle="How Edfosys CRM keeps visa consultancies organized, compliant, and error-free across high-volume intakes."
+          faqs={[
+            {
+              q: "How does Edfosys CRM handle country-specific visa document checklists?",
+              a: "Edfosys CRM allows you to configure specific document requirements for every country intake (Canada SDS, UK Student, Australia Subclass 500, Schengen, etc.). Document status tags (Pending, Uploaded, Verified, Rejected) ensure zero embassy lodgement oversights.",
+            },
+            {
+              q: "Can clients receive automated milestone updates via WhatsApp?",
+              a: "Yes. When your case team updates an application milestone (such as SOP review, biometric slot booked, or visa decision received), Edfosys CRM triggers an automated WhatsApp notification with official confirmation details.",
+            },
+            {
+              q: "Does the system protect confidential applicant passport and financial data?",
+              a: "Yes. Documents are stored in secure cloud vaults with role-based permissions, allowing telecallers to view basic inquiry data while restricting sensitive financial and identity records to authorized case processors.",
+            },
+          ]}
+        />
 
         {/* Bottom CTA Banner */}
         <IndustryCtaBanner

@@ -3,11 +3,15 @@ import Footer from "@/components/layout/Footer";
 import IndustryHero from "@/components/crm/IndustryHero";
 import RealEstateShowcase from "./RealEstateShowcase";
 import IndustryCtaBanner from "@/components/crm/IndustryCtaBanner";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Real Estate & Builders CRM | Edfosys CRM",
   description:
     "Sell properties faster. Automate site visit follow-ups, instant WhatsApp brochure broadcasts, buyer qualification pipelines, and source attribution with Edfosys Real Estate CRM.",
+  alternates: {
+    canonical: "https://edfosys.com/crm/industries/real-estate",
+  },
 };
 
 export default function RealEstateCrmPage() {
@@ -81,6 +85,27 @@ export default function RealEstateCrmPage() {
             </div>
           </div>
         </section>
+
+        {/* Real Estate FAQs */}
+        <FaqSection
+          badge="Real Estate FAQ"
+          title="Frequently Asked Questions: Real Estate CRM"
+          subtitle="How Edfosys CRM helps property developers, builders, and agencies maximize site visits and sales velocity."
+          faqs={[
+            {
+              q: "How does WhatsApp automation improve real estate site visit attendance?",
+              a: "When a buyer schedules a site visit, Edfosys CRM triggers an automated WhatsApp confirmation with project location pins, parking guidance, and digital brochures. Automated reminders sent 24 hours and 2 hours prior reduce no-shows by up to 60%.",
+            },
+            {
+              q: "Can we track lead attribution for channel partners and external brokers?",
+              a: "Yes. Edfosys CRM provides source attribution across digital ad campaigns, property portals, and channel partner networks. Automated phone and email deduplication prevents commission conflicts between internal sales reps and external brokers.",
+            },
+            {
+              q: "How do project managers prevent buyer inquiry leakage during weekend campaigns?",
+              a: "Our automated round-robin engine distributes incoming weekend leads immediately to active on-duty sales executives. If an executive does not log an activity or update stage within a specified SLA, the lead is automatically escalated to a team lead.",
+            },
+          ]}
+        />
 
         {/* Bottom CTA Banner */}
         <IndustryCtaBanner

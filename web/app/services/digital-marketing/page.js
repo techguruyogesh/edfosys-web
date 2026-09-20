@@ -14,11 +14,15 @@ import {
   HelpCircle,
   Share2,
 } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Performance Marketing & SEO Growth Services | Edfosys",
   description:
     "Data-driven customer acquisition, Meta & Google Lead Ads, Server-Side CAPI tracking, and programmatic SEO designed for profitable customer acquisition.",
+  alternates: {
+    canonical: "https://edfosys.com/services/digital-marketing",
+  },
 };
 
 export default function DigitalMarketingPage() {
@@ -296,33 +300,13 @@ export default function DigitalMarketingPage() {
           </div>
         </section>
 
-        {/* FAQs */}
-        <section className="py-16 bg-slate-50 border-t border-slate-200">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">
-                Frequently Asked Marketing Questions
-              </h3>
-              <p className="text-sm text-slate-600">
-                Honest answers on budget allocation, attribution, and expected returns.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((f, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                  <h4 className="text-base font-bold text-slate-900 mb-2 flex items-start">
-                    <HelpCircle className="w-5 h-5 text-[#F7941D] mr-2 flex-shrink-0 mt-0.5" />
-                    <span>{f.q}</span>
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
-                    {f.a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* FAQs with Schema */}
+        <FaqSection
+          badge="Marketing FAQ"
+          title="Frequently Asked Marketing Questions"
+          subtitle="Honest answers on budget allocation, attribution, and expected returns."
+          faqs={faqs}
+        />
 
         {/* Floating CTA Banner */}
         <CallToActionBanner

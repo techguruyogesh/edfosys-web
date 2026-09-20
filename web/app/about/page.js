@@ -2,12 +2,16 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import CallToActionBanner from "@/components/layout/CallToActionBanner";
+import FaqSection from "@/components/common/FaqSection";
 import { Sparkles, ShieldCheck, Heart, Award, ArrowRight, Building2, Code2 } from "lucide-react";
 
 export const metadata = {
   title: "About Edfosys | Technology Studio & Business Growth Accelerators",
   description:
     "Discover the story behind Edfosys. We combine elite software engineering, enterprise cloud architectures, and dedicated business setup consulting for growing modern firms.",
+  alternates: {
+    canonical: "https://edfosys.com/about",
+  },
 };
 
 export default function AboutPage() {
@@ -78,6 +82,27 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* About FAQs */}
+        <FaqSection
+          badge="Company FAQ"
+          title="Frequently Asked Questions About Edfosys"
+          subtitle="Learn more about our team, engineering culture, intellectual property standards, and global delivery model."
+          faqs={[
+            {
+              q: "What is Edfosys's core philosophy and founding mission?",
+              a: "Edfosys was founded to bridge the gap between technical software engineering and real-world business execution. Rather than acting as a detached vendor, we partner closely with ambitious enterprises as a unified technology and growth studio.",
+            },
+            {
+              q: "Where is Edfosys headquartered and what regions do you serve?",
+              a: "Edfosys is headquartered in Ahmedabad, Gujarat, India, delivering software and consulting engagements to modern businesses across India, the United Arab Emirates, North America, and Europe.",
+            },
+            {
+              q: "Who owns the intellectual property (IP) of custom software built by Edfosys?",
+              a: "Our clients retain 100% full legal ownership of all codebases, database schemas, APIs, and digital design assets produced during our engagement. We enforce zero vendor lock-in.",
+            },
+          ]}
+        />
 
         {/* Floating CTA Banner */}
         <CallToActionBanner

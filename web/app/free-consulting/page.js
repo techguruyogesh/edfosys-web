@@ -11,11 +11,15 @@ import {
   Building2,
   Code2,
 } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
-  title: "Free 45-Min Business Setup & Tech Strategy Consulting",
+  title: "Free 45-Min Business Setup & Tech Strategy Consulting | Edfosys",
   description:
     "Schedule a complimentary 45-minute 1-on-1 strategy session with Edfosys senior architects and business advisors. Get your tailored setup and tech scaling roadmap.",
+  alternates: {
+    canonical: "https://edfosys.com/free-consulting",
+  },
 };
 
 export default function FreeConsultingPage() {
@@ -132,6 +136,27 @@ export default function FreeConsultingPage() {
             </div>
           </div>
         </div>
+
+        {/* Consulting FAQs */}
+        <FaqSection
+          badge="Advisory FAQ"
+          title="Frequently Asked Questions About the Strategy Session"
+          subtitle="Everything you need to know about our complimentary 45-minute executive consultation."
+          faqs={[
+            {
+              q: "Is the 45-minute strategy session truly 100% free with no hidden obligation?",
+              a: "Yes, completely. There are no pitch decks, no aggressive sales follow-ups, and no payment required. We provide genuine technical and business advisory because serious enterprises frequently choose to partner with us once they experience our execution clarity.",
+            },
+            {
+              q: "What should I prepare before our consultation call?",
+              a: "Come prepared with an outline of your business model, current or projected sales volumes, customer acquisition channels, and any specific technical bottlenecks or compliance questions you want answered.",
+            },
+            {
+              q: "Are our business concepts and financials kept confidential?",
+              a: "Yes. We operate under strict mutual confidentiality protocols and routinely sign mutual Non-Disclosure Agreements (NDAs) prior to sensitive technical or financial discussions.",
+            },
+          ]}
+        />
       </main>
 
       <Footer />

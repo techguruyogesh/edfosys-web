@@ -3,11 +3,15 @@ import Footer from "@/components/layout/Footer";
 import IndustryHero from "@/components/crm/IndustryHero";
 import B2bServicesShowcase from "./B2bServicesShowcase";
 import IndustryCtaBanner from "@/components/crm/IndustryCtaBanner";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "IT & B2B Service Agency CRM | Edfosys CRM",
   description:
     "Close high-ticket B2B contracts with predictable pipelines. Track multi-stakeholder deals, proposal views, sprint milestones, and recurring retainer invoices with Edfosys CRM.",
+  alternates: {
+    canonical: "https://edfosys.com/crm/industries/b2b-services",
+  },
 };
 
 export default function B2bServicesCrmPage() {
@@ -75,12 +79,33 @@ export default function B2bServicesCrmPage() {
                 </div>
                 <h3 className="text-xl font-bold text-emerald-950 mb-3">The Edfosys Fix</h3>
                 <p className="text-sm text-emerald-800 leading-relaxed">
-                  Real-time proposal telemetry alerts you when the client is reading your pricing, while automated milestone invoicing ensures immediate cash collection.
+                  Automated quotation generation and structured stage-gate qualification ensure deals progress swiftly, while automated milestone invoicing ensures immediate cash collection.
                 </p>
               </div>
             </div>
           </div>
         </section>
+
+        {/* B2B Services FAQs */}
+        <FaqSection
+          badge="B2B Services FAQ"
+          title="Frequently Asked Questions: B2B Services CRM"
+          subtitle="How Edfosys CRM helps digital agencies, IT service firms, and consultancies scale their enterprise deal flow."
+          faqs={[
+            {
+              q: "How does Edfosys CRM help IT agencies and B2B consultancies close deals faster?",
+              a: "Edfosys CRM provides multi-stage deal tracking tailored for consultative B2B sales cycles. You can manage stakeholder notes, track proposal dispatch, schedule follow-up triggers, and convert accepted quotes into GST invoices with one click.",
+            },
+            {
+              q: "Can we generate multi-item Statements of Work (SOW) and GST quotes?",
+              a: "Yes. Edfosys CRM includes a native quotation builder that allows itemized scope deliverables, hourly or fixed pricing, CGST/SGST/IGST tax calculation, and 1-click export into branded client-ready PDFs.",
+            },
+            {
+              q: "Can we track recurring retainer contracts and renewal deadlines?",
+              a: "Yes. You can manage client billing accounts, track retainer terms, and receive automated reminders before contracts expire to ensure zero revenue leakage.",
+            },
+          ]}
+        />
 
         {/* Bottom CTA Banner */}
         <IndustryCtaBanner

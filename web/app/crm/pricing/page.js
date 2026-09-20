@@ -2,11 +2,16 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
+import CallToActionBanner from "@/components/layout/CallToActionBanner";
 
 export const metadata = {
   title: "Simple, Transparent CRM Pricing Plans | Edfosys CRM",
   description:
     "Transparent pricing for growing sales teams. 14-day unlimited free trial. Includes lead management, automated WhatsApp follow-ups, and pipeline tracking.",
+  alternates: {
+    canonical: "https://edfosys.com/crm/pricing",
+  },
 };
 
 export default function PricingPage() {
@@ -138,6 +143,52 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
+
+        {/* Pricing FAQs */}
+        <FaqSection
+          badge="Pricing Details"
+          title="Frequently Asked Questions About CRM Pricing"
+          subtitle="Everything you need to know about plans, billing, user seats, and Meta WhatsApp integration."
+          faqs={[
+            {
+              q: "Is there really a 14-day free trial with no credit card required?",
+              a: "Yes. You get full access to all features for 14 days without providing any credit card or payment details. If you choose not to subscribe after 14 days, your data remains secure and you will never be charged without consent.",
+            },
+            {
+              q: "Can I change plans or add user seats as our sales team grows?",
+              a: "Yes. You can upgrade, downgrade, or add additional user seats at any time directly from your tenant billing panel. Charges are automatically prorated to your billing cycle.",
+            },
+            {
+              q: "Does Edfosys charge an additional markup on WhatsApp messages?",
+              a: "No. Edfosys does not take a percentage or per-message markup on WhatsApp communications. You connect your own Meta Business Manager WhatsApp Cloud API account. Meta provides the first 1,000 service conversations per month free.",
+            },
+            {
+              q: "What payment methods are supported for subscription billing?",
+              a: "We support UPI, Net Banking, Debit/Credit cards (Visa, Mastercard, RuPay, Amex), and corporate invoice bank transfers via our Razorpay integration.",
+            },
+            {
+              q: "Are the listed subscription prices inclusive of GST?",
+              a: "All displayed prices are exclusive of 18% GST. A compliant tax invoice containing your organization's GSTIN is generated automatically upon settlement.",
+            },
+          ]}
+        />
+
+        {/* Call to Action */}
+        <CallToActionBanner
+          badge="Start Free Today"
+          title="Supercharge Your Sales Team with"
+          highlight="Edfosys CRM"
+          subtitle="Join over 1,200 businesses closing deals faster. Create your account in under 2 minutes."
+          primaryCtaText="Start 14-Day Free Trial"
+          primaryCtaLink="https://app.edfosys.com/signup"
+          secondaryCtaText="Schedule 1-on-1 Consultation"
+          secondaryCtaLink="/free-consulting"
+          trustBadges={[
+            "No credit card required",
+            "Instant onboarding",
+            "Cancel anytime",
+          ]}
+        />
       </main>
 
       <Footer />

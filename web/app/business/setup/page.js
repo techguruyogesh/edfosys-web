@@ -2,11 +2,15 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import { Building2, CheckCircle2, ArrowRight, ShieldCheck, FileText, Landmark, Award } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
-  title: "Turnkey Company & Business Setup Services",
+  title: "Turnkey Company & Business Setup Services | Edfosys",
   description:
-    "End-to-end company incorporation (Pvt Ltd, LLP), GST registration, corporate banking, MSME, trademark filing, and legal compliance advisory.",
+    "End-to-end company incorporation (Pvt Ltd, LLP), GST registration, corporate banking, MSME, trademark filing, and legal compliance advisory with Edfosys.",
+  alternates: {
+    canonical: "https://edfosys.com/business/setup",
+  },
 };
 
 export default function BusinessSetupPage() {
@@ -98,12 +102,33 @@ export default function BusinessSetupPage() {
           </div>
         </section>
 
+        {/* Business Setup FAQs */}
+        <FaqSection
+          badge="Corporate Setup FAQ"
+          title="Frequently Asked Questions: Business Setup"
+          subtitle="Clear answers regarding Private Limited incorporation, GST registration, bank onboarding, and legal compliance."
+          faqs={[
+            {
+              q: "What is the typical timeline for incorporating a Private Limited company in India?",
+              a: "With Edfosys, Private Limited incorporation takes approximately 7 to 10 working days, including DSC generation, DIN registration, MCA name reservation (RUN), SPICe+ filing, and PAN/TAN issuance.",
+            },
+            {
+              q: "Does Edfosys handle GST registration and corporate banking setup?",
+              a: "Yes. Once the certificate of incorporation is granted, our corporate advisory team expedites GST registration, MSME/Udyam certification, and corporate bank current account opening with top commercial and digital banks.",
+            },
+            {
+              q: "Can foreign founders or NRIs incorporate an entity in India through Edfosys?",
+              a: "Yes. We assist non-resident Indians (NRIs) and foreign nationals with complete FDI compliance, notarized apostille documentation, and RBI/FEMA filing assistance.",
+            },
+          ]}
+        />
+
         <section className="py-16 bg-[#0C3246] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2">
                 Need Guidance on Which Business Structure to Choose?
-              </h3>
+              </h2>
               <p className="text-slate-300 text-sm">
                 Get free 1-on-1 advisory comparing Private Limited vs LLP vs Sole Proprietorship.
               </p>

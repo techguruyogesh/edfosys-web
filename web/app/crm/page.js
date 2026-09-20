@@ -16,11 +16,15 @@ import {
   Stethoscope,
   Briefcase,
 } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Edfosys CRM | Multi-Industry Lead Management & WhatsApp Automation",
   description:
     "Capture, track, and convert leads with Edfosys CRM. Purpose-built for Education, Real Estate, Immigration, Healthcare, B2B Services, and Auctions with native WhatsApp Cloud API integration.",
+  alternates: {
+    canonical: "https://edfosys.com/crm",
+  },
 };
 
 export default function CrmOverviewPage() {
@@ -186,6 +190,35 @@ export default function CrmOverviewPage() {
 
         {/* Connected Integrations Ecosystem */}
         <CrmIntegrationsEcosystem />
+
+        {/* Frequently Asked Questions */}
+        <FaqSection
+          badge="Product FAQs"
+          title="Frequently Asked Questions About Edfosys CRM"
+          subtitle="Clear answers on Meta Ads ingestion, WhatsApp Cloud API, tenant database isolation, and security."
+          faqs={[
+            {
+              q: "How does Edfosys CRM capture leads from Facebook and Instagram?",
+              a: "Edfosys CRM connects directly to Meta Lead Ads via instant webhooks. When a prospect submits a lead form on Facebook or Instagram, the data is ingested into your CRM pipeline in approximately 0.4 seconds, automatically deduplicated, and assigned to an active sales representative.",
+            },
+            {
+              q: "Does Edfosys CRM use the official Meta WhatsApp Cloud API?",
+              a: "Yes. Edfosys CRM integrates directly with the official Meta WhatsApp Cloud API. This allows verified business message dispatch, pre-approved rich media template broadcasts, and dynamic variable insertion with delivery logs and 98% open rates.",
+            },
+            {
+              q: "How does database isolation work in Edfosys CRM?",
+              a: "Unlike multi-tenant CRMs that store all customer data in shared tables with tenant ID filters, Edfosys CRM provisions physically isolated database schemas for each organization using stancl/tenancy. Your customer records, financials, and leads are entirely sequestered.",
+            },
+            {
+              q: "Can Edfosys CRM handle multi-branch sales teams and counselor shifts?",
+              a: "Yes. Edfosys CRM supports granular multi-branch hierarchies, role-based access control (RBAC), and shift-aware round-robin lead distribution that automatically skips team members who are offline or on approved leave.",
+            },
+            {
+              q: "How does billing and invoicing work within the CRM?",
+              a: "Edfosys CRM includes a native GST quotation and invoicing engine. You can create line-item quotations with CGST, SGST, and IGST breakdowns, convert them to tax invoices with one click, and download branded printable PDFs.",
+            },
+          ]}
+        />
 
         {/* Floating CTA Banner */}
         <CallToActionBanner

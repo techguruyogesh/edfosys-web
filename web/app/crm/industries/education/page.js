@@ -3,11 +3,15 @@ import Footer from "@/components/layout/Footer";
 import IndustryHero from "@/components/crm/IndustryHero";
 import EducationShowcase from "./EducationShowcase";
 import IndustryCtaBanner from "@/components/crm/IndustryCtaBanner";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Education & Coaching Institute CRM | Edfosys CRM",
   description:
     "Stop admission drop-offs. Ingest student inquiries from Meta & Google Ads, route to counselors in seconds, and automate entrance exam & fee alerts via WhatsApp Cloud API.",
+  alternates: {
+    canonical: "https://edfosys.com/crm/industries/education",
+  },
 };
 
 export default function EducationCrmPage() {
@@ -81,6 +85,27 @@ export default function EducationCrmPage() {
             </div>
           </div>
         </section>
+
+        {/* Education FAQs */}
+        <FaqSection
+          badge="Education FAQ"
+          title="Frequently Asked Questions: Education CRM"
+          subtitle="How Edfosys CRM streamlines student admissions, counselor productivity, and fee collection."
+          faqs={[
+            {
+              q: "How does Edfosys CRM accelerate student inquiry response times?",
+              a: "When an inquiry is captured from Meta Ads, Google Ads, or your website, Edfosys CRM assigns it within 0.4 seconds to an active counselor and triggers an instant WhatsApp greeting with course brochures and diagnostic test links.",
+            },
+            {
+              q: "Can multi-branch coaching institutes manage student pipelines separately?",
+              a: "Yes. Edfosys CRM supports complete multi-branch hierarchy with shift-aware counselor allocation. Branch administrators only see their local campus admissions, while central leadership monitors conversion rates across all centers.",
+            },
+            {
+              q: "Does the platform support GST fee receipts and installment plans?",
+              a: "Yes. Counselors can generate compliant GST quotations and fee receipts with automated CGST/SGST breakdowns, installment tracking, and 1-click printable PDF generation.",
+            },
+          ]}
+        />
 
         {/* Bottom CTA Banner */}
         <IndustryCtaBanner

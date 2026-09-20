@@ -17,11 +17,15 @@ import {
   HelpCircle,
   Sparkles,
 } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Enterprise Web & Cloud Architecture Services | Edfosys",
   description:
     "High-performance custom web applications, SaaS multi-tenant platforms, and resilient cloud backends engineered with Next.js, Laravel, Node.js, and AWS.",
+  alternates: {
+    canonical: "https://edfosys.com/services/web-development",
+  },
 };
 
 export default function WebDevelopmentPage() {
@@ -303,33 +307,13 @@ export default function WebDevelopmentPage() {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-16 bg-slate-50 border-t border-slate-200">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">
-                Frequently Asked Technical Questions
-              </h3>
-              <p className="text-sm text-slate-600">
-                Key questions enterprise leaders ask before partnering with us.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((f, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                  <h4 className="text-base font-bold text-slate-900 mb-2 flex items-start">
-                    <HelpCircle className="w-5 h-5 text-[#F7941D] mr-2 flex-shrink-0 mt-0.5" />
-                    <span>{f.q}</span>
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
-                    {f.a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* FAQ Section with Schema */}
+        <FaqSection
+          badge="Technical FAQ"
+          title="Frequently Asked Technical Questions"
+          subtitle="Key questions enterprise leaders ask before partnering with us."
+          faqs={faqs}
+        />
 
         {/* Floating CTA Banner */}
         <CallToActionBanner

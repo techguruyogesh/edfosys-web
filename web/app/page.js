@@ -18,11 +18,15 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Edfosys | Technology Studio, Business Growth & SaaS Solutions",
   description:
     "Empowering modern businesses with high-impact software engineering, turnkey company setup, growth advisory, and our flagship Edfosys CRM platform.",
+  alternates: {
+    canonical: "https://edfosys.com",
+  },
 };
 
 export default function HomePage() {
@@ -229,7 +233,38 @@ export default function HomePage() {
         <TestimonialWall />
 
         {/* ================================================================= */}
-        {/* 7. FINAL HIGH-IMPACT CALENDLY-STYLE BOOKING BANNER                */}
+        {/* 7. FREQUENTLY ASKED QUESTIONS (AEO & GEO Optimization)            */}
+        {/* ================================================================= */}
+        <FaqSection
+          badge="Got Questions?"
+          title="Frequently Asked Questions About Edfosys"
+          subtitle="Everything you need to know about our technology studio, services, and flagship CRM platform."
+          faqs={[
+            {
+              q: "What does Edfosys do?",
+              a: "Edfosys is a unified technology studio and business growth accelerator. We engineer custom web and mobile applications, provide turnkey company setup and corporate growth advisory, and provide our flagship multi-tenant Edfosys CRM platform with native WhatsApp automation.",
+            },
+            {
+              q: "What is Edfosys CRM and how is it different from generic CRMs?",
+              a: "Edfosys CRM is an industry-tailored SaaS platform built with dedicated tenant database schema isolation, 0.4-second Meta Ads lead ingestion, official Meta WhatsApp Cloud API automation, and automated GST billing. Unlike bloated generic tools, it requires zero third-party connector plugins and is pre-configured for fast conversion.",
+            },
+            {
+              q: "How fast can we onboard and start using Edfosys CRM?",
+              a: "You can sign up and launch your organization within 2 minutes via our self-serve 14-day free trial. If you require historical lead data migration or custom pipeline configuration, our engineering team completes full onboarding within 24 to 48 hours.",
+            },
+            {
+              q: "What does the Free 45-Minute Strategy Session include?",
+              a: "Our strategy session is a direct 1-on-1 consultation with a senior technology architect and growth partner. We analyze your current CAC, sales funnels, and tech stack architecture, providing an actionable 90-day execution roadmap with zero sales pressure.",
+            },
+            {
+              q: "Which business sectors does Edfosys specialize in?",
+              a: "We provide dedicated vertical solutions for Education & Institutes, Real Estate Developers & Builders, Immigration & Visa Consultants, Elective Healthcare & Aesthetic Clinics, B2B IT Services, and High-Value Auctions.",
+            },
+          ]}
+        />
+
+        {/* ================================================================= */}
+        {/* 8. FINAL HIGH-IMPACT CALENDLY-STYLE BOOKING BANNER                */}
         {/* ================================================================= */}
         <CallToActionBanner
           badge="Zero Risk • Immediate Value"

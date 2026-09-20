@@ -1,12 +1,16 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FreeConsultingForm from "@/app/free-consulting/FreeConsultingForm";
+import FaqSection from "@/components/common/FaqSection";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export const metadata = {
   title: "Contact Edfosys | Get in Touch with Our Team",
   description:
     "Contact Edfosys for custom software engineering inquiries, business setup consulting, or Edfosys CRM platform support.",
+  alternates: {
+    canonical: "https://edfosys.com/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -83,6 +87,27 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+
+        {/* Contact FAQs */}
+        <FaqSection
+          badge="Support FAQ"
+          title="Frequently Asked Questions About Contacting Us"
+          subtitle="Information on response turnaround, escalation channels, and meeting schedules."
+          faqs={[
+            {
+              q: "What is the standard turnaround time for new project inquiries?",
+              a: "Our advisory and engineering teams respond to new project inquiries and strategy consultation requests within 2 business hours (Monday to Saturday, 9:00 AM – 7:00 PM IST).",
+            },
+            {
+              q: "How do active Edfosys CRM subscribers access priority support?",
+              a: "Active subscribers can reach our dedicated support engineers directly via the in-app chat, our WhatsApp priority hotline at +91 7405672371, or by emailing contact@edfosys.com.",
+            },
+            {
+              q: "Can we schedule an in-person meeting at the Edfosys office?",
+              a: "Yes. In-person architectural reviews and corporate advisory sessions at our Ahmedabad headquarters can be scheduled by submitting a request or contacting us directly.",
+            },
+          ]}
+        />
       </main>
 
       <Footer />

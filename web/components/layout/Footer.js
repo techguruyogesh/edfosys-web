@@ -14,7 +14,7 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <Image
                 src="/logo.png"
-                alt="Edfosys"
+                alt="Edfosys - Technology Studio & SaaS CRM Platform"
                 width={150}
                 height={35}
                 className="h-9 w-auto brightness-0 invert object-contain"

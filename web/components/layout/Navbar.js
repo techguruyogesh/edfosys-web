@@ -155,7 +155,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-2.5">
             <Image
               src="/logo.png"
-              alt="Edfosys"
+              alt="Edfosys - Technology Studio & SaaS CRM Platform"
               width={160}
               height={38}
               priority

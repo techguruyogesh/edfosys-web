@@ -1,6 +1,7 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/common/FloatingWhatsApp";
+import { OrganizationSchema, SoftwareApplicationSchema } from "@/components/seo/JsonLd";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -10,6 +11,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata = {
   metadataBase: new URL("https://edfosys.com"),
+  alternates: {
+    canonical: "./",
+  },
   title: {
     default: "Edfosys | Technology Studio, Business Growth & SaaS Solutions",
     template: "%s | Edfosys",
@@ -27,10 +31,23 @@ export const metadata = {
     "Web Development",
     "Mobile Apps",
     "Lead Management",
+    "WhatsApp CRM Automation",
+    "Multi-Tenant CRM",
   ],
   authors: [{ name: "Edfosys" }],
   creator: "Edfosys",
   publisher: "Edfosys",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.png?v=edfosys-s2", type: "image/png" },
@@ -68,6 +85,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${plusJakarta.variable} font-sans antialiased`}>
+      <head>
+        <OrganizationSchema />
+        <SoftwareApplicationSchema />
+      </head>
       <body className="min-h-screen flex flex-col bg-white text-slate-900">
         {children}
         <FloatingWhatsApp />

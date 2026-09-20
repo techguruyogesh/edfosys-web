@@ -19,11 +19,15 @@ import {
   Database,
   Layers,
 } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Industry-Specific CRM Solutions | Edfosys CRM",
   description:
     "Explore tailored CRM editions built for Education, Real Estate, Immigration, Healthcare, B2B Services, and Auctions. Pre-configured pipelines, WhatsApp Cloud API, and zero custom coding.",
+  alternates: {
+    canonical: "https://edfosys.com/crm/industries",
+  },
 };
 
 export default function IndustriesHubPage() {
@@ -337,6 +341,31 @@ export default function IndustriesHubPage() {
             </div>
           </div>
         </section>
+
+        {/* Industry FAQs */}
+        <FaqSection
+          badge="Industry FAQ"
+          title="Frequently Asked Questions About Industry CRM Editions"
+          subtitle="How our purpose-built vertical workflows give your sales and operational teams an unfair advantage."
+          faqs={[
+            {
+              q: "Why should we choose an industry-tailored CRM instead of generic CRM software?",
+              a: "Generic CRMs require months of expensive consultant setup, third-party middleware plugins, and ongoing maintenance to handle vertical workflows like site visits, counselor quotas, or patient consultations. Edfosys CRM delivers pre-configured pipeline stages, document checklists, and native WhatsApp automation out of the box.",
+            },
+            {
+              q: "Can we customize pipeline stages and custom fields for our specific process?",
+              a: "Yes. While every industry edition includes pre-tested stage workflows, administrators have full control to add, edit, or reorder pipeline stages, custom qualification attributes, and lead status tags.",
+            },
+            {
+              q: "How does data migration work from our existing spreadsheets or legacy CRM?",
+              a: "We provide an automated CSV/Excel import wizard with column auto-mapping and phone number normalization. For enterprise migrations with over 20,000 records, our engineering team handles end-to-end database migration with zero downtime.",
+            },
+            {
+              q: "Can multi-branch operations be managed under a single organization account?",
+              a: "Yes. Edfosys CRM includes built-in multi-branch isolation. Branch managers and sales reps only see their authorized territory data, while executive leadership enjoys real-time company-wide roll-up analytics.",
+            },
+          ]}
+        />
 
         {/* Global CTA Banner */}
         <IndustryCtaBanner

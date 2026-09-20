@@ -15,11 +15,15 @@ import {
   HelpCircle,
   Sparkles,
 } from "lucide-react";
+import FaqSection from "@/components/common/FaqSection";
 
 export const metadata = {
   title: "Enterprise Mobile App Development | iOS & Android | Edfosys",
   description:
     "Native-grade iOS and Android mobile applications engineered with Flutter and React Native. Smooth 60fps animations, offline data synchronization, and enterprise security.",
+  alternates: {
+    canonical: "https://edfosys.com/services/mobile-apps",
+  },
 };
 
 export default function MobileAppsPage() {
@@ -301,33 +305,13 @@ export default function MobileAppsPage() {
           </div>
         </section>
 
-        {/* FAQs */}
-        <section className="py-16 bg-slate-50 border-t border-slate-200">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">
-                Frequently Asked Mobile Questions
-              </h3>
-              <p className="text-sm text-slate-600">
-                Clear answers regarding architecture, timeline, and store publishing.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((f, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                  <h4 className="text-base font-bold text-slate-900 mb-2 flex items-start">
-                    <HelpCircle className="w-5 h-5 text-[#F7941D] mr-2 flex-shrink-0 mt-0.5" />
-                    <span>{f.q}</span>
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
-                    {f.a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* FAQs with Schema */}
+        <FaqSection
+          badge="Mobile FAQ"
+          title="Frequently Asked Mobile Questions"
+          subtitle="Clear answers regarding architecture, timeline, and store publishing."
+          faqs={faqs}
+        />
 
         {/* Floating CTA Banner */}
         <CallToActionBanner
