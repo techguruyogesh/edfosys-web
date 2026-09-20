@@ -1,23 +1,17 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
+import CrmMainShowcase from "@/components/crm/CrmMainShowcase";
 import {
   Zap,
   ArrowRight,
   CheckCircle2,
-  MessageSquare,
-  Users,
-  Target,
-  BarChart3,
-  ShieldCheck,
   Building2,
   GraduationCap,
   Plane,
   Gavel,
   Stethoscope,
   Briefcase,
-  Clock,
-  Sparkles,
 } from "lucide-react";
 
 export const metadata = {
@@ -69,29 +63,6 @@ export default function CrmOverviewPage() {
       icon: Gavel,
       href: "/crm/industries/auctions",
       badge: "Auctions",
-    },
-  ];
-
-  const keyFeatures = [
-    {
-      title: "Official WhatsApp Cloud API",
-      desc: "Send instant templated notifications, follow-up sequences, and document reminders directly to your leads' WhatsApp with 98% open rates.",
-      icon: MessageSquare,
-    },
-    {
-      title: "Multi-Source Lead Capture",
-      desc: "Connect Facebook Lead Ads, Google Ads webhooks, landing pages, and walk-ins into a unified, de-duplicated inbox in real time.",
-      icon: Target,
-    },
-    {
-      title: "Visual Kanban Sales Pipeline",
-      desc: "Drag-and-drop deals across custom qualification stages. Spot pipeline bottlenecks and revenue opportunities instantly.",
-      icon: BarChart3,
-    },
-    {
-      title: "Strict Multi-Tenant Database Isolation",
-      desc: "Your data is physically segregated in dedicated tenant databases. Enterprise-grade encryption at rest and in transit.",
-      icon: ShieldCheck,
     },
   ];
 
@@ -147,41 +118,8 @@ export default function CrmOverviewPage() {
           </div>
         </section>
 
-        {/* Core Capabilities */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-                Engineered for Sales Performance
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600">
-                Everything your team needs to capture, nurture, and close leads without complexity.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {keyFeatures.map((feat) => {
-                const Icon = feat.icon;
-                return (
-                  <div
-                    key={feat.title}
-                    className="p-8 rounded-3xl border border-slate-200 bg-slate-50/50 hover:bg-[#FFF9F2] hover:border-orange-200 transition-all group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-6 group-hover:bg-[#F7941D] transition-colors">
-                      <Icon className="w-6 h-6 text-[#F7941D] group-hover:text-white transition-colors" />
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#F7941D] transition-colors">
-                      {feat.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      {feat.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        {/* Calendly-Style Product Pillars, Interactive Showcase & Workflow Stepper */}
+        <CrmMainShowcase />
 
         {/* Industry Verticals */}
         <section className="py-20 bg-slate-50 border-t border-slate-200/60">
