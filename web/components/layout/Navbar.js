@@ -31,12 +31,19 @@ import {
   CheckCircle2,
   Layers,
   CreditCard,
+  BookOpen,
+  HelpCircle,
+  Award,
+  Calendar,
+  Info,
+  Mail,
 } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
   const [crmDropdown, setCrmDropdown] = useState(false);
+  const [resourcesDropdown, setResourcesDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -139,6 +146,51 @@ export default function Navbar() {
       href: "/free-consulting",
       icon: Sparkles,
       badge: "Free 45-Min",
+    },
+  ];
+
+  const resourceMainItems = [
+    {
+      title: "About Us",
+      desc: "Our story, engineering mission, and leadership team.",
+      href: "/about",
+      icon: Info,
+      badge: null,
+    },
+    {
+      title: "Blog & Insights",
+      desc: "In-depth articles on software architecture and scaling.",
+      href: "/blog",
+      icon: BookOpen,
+      badge: "Articles",
+    },
+    {
+      title: "Contact & Support",
+      desc: "Reach our software architects and customer support.",
+      href: "/contact",
+      icon: Mail,
+      badge: null,
+    },
+  ];
+
+  const resourceUpcomingItems = [
+    {
+      title: "Case Studies",
+      desc: "Client success stories and ROI benchmarks.",
+      icon: Award,
+      badge: "Soon",
+    },
+    {
+      title: "Help Center",
+      desc: "Step-by-step guides, documentation & FAQs.",
+      icon: HelpCircle,
+      badge: "Soon",
+    },
+    {
+      title: "Events & Webinars",
+      desc: "Live workshops on growth and CRM automation.",
+      icon: Calendar,
+      badge: "Soon",
     },
   ];
 
@@ -458,29 +510,103 @@ export default function Navbar() {
               <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             </Link>
 
-            {/* About */}
-            <Link
-              href="/about"
-              className="text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors"
+            {/* Resources Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setResourcesDropdown(true)}
+              onMouseLeave={() => setResourcesDropdown(false)}
             >
-              About
-            </Link>
+              <button
+                className="flex items-center space-x-1.5 text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors py-2"
+                onClick={() => setResourcesDropdown(!resourcesDropdown)}
+              >
+                <span>Resources</span>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    resourcesDropdown ? "rotate-180 text-[#F7941D]" : ""
+                  }`}
+                />
+              </button>
 
-            {/* Blog */}
-            <Link
-              href="/blog"
-              className="text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors"
-            >
-              Blog
-            </Link>
+              {/* Resources Dropdown Menu */}
+              {resourcesDropdown && (
+                <div className="absolute top-full right-0 lg:left-1/2 lg:-translate-x-1/2 w-[540px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 grid grid-cols-2 gap-5 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {/* Column 1: Active Core Pages */}
+                  <div>
+                    <div className="flex items-center space-x-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 pb-1.5 border-b border-slate-100">
+                      <span>Explore</span>
+                    </div>
+                    <div className="space-y-2">
+                      {resourceMainItems.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="group flex items-start space-x-3 p-2 rounded-xl hover:bg-[#FFF9F2] transition-colors"
+                          >
+                            <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F7941D] transition-colors">
+                              <Icon className="w-4 h-4 text-[#F7941D] group-hover:text-white transition-colors" />
+                            </div>
+                            <div>
+                              <div className="flex items-center space-x-1.5">
+                                <span className="text-xs font-bold text-slate-900 group-hover:text-[#F7941D] transition-colors">
+                                  {item.title}
+                                </span>
+                                {item.badge && (
+                                  <span className="text-[9px] font-bold bg-orange-100 text-[#e57a0b] px-1.5 py-0.5 rounded">
+                                    {item.badge}
+                                  </span>
+                                )}
+                              </div>
+                              <div className="text-[11px] text-slate-500 leading-snug">
+                                {item.desc}
+                              </div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
 
-            {/* Contact */}
-            <Link
-              href="/contact"
-              className="text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors"
-            >
-              Contact
-            </Link>
+                  {/* Column 2: Knowledge Hub (Future Expansion) */}
+                  <div className="bg-slate-50/70 rounded-xl p-3.5 border border-slate-100/90">
+                    <div className="flex items-center justify-between text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 pb-1.5 border-b border-slate-200/60">
+                      <span>Knowledge Hub</span>
+                      <span className="text-[9px] text-slate-400 font-medium normal-case">coming soon</span>
+                    </div>
+                    <div className="space-y-2">
+                      {resourceUpcomingItems.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <div
+                            key={item.title}
+                            className="flex items-start space-x-2.5 p-1.5 rounded-lg opacity-70 cursor-default"
+                          >
+                            <div className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 text-slate-400">
+                              <Icon className="w-3.5 h-3.5" />
+                            </div>
+                            <div>
+                              <div className="flex items-center space-x-1.5">
+                                <span className="text-xs font-semibold text-slate-700">
+                                  {item.title}
+                                </span>
+                                <span className="text-[8px] font-bold bg-slate-200 text-slate-600 px-1.5 py-0.2 rounded uppercase">
+                                  {item.badge}
+                                </span>
+                              </div>
+                              <div className="text-[10px] text-slate-500 leading-tight">
+                                {item.desc}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Desktop Right CTAs */}
@@ -594,18 +720,46 @@ export default function Navbar() {
             >
               Free 45-Min Strategy Session
             </Link>
-            <Link
-              href="/about"
-              className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-900 hover:bg-[#FFF9F2]"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-900 hover:bg-[#FFF9F2]"
-            >
-              Contact
-            </Link>
+            {/* Mobile Resources Section */}
+            <div className="px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200/70">
+              <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">
+                Resources & Company
+              </div>
+              <div className="space-y-1.5 pl-1">
+                <Link
+                  href="/about"
+                  className="block text-sm font-semibold text-slate-800 hover:text-[#F7941D]"
+                >
+                  📖 About Edfosys
+                </Link>
+                <Link
+                  href="/blog"
+                  className="block text-sm font-semibold text-slate-800 hover:text-[#F7941D]"
+                >
+                  ✍️ Blog & Growth Insights
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block text-sm font-semibold text-slate-800 hover:text-[#F7941D]"
+                >
+                  📞 Contact & Support
+                </Link>
+                <div className="pt-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                  Knowledge Hub (Coming Soon)
+                </div>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  <span className="text-[11px] bg-white border border-slate-200 text-slate-500 px-2 py-0.5 rounded-md">
+                    Case Studies
+                  </span>
+                  <span className="text-[11px] bg-white border border-slate-200 text-slate-500 px-2 py-0.5 rounded-md">
+                    Help Center
+                  </span>
+                  <span className="text-[11px] bg-white border border-slate-200 text-slate-500 px-2 py-0.5 rounded-md">
+                    Events & Webinars
+                  </span>
+                </div>
+              </div>
+            </div>
             <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
               <Link
                 href="/free-consulting"
