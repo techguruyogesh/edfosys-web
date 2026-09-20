@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
+import CallToActionBanner from "@/components/layout/CallToActionBanner";
 import { Sparkles, ShieldCheck, Heart, Award, ArrowRight, Building2, Code2 } from "lucide-react";
 
 export const metadata = {
@@ -78,20 +79,22 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-16 bg-[#0C3246] text-white text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-3xl font-extrabold mb-4">Want to Work with Us?</h3>
-            <p className="text-slate-300 text-sm sm:text-base mb-8 max-w-xl mx-auto">
-              Whether you need enterprise software engineering or complete business setup guidance, we are ready to partner with you.
-            </p>
-            <Link
-              href="/free-consulting"
-              className="inline-block px-8 py-3.5 rounded-xl font-bold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-xl"
-            >
-              Book 45-Min Strategy Session →
-            </Link>
-          </div>
-        </section>
+        {/* Floating CTA Banner */}
+        <CallToActionBanner
+          badge="Partner with Edfosys"
+          title="Want to Work with"
+          highlight="Us?"
+          subtitle="Whether you need enterprise software engineering, custom cloud architecture, or strategic business scaling guidance, our senior team is ready to accelerate your journey."
+          primaryCtaText="Book 45-Min Strategy Session"
+          primaryCtaLink="/free-consulting"
+          secondaryCtaText="Contact Us Directly"
+          secondaryCtaLink="/contact"
+          trustBadges={[
+            "Direct architect access",
+            "Actionable tech roadmap",
+            "100% confidential",
+          ]}
+        />
       </main>
 
       <Footer />

@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
+import CallToActionBanner from "@/components/layout/CallToActionBanner";
 import {
   Smartphone,
   CheckCircle2,
@@ -328,31 +329,22 @@ export default function MobileAppsPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#0C3246] text-white text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-3xl font-extrabold mb-4">
-              Have a Mobile App Concept in Mind?
-            </h3>
-            <p className="text-slate-300 text-sm sm:text-base mb-8 max-w-xl mx-auto">
-              Get an interactive prototype and technical architecture breakdown in our free 45-minute discovery consultation.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/free-consulting"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-xl"
-              >
-                Schedule Mobile Discovery
-              </Link>
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20"
-              >
-                Request Cost Breakdown
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* Floating CTA Banner */}
+        <CallToActionBanner
+          badge="Native & Cross-Platform Mobile"
+          title="Have a Mobile App Concept in Mind with"
+          highlight="Edfosys?"
+          subtitle="Get an interactive prototype and technical architecture breakdown in our free 45-minute discovery consultation with senior mobile architects."
+          primaryCtaText="Schedule Mobile Discovery"
+          primaryCtaLink="/free-consulting"
+          secondaryCtaText="Request Cost Breakdown"
+          secondaryCtaLink="/contact"
+          trustBadges={[
+            "60fps fluid performance guarantee",
+            "100% App Store approval compliance",
+            "Offline-first synchronization",
+          ]}
+        />
       </main>
 
       <Footer />

@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
+import CallToActionBanner from "@/components/layout/CallToActionBanner";
 import {
   Palette,
   CheckCircle2,
@@ -323,31 +324,22 @@ export default function UiUxDesignPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#0C3246] text-white text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-3xl font-extrabold mb-4">
-              Elevate Your Product Experience
-            </h3>
-            <p className="text-slate-300 text-sm sm:text-base mb-8 max-w-xl mx-auto">
-              Get an expert UX audit of your existing interface or discuss building a comprehensive design system from scratch.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/free-consulting"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-xl"
-              >
-                Book Free UX Audit
-              </Link>
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20"
-              >
-                Discuss Custom Scope
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* Floating CTA Banner */}
+        <CallToActionBanner
+          badge="Product Design Studio"
+          title="Ready to Elevate Your Digital Product Experience with"
+          highlight="Edfosys?"
+          subtitle="Get an expert UX audit of your existing interface or discuss building a scalable, tokenized design system from scratch with our product design leads."
+          primaryCtaText="Book Free UX Audit"
+          primaryCtaLink="/free-consulting"
+          secondaryCtaText="Discuss Custom Scope"
+          secondaryCtaLink="/contact"
+          trustBadges={[
+            "Figma Variables & Auto-Layout 5.0",
+            "WCAG 2.1 AA accessibility standards",
+            "Direct Storybook & Tailwind token handoff",
+          ]}
+        />
       </main>
 
       <Footer />

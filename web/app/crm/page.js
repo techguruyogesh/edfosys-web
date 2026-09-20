@@ -4,6 +4,7 @@ import Link from "next/link";
 import CrmMainShowcase from "@/components/crm/CrmMainShowcase";
 import CrmPanelFeatures from "@/components/crm/CrmPanelFeatures";
 import CrmIntegrationsEcosystem from "@/components/crm/CrmIntegrationsEcosystem";
+import CallToActionBanner from "@/components/layout/CallToActionBanner";
 import {
   Zap,
   ArrowRight,
@@ -186,33 +187,22 @@ export default function CrmOverviewPage() {
         {/* Connected Integrations Ecosystem */}
         <CrmIntegrationsEcosystem />
 
-        {/* CTA */}
-        <section className="py-16 bg-[#0C3246] text-white text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-3xl font-extrabold mb-4">
-              Ready to Accelerate Your Sales Pipeline?
-            </h3>
-            <p className="text-slate-300 text-sm sm:text-base mb-8 max-w-xl mx-auto">
-              Get set up in 2 minutes. Experience why 1,200+ businesses trust Edfosys CRM.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://app.edfosys.com/signup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-xl"
-              >
-                Create Free Account
-              </a>
-              <Link
-                href="/free-consulting"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20"
-              >
-                Schedule Custom Demo
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* Floating CTA Banner */}
+        <CallToActionBanner
+          badge="14-Day Risk-Free Trial"
+          title="Ready to Accelerate Your Sales Pipeline with"
+          highlight="Edfosys CRM?"
+          subtitle="Get set up in 2 minutes. Experience why 1,200+ fast-growing businesses trust Edfosys CRM to capture leads and close deals."
+          primaryCtaText="Create Free Account"
+          primaryCtaLink="https://app.edfosys.com/signup"
+          secondaryCtaText="Schedule Custom Demo"
+          secondaryCtaLink="/free-consulting"
+          trustBadges={[
+            "No credit card required",
+            "2-minute self-serve setup",
+            "Cancel anytime",
+          ]}
+        />
       </main>
 
       <Footer />

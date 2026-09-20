@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Link from "next/link";
+import CallToActionBanner from "@/components/layout/CallToActionBanner";
 import {
   Code2,
   CheckCircle2,
@@ -330,31 +331,22 @@ export default function WebDevelopmentPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#0C3246] text-white text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-3xl font-extrabold mb-4">
-              Ready to Architect Your Next Web Platform?
-            </h3>
-            <p className="text-slate-300 text-sm sm:text-base mb-8 max-w-xl mx-auto">
-              Book a complimentary 45-minute technical session with our lead architects. We will audit your architecture and provide actionable recommendations.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/free-consulting"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#F7941D] hover:bg-[#e57a0b] text-white shadow-xl"
-              >
-                Schedule Technical Audit
-              </Link>
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20"
-              >
-                Get Cost Estimate
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* Floating CTA Banner */}
+        <CallToActionBanner
+          badge="Enterprise Cloud Architecture"
+          title="Ready to Architect Your Next Web Platform with"
+          highlight="Edfosys?"
+          subtitle="Book a complimentary 45-minute technical session with our lead architects. We will audit your architecture and provide actionable scaling recommendations."
+          primaryCtaText="Schedule Technical Audit"
+          primaryCtaLink="/free-consulting"
+          secondaryCtaText="Request Cost Estimate"
+          secondaryCtaLink="/contact"
+          trustBadges={[
+            "100% IP & source code ownership",
+            "Production-grade security audit",
+            "Zero vendor lock-in",
+          ]}
+        />
       </main>
 
       <Footer />
