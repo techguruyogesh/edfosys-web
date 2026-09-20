@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
@@ -13,6 +13,18 @@ export default function CalendlyShowcase({
   signupSlug = "general",
 }) {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-scroll / cycle across features like Calendly
+  useEffect(() => {
+    if (isPaused || tabs.length <= 1) return;
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % tabs.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [isPaused, tabs.length]);
+
   const currentTab = tabs[activeIdx] || tabs[0];
 
   if (!tabs.length) return null;
@@ -36,11 +48,19 @@ export default function CalendlyShowcase({
           )}
         </div>
 
-        {/* Dreamy Gradient Backdrop Container (Calendly Style) */}
-        <div className="relative rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-tr from-sky-200/60 via-blue-100/40 to-amber-100/40 p-4 sm:p-8 lg:p-12 border border-white/80 shadow-2xl shadow-blue-900/5">
+        {/* Dreamy Gradient Backdrop Container (Calendly Style with Generous Top Padding) */}
+        <div
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          className="relative rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-tr from-sky-200/70 via-blue-100/50 to-amber-100/50 pt-14 sm:pt-20 lg:pt-24 pb-6 sm:pb-10 lg:pb-12 px-4 sm:px-8 lg:px-12 border border-white/90 shadow-2xl shadow-blue-900/5 overflow-hidden"
+        >
+          {/* Subtle Ambient Decorative Orbs */}
+          <div className="absolute top-0 right-1/4 w-80 h-80 bg-sky-300/30 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-200/30 rounded-full blur-3xl pointer-events-none" />
+
           {/* Top Interactive Icon Bar with Pointer Indicator */}
-          <div className="flex justify-center -mt-8 sm:-mt-12 mb-6 sm:mb-8 relative z-10">
-            <div className="inline-flex items-center bg-white/90 backdrop-blur-xl p-2 rounded-2xl sm:rounded-3xl border border-white/90 shadow-xl gap-2 sm:gap-3">
+          <div className="flex justify-center mb-6 sm:mb-8 relative z-10">
+            <div className="inline-flex items-center bg-white/95 backdrop-blur-xl p-2 sm:p-2.5 rounded-2xl sm:rounded-3xl border border-white/90 shadow-xl gap-2 sm:gap-3">
               {tabs.map((tab, idx) => {
                 const isActive = activeIdx === idx;
                 const Icon = tab.icon;
@@ -56,11 +76,16 @@ export default function CalendlyShowcase({
                       aria-label={tab.label || tab.badge}
                     >
                       <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+
+                      {/* Auto-cycle active pulse bar */}
+                      {isActive && !isPaused && (
+                        <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-[#F7941D] rounded-full animate-pulse" />
+                      )}
                     </button>
 
                     {/* Connecting Pointer Teardrop when active (matching Calendly's tab indicator) */}
                     {isActive && (
-                      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-0 h-0 border-x-[6px] border-x-transparent border-t-[8px] border-t-[#0C3246] transition-all" />
+                      <div className="absolute -bottom-2 sm:-bottom-2.5 left-1/2 -translate-x-1/2 w-0 h-0 border-x-[6px] border-x-transparent border-t-[8px] border-t-[#0C3246] transition-all z-20" />
                     )}
                   </div>
                 );
@@ -69,7 +94,7 @@ export default function CalendlyShowcase({
           </div>
 
           {/* Floating Pure White Card */}
-          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 p-6 sm:p-10 lg:p-12 min-h-[460px] flex flex-col justify-center">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 p-6 sm:p-10 lg:p-12 min-h-[460px] flex flex-col justify-center relative z-10">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentTab.id || activeIdx}
