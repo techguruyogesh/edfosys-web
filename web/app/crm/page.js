@@ -14,6 +14,8 @@ import {
   GraduationCap,
   Plane,
   Gavel,
+  Stethoscope,
+  Briefcase,
   Clock,
   Sparkles,
 } from "lucide-react";
@@ -21,7 +23,7 @@ import {
 export const metadata = {
   title: "Edfosys CRM | Multi-Industry Lead Management & WhatsApp Automation",
   description:
-    "Capture, track, and convert leads with Edfosys CRM. Purpose-built for Education, Real Estate, Immigration, and Consulting teams with native WhatsApp Cloud API integration.",
+    "Capture, track, and convert leads with Edfosys CRM. Purpose-built for Education, Real Estate, Immigration, Healthcare, B2B Services, and Auctions with native WhatsApp Cloud API integration.",
 };
 
 export default function CrmOverviewPage() {
@@ -30,25 +32,43 @@ export default function CrmOverviewPage() {
       title: "Education & Institutes",
       desc: "Track student inquiries, counselor follow-ups, and admission conversion pipelines.",
       icon: GraduationCap,
-      href: "/crm/industries#education",
+      href: "/crm/industries/education",
+      badge: "EdTech",
     },
     {
       title: "Real Estate & Builders",
       desc: "Manage property site visits, broker commissions, and automated WhatsApp inventory alerts.",
       icon: Building2,
-      href: "/crm/industries#real-estate",
+      href: "/crm/industries/real-estate",
+      badge: "Real Estate",
     },
     {
       title: "Immigration & Visa",
       desc: "Case milestone tracking, document verification checklists, and automated status alerts.",
       icon: Plane,
-      href: "/crm/industries#immigration",
+      href: "/crm/industries/immigration",
+      badge: "Visa",
+    },
+    {
+      title: "Healthcare & Clinics",
+      desc: "Doctor queue scheduling, automated WhatsApp reminder directions, and post-care cadences.",
+      icon: Stethoscope,
+      href: "/crm/industries/healthcare",
+      badge: "Healthcare",
+    },
+    {
+      title: "IT & B2B Services",
+      desc: "Consultative high-ticket deal stages, proposal view alerts, and milestone billing.",
+      icon: Briefcase,
+      href: "/crm/industries/b2b-services",
+      badge: "Agencies",
     },
     {
       title: "Auctions & High-Value Deals",
       desc: "Consignor lot inventory, bidder registrations, premium calculations, and settlements.",
       icon: Gavel,
-      href: "/crm/industries#auction",
+      href: "/crm/industries/auctions",
+      badge: "Auctions",
     },
   ];
 
@@ -175,31 +195,47 @@ export default function CrmOverviewPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {industries.map((ind) => {
                 const Icon = ind.icon;
                 return (
-                  <div
+                  <Link
                     key={ind.title}
-                    className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
+                    href={ind.href}
+                    className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:border-orange-300 transition-all flex flex-col justify-between group"
                   >
                     <div>
-                      <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center mb-4">
-                        <Icon className="w-6 h-6 text-[#F7941D]" />
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center group-hover:bg-[#F7941D] transition-colors">
+                          <Icon className="w-6 h-6 text-[#F7941D] group-hover:text-white transition-colors" />
+                        </div>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">
+                          {ind.badge}
+                        </span>
                       </div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-2">
+                      <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#F7941D] transition-colors">
                         {ind.title}
                       </h4>
                       <p className="text-xs text-slate-600 leading-relaxed mb-4">
                         {ind.desc}
                       </p>
                     </div>
-                    <span className="text-xs font-bold text-[#F7941D]">
-                      Optimized Pipeline →
-                    </span>
-                  </div>
+                    <div className="flex items-center space-x-1 text-xs font-bold text-[#F7941D]">
+                      <span>Explore Dedicated Edition</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
                 );
               })}
+            </div>
+
+            <div className="text-center">
+              <Link
+                href="/crm/industries"
+                className="inline-flex items-center space-x-2 text-sm font-bold text-[#0C3246] hover:text-[#F7941D] transition-colors"
+              >
+                <span>View all industry editions and vertical comparison →</span>
+              </Link>
             </div>
           </div>
         </section>

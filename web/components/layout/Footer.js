@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0C3246] text-slate-300 pt-16 pb-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 pb-12 border-b border-slate-800/80">
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block">
@@ -100,7 +100,7 @@ export default function Footer() {
           {/* Column 4: SaaS Products */}
           <div>
             <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">
-              SaaS Products
+              SaaS Platform
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
@@ -112,19 +112,58 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/crm/features" className="hover:text-[#F7941D] transition-colors">
-                  CRM Features
+                <Link href="/crm/pricing" className="hover:text-[#F7941D] transition-colors">
+                  CRM Pricing & Plans
                 </Link>
               </li>
               <li>
-                <Link href="/crm/pricing" className="hover:text-[#F7941D] transition-colors">
-                  CRM Pricing & Plans
+                <Link href="/crm/industries" className="hover:text-[#F7941D] transition-colors">
+                  All Industry Hub
                 </Link>
               </li>
               <li>
                 <a href="https://app.edfosys.com/signup" target="_blank" rel="noopener noreferrer" className="hover:text-[#F7941D] transition-colors">
                   Start Free CRM Trial
                 </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 5: Industry CRM Editions */}
+          <div>
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">
+              Industry Editions
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link href="/crm/industries/education" className="hover:text-[#F7941D] transition-colors">
+                  Education & Institutes
+                </Link>
+              </li>
+              <li>
+                <Link href="/crm/industries/real-estate" className="hover:text-[#F7941D] transition-colors">
+                  Real Estate & Builders
+                </Link>
+              </li>
+              <li>
+                <Link href="/crm/industries/immigration" className="hover:text-[#F7941D] transition-colors">
+                  Immigration & Visa
+                </Link>
+              </li>
+              <li>
+                <Link href="/crm/industries/healthcare" className="hover:text-[#F7941D] transition-colors">
+                  Healthcare & Clinics
+                </Link>
+              </li>
+              <li>
+                <Link href="/crm/industries/b2b-services" className="hover:text-[#F7941D] transition-colors">
+                  IT & B2B Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/crm/industries/auctions" className="hover:text-[#F7941D] transition-colors">
+                  Auctions & High-Value
+                </Link>
               </li>
             </ul>
           </div>

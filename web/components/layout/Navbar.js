@@ -18,11 +18,18 @@ import {
   ArrowRight,
   ShieldCheck,
   Headphones,
+  GraduationCap,
+  Plane,
+  Gavel,
+  Stethoscope,
+  Briefcase,
+  Zap,
 } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
+  const [industriesDropdown, setIndustriesDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -37,7 +44,47 @@ export default function Navbar() {
   useEffect(() => {
     setIsOpen(false);
     setServicesDropdown(false);
+    setIndustriesDropdown(false);
   }, [pathname]);
+
+  const industryList = [
+    {
+      title: "Education & Coaching",
+      desc: "Student inquiries, counselor round-robin & exam alerts.",
+      href: "/crm/industries/education",
+      icon: GraduationCap,
+    },
+    {
+      title: "Real Estate & Builders",
+      desc: "Site visit scheduling & live multi-tower inventory grid.",
+      href: "/crm/industries/real-estate",
+      icon: Building2,
+    },
+    {
+      title: "Immigration & Visa",
+      desc: "Country intakes, document vaults & status alerts.",
+      href: "/crm/industries/immigration",
+      icon: Plane,
+    },
+    {
+      title: "Healthcare & Clinics",
+      desc: "Doctor queues, no-show reminders & care retention.",
+      href: "/crm/industries/healthcare",
+      icon: Stethoscope,
+    },
+    {
+      title: "IT & B2B Services",
+      desc: "High-ticket deal pipeline & proposal view heatmaps.",
+      href: "/crm/industries/b2b-services",
+      icon: Briefcase,
+    },
+    {
+      title: "Auctions & High-Value",
+      desc: "Consignor lots, KYC paddles & outbid WhatsApp bots.",
+      href: "/crm/industries/auctions",
+      icon: Gavel,
+    },
+  ];
 
   const itServices = [
     {
@@ -233,6 +280,63 @@ export default function Navbar() {
               </span>
             </Link>
 
+            {/* Industries Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIndustriesDropdown(true)}
+              onMouseLeave={() => setIndustriesDropdown(false)}
+            >
+              <button
+                className="flex items-center space-x-1.5 text-sm font-semibold text-slate-700 hover:text-[#F7941D] transition-colors py-2"
+                onClick={() => setIndustriesDropdown(!industriesDropdown)}
+              >
+                <span>Industries</span>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    industriesDropdown ? "rotate-180 text-[#F7941D]" : ""
+                  }`}
+                />
+              </button>
+
+              {/* Industries Dropdown Menu */}
+              {industriesDropdown && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[540px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 grid grid-cols-2 gap-3 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {industryList.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="group flex items-start space-x-3 p-2.5 rounded-xl hover:bg-[#FFF9F2] transition-colors"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F7941D] transition-colors">
+                          <Icon className="w-4 h-4 text-[#F7941D] group-hover:text-white transition-colors" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-[#F7941D] transition-colors">
+                            {item.title}
+                          </div>
+                          <div className="text-[11px] text-slate-500 leading-snug">
+                            {item.desc}
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                  <div className="col-span-2 pt-3 mt-1 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <Link
+                      href="/crm/industries"
+                      className="font-bold text-[#F7941D] hover:underline flex items-center space-x-1"
+                    >
+                      <span>Explore All Industries Hub</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                    <span className="text-slate-400 text-[11px]">6 Pre-configured Editions</span>
+                  </div>
+                </div>
+              )}
+            </div>
+
             {/* Free Consulting Highlight */}
             <Link
               href="/free-consulting"
@@ -334,6 +438,25 @@ export default function Navbar() {
             >
               Edfosys CRM
             </Link>
+            <div className="px-3 py-2">
+              <div className="flex items-center justify-between text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                <span>Industry Solutions</span>
+                <Link href="/crm/industries" className="text-[#F7941D] text-[11px] lowercase tracking-normal">
+                  view all →
+                </Link>
+              </div>
+              <div className="space-y-2 pl-2">
+                {industryList.map((ind) => (
+                  <Link
+                    key={ind.href}
+                    href={ind.href}
+                    className="block text-sm text-slate-700 hover:text-[#F7941D]"
+                  >
+                    {ind.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
             <Link
               href="/free-consulting"
               className="block px-3 py-2 rounded-lg text-sm font-semibold text-[#F7941D] hover:bg-[#FFF9F2]"
