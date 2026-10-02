@@ -15,21 +15,22 @@ export default function AnnouncementBar() {
         {/* Main Content */}
         <div className="flex items-center justify-center flex-wrap gap-x-2 gap-y-1 text-xs sm:text-[13px] font-medium text-center pr-6 sm:pr-0">
           <div className="flex items-center space-x-1.5 flex-shrink-0">
-            <Megaphone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-900 fill-slate-900/10 flex-shrink-0" />
-            <span className="font-bold tracking-tight">Special Offer:</span>
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-white text-slate-900 shadow-xs">
+              ⚡ 14-Day Risk-Free Trial
+            </span>
           </div>
 
-          <span className="text-slate-900">
-            Get 3 Months Free on Annual Plans + New WhatsApp Cloud Automation & 0.4s Meta Lead Sync.
+          <span className="text-slate-900 font-medium">
+            Launch your full CRM workspace with 1-Click WhatsApp & 0.4s Meta Ads Sync. No credit card required!
           </span>
 
-          <Link
-            href="/crm"
-            className="inline-flex items-center space-x-1 bg-white/85 hover:bg-white text-slate-900 px-2.5 py-0.5 rounded-md text-[11px] sm:text-xs font-semibold transition-all hover:scale-[1.02] border border-white/60 shadow-xs ml-1 flex-shrink-0"
+          <a
+            href="https://app.edfosys.com/signup"
+            className="inline-flex items-center space-x-1 bg-white hover:bg-slate-50 text-slate-900 px-2.5 py-0.5 rounded-md text-[11px] sm:text-xs font-bold transition-all hover:scale-[1.02] border border-white/80 shadow-xs ml-1 flex-shrink-0"
           >
-            <span>Learn more</span>
+            <span>Start Free Trial</span>
             <ArrowRight className="w-3 h-3 text-slate-700" />
-          </Link>
+          </a>
         </div>
 
         {/* Dismiss Button */}
