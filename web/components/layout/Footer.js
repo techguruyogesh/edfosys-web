@@ -179,6 +179,9 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-slate-400 transition-colors">
               Terms of Service
             </Link>
+            <Link href="/data-deletion" className="hover:text-slate-400 transition-colors">
+              Data Deletion
+            </Link>
             <Link href="/contact" className="hover:text-slate-400 transition-colors">
               Contact Support
             </Link>
